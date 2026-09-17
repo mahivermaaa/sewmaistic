@@ -388,7 +388,7 @@ export function Footer() {
               info@thesugarhouse.com
             </a>
             <a
-              href="tel:+917084400400"
+              href="tel:+915678XXXXXX"
               className="flex items-center gap-2 hover:text-[#A3B18A] transition-colors text-sm"
             >
               <PhoneIcon className="w-3.5 h-3.5 text-[#A3B18A]" />
@@ -397,7 +397,7 @@ export function Footer() {
             <div className="flex items-start gap-2 mt-1">
               <MapPinIcon className="w-3.5 h-3.5 shrink-0 mt-0.5 text-[#A3B18A]" />
               <span>
-                B-192, Aliganj Main Rd, Opp. Ram Krishna Math, Nirala Nagar, Lucknow, Uttar Pradesh 226020.
+                Gomtinagar, Lucknow, 226016, Lucknow, Uttar Pradesh 226020.
               </span>
             </div>
           </div>
@@ -406,10 +406,10 @@ export function Footer() {
             <p className="font-bold text-xs text-[#DAD7CD] mb-1">
               SUGAR HOUSE FOOD PRODUCTS PRIVATE LIMITED
             </p>
-            <p>CIN - U15412UP2019PTC124722</p>
-            <p>Registered office at Khasra No-189, Ganeshpur Rehmanpur, Dewa Road, Chinhat, Lucknow - 226028</p>
-            <p>GSTIN - 09AAFCH1474B1ZU</p>
-            <p>FSSAI NO - 12722066001772</p>
+            <p>CIN - ABCxxxxxxxxxxxxxxxx</p>
+            <p></p>
+            <p>GSTIN - 12364789025xxxxx</p>
+            <p>FSSAI NO - xxxxxxxxxxxxxxxx</p>
           </div>
         </div>
 
@@ -423,18 +423,18 @@ export function Footer() {
           </span>
         </div>
 
-        {/* Bottom Bar: Copyright & TechBRJ credit */}
+        {/* Bottom Bar: Copyright & # credit */}
         <div className="mt-8 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-[#3A5A40] text-xs text-[rgba(218,215,205,0.6)]">
           <p>© 2026 The Sugar House. All rights reserved.</p>
           <p>
             Design & Build by{" "}
             <a
-              href="https://www.techbrj.com/"
+              href="https://www.#.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-[#A3B18A]"
             >
-              TechBRJ
+              #
             </a>
           </p>
         </div>

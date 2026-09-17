@@ -40,7 +40,7 @@
 | - Contact Form ("Get in Touch")                             |
 | - FAQ Accordion                                             |
 | - Customer Care / Address & GSTIN Details                   |
-| - Copyright & TechBRJ credit                                |
+| - Copyright & # credit                                |
 +-------------------------------------------------------------+
 | Floating Fixed Action: Wobbling Phone Call Button (Bottom Left)|
 +-------------------------------------------------------------+

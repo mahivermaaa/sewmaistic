@@ -20,7 +20,7 @@ const products: Product[] = [
     name: "Artisanal Treasure Box",
     weight: "500g · Assorted 16 Pcs",
     price: "₹ 1,450",
-    image: "/sites/thf/root-default/products/gifting/artisanal-treasure-box.png",
+    image: "/sites/thf/root-default/artboard/artboard1.png",
     badge: "Bestseller",
   },
   {
@@ -99,11 +99,10 @@ export function CategoryGrid() {
                 key={tab}
                 type="button"
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-                  activeTab === tab
-                    ? "bg-[#3A5A40] text-[#DAD7CD] shadow-md font-bold"
-                    : "text-[#344E41] hover:bg-[#A3B18A]/30"
-                }`}
+                className={`px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${activeTab === tab
+                  ? "bg-[#3A5A40] text-[#DAD7CD] shadow-md font-bold"
+                  : "text-[#344E41] hover:bg-[#A3B18A]/30"
+                  }`}
               >
                 {tab}
               </button>

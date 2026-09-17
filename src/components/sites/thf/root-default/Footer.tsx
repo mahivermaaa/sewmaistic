@@ -392,7 +392,7 @@ export function Footer() {
               className="flex items-center gap-2 hover:text-[#A3B18A] transition-colors text-sm"
             >
               <PhoneIcon className="w-3.5 h-3.5 text-[#A3B18A]" />
-              Customer Care No. +91 70844 00400
+
             </a>
             <div className="flex items-start gap-2 mt-1">
               <MapPinIcon className="w-3.5 h-3.5 shrink-0 mt-0.5 text-[#A3B18A]" />

@@ -22,15 +22,15 @@ async function runScraper() {
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 900 });
 
-  console.log('Navigating to https://www.thehazelnutfactory.com ...');
-  await page.goto('https://www.thehazelnutfactory.com', { waitUntil: 'networkidle2', timeout: 45000 });
+  console.log('Navigating to https://www.#.com ...');
+  await page.goto('https://www.#.com', { waitUntil: 'networkidle2', timeout: 45000 });
 
   const title = await page.title();
   console.log('Page Title:', title);
 
   const screenshotDir = './docs/design-references/thf/root-default';
   fs.mkdirSync(screenshotDir, { recursive: true });
-  
+
   await page.screenshot({ path: `${screenshotDir}/desktop-1440.png`, fullPage: true });
   console.log('Saved desktop screenshot to desktop-1440.png');
 

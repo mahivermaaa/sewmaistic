@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 async function main() {
-  const url = 'https://www.thehazelnutfactory.com';
+  const url = 'https://www.#.com';
   console.log('Fetching main page HTML from', url);
   const res = await fetch(url);
   const html = await res.text();

@@ -14,6 +14,6 @@
 4. **FAQ Accordion:**
    - 5 Expandable questions (Can I customise my own gift box?, Do you offer corporate gifting?, Shipping policy, Return policy, Physical stores).
 5. **Business Info & Legal:**
-   - Customer Care No (+91-7084400400), Email (`info@thehazelnutfactory.com`)
+   - Customer Care No (+91-7084400400), Email (`info@#.com`)
    - Company name, CIN, GSTIN, FSSAI Number, Registered Address.
 6. **Watermark & Copyright:** Faded background logo watermark + copyright info.

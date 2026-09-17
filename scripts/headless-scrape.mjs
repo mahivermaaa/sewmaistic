@@ -10,7 +10,7 @@ try {
       const browser = await puppeteer.launch({ headless: true });
       const page = await browser.newPage();
       await page.setViewport({ width: 1440, height: 900 });
-      await page.goto('https://www.thehazelnutfactory.com', { waitUntil: 'networkidle2', timeout: 30000 });
+      await page.goto('https://www.#.com', { waitUntil: 'networkidle2', timeout: 30000 });
       
       const title = await page.title();
       console.log('Page Title:', title);

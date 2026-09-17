@@ -8,7 +8,7 @@
 ## Structure
 1. **Marquee Ticker:** Infinite horizontal scroll with text `ARTISANAL SWEETS · PAN-INDIA DELIVERY`.
 2. **Main Headline:** "Someone had to reinvent mithai. We did it !" (Font: Bodoni Moda / Serif, gold accent line).
-3. **Subheadline:** "Fusion artisanal confections, crafted in small batches. Packaged with intention."
+3. **Subheadline:** "Fusion artisanal confections, crafted in small batches."
 4. **CTA Buttons:** 
    - Primary: "EXPLORE COLLECTION" -> Gold gradient background.
    - Secondary: "OUR STORY" -> Glassmorphic subtle border.

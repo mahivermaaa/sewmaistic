@@ -16,8 +16,8 @@ function parseDom() {
   const imgUrls = new Set();
   data.images.forEach(img => {
     if (img.src) {
-      if (img.src.startsWith('https://www.thehazelnutfactory.com')) {
-        imgUrls.add(img.src.replace('https://www.thehazelnutfactory.com', ''));
+      if (img.src.startsWith('https://www.#.com')) {
+        imgUrls.add(img.src.replace('https://www.#.com', ''));
       } else if (img.src.startsWith('/')) {
         imgUrls.add(img.src);
       }

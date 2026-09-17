@@ -1,11 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 
-const BASE_URL = 'https://www.thehazelnutfactory.com';
+const BASE_URL = 'https://www.#.com';
 
 async function downloadAllAssetsClean() {
   const rawPaths = JSON.parse(fs.readFileSync('./docs/research/thf/root-default/image_paths.json', 'utf-8'));
-  
+
   const cleanPaths = new Set();
   rawPaths.forEach(p => {
     if (!p) return;
@@ -26,7 +26,7 @@ async function downloadAllAssetsClean() {
   for (const assetPath of cleanPaths) {
     if (!assetPath || assetPath.length < 2) continue;
     const fullUrl = BASE_URL + assetPath;
-    
+
     // Make sure destPath doesn't contain query params
     const cleanRelativePath = assetPath.split('?')[0];
     const destPath = path.join(publicDir, cleanRelativePath);

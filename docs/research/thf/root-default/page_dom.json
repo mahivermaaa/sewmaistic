@@ -1,0 +1,1218 @@
+{
+  "sections": [
+    {
+      "tag": "HEADER",
+      "className": "w-full fixed top-0 left-0 z-100 transition-[background,border-color] duration-500 ease-out ",
+      "id": "",
+      "innerText": "SHOP ALL\nGIFTING\nOUR STORY\nEVENTS\nSTORES",
+      "styles": {
+        "bg": "rgba(8, 12, 18, 0.8)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "DIV",
+      "className": "relative",
+      "id": "",
+      "innerText": "ARTISANAL SWEETS · PAN-INDIA DELIVERY\n\nSomeone had to\nreinvent mithai.\nWe did it !\n\nFusion artisanal confections, crafted in small batches.\nPackaged with obsession. Delivered anywhere in India.\n\nEXPLORE MITHAI COLLECTION\nEXPLORE MITHAI COLLECTION\nPLAY VIDEO\nGIFT BOXES\n✦\nTEMPERATURE CONTROLLED\n✦\nWEDDING COLLECTIONS\n✦\nLABON® EXCLUSIVE\n✦\nPAN-INDIA SHIPPING\n✦\nLONG SHELF LIFE\n✦\nHANDCRAFTED DAILY\n✦\nPREM",
+      "styles": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "STYLE",
+      "className": "",
+      "id": "",
+      "innerText": "\n          @media (max-width: 767px) {\n            .thf-cta-banner { flex-direction: column !important; align-items: flex-start !important; gap: 0.9rem !important; }\n            .thf-cta-text { font-size: 0.72rem !important; }\n            .thf-cta-btn { margin-left: 0 !important; }\n            .thf-s3-section { flex-direction: column !important; align-items: center !important; }\n            .thf-s",
+      "styles": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "none",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "SECTION",
+      "className": "thf-section-full",
+      "id": "",
+      "innerText": "ARTISANAL SWEETS · PAN-INDIA DELIVERY\n\nSomeone had to\nreinvent mithai.\nWe did it !\n\nFusion artisanal confections, crafted in small batches.\nPackaged with obsession. Delivered anywhere in India.\n\nEXPLORE MITHAI COLLECTION\nEXPLORE MITHAI COLLECTION\nPLAY VIDEO\nGIFT BOXES\n✦\nTEMPERATURE CONTROLLED\n✦\nWEDDING COLLECTIONS\n✦\nLABON® EXCLUSIVE\n✦\nPAN-INDIA SHIPPING\n✦\nLONG SHELF LIFE\n✦\nHANDCRAFTED DAILY\n✦\nPREM",
+      "styles": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "flex",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "DIV",
+      "className": "",
+      "id": "brew-start",
+      "innerText": "",
+      "styles": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "BR",
+      "className": "",
+      "id": "",
+      "innerText": "",
+      "styles": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "BR",
+      "className": "",
+      "id": "",
+      "innerText": "",
+      "styles": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "SECTION",
+      "className": "relative overflow-hidden bg-(--whiteBG)",
+      "id": "",
+      "innerText": "THF\nTHF, The Way You Want It\n\nFrom handcrafted sweets to curated gift boxes -every piece made with intention.\n\n✦\n\nLabon\n\nFusion mithais, crafted daily\n\nBaklava\n\nLebanese-Indian, layered by hand\n\nAssorted Gifting Boxes\n\nCurated, premium packaged\n\nRetail\n\nCookies, namkeens & more\n\nBuild Your Own Box\n\nCustomise every piece",
+      "styles": {
+        "bg": "rgb(250, 247, 242)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "40px 86.4px 112px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "DIV",
+      "className": "thf-cta-banner",
+      "id": "",
+      "innerText": "Can't decide? Build exactly the box you want. Choose your vessel, fill it, add a message.\n\nSTART BUILDING",
+      "styles": {
+        "bg": "rgb(0, 61, 165)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "24px 64px",
+        "margin": "0px",
+        "display": "flex",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "SECTION",
+      "className": "w-full",
+      "id": "",
+      "innerText": "®\nREGISTERED TRADEMARK\nIntroducing the\nLabon®\n\nWe took everything you love about an Indian laddoo - the warmth, the richness, the nostalgia and wrapped it in the precision of a French bonbon shell. Labon® is where Indian mithai craftsmanship meets European flavour sensibility, layered and handcrafted at THF.\n\nSix Artisanal Flavours - From Pistachio & Hazelnut to French Cranberry & White Chocolate\n",
+      "styles": {
+        "bg": "rgb(16, 24, 32)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "SECTION",
+      "className": "relative overflow-hidden",
+      "id": "",
+      "innerText": "MEDIA COVERAGE\nNot To Brag, But The Press Agrees\n\nFeatured across leading publications for the craft, care, and consistency behind every box we send out.\n\nCLICK TO VIEW\nCLICK TO VIEW\nCLICK TO VIEW\nCLICK TO VIEW\nCLICK TO VIEW\nCLICK TO VIEW\nCLICK TO VIEW",
+      "styles": {
+        "bg": "rgb(250, 247, 242)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "DIV",
+      "className": "w-full",
+      "id": "",
+      "innerText": "",
+      "styles": {
+        "bg": "rgb(250, 247, 242)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "SECTION",
+      "className": "relative w-full py-16 md:py-24 overflow-hidden bg-(--whiteBG)",
+      "id": "",
+      "innerText": "ENQUIRE NOW\nOUR CLIENTS\nTrusted by India’s leading\nbrands",
+      "styles": {
+        "bg": "rgb(250, 247, 242)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "96px 0px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "DIV",
+      "className": "w-full",
+      "id": "",
+      "innerText": "",
+      "styles": {
+        "bg": "rgb(250, 247, 242)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "SECTION",
+      "className": "bg-(--primeBlack) overflow-hidden",
+      "id": "",
+      "innerText": "Follow the craft — @thf.mithai\n\nOPEN INSTAGRAM",
+      "styles": {
+        "bg": "rgb(16, 24, 32)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px 0px 80px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    },
+    {
+      "tag": "FOOTER",
+      "className": "font-brand bg-(--primeBlack)",
+      "id": "",
+      "innerText": "Crafted Fresh,\nSavoured Always.\n\nHandcrafted sweets and treats made\nwith the finest ingredients.\n\n@thf.india\n\nSHOP\n\nHome\nOur Story\nWeddings\nBuild Your Own Box\nStores\n\nPOLICIES\n\nTerms and Services\nRefund and Return\nPrivacy Policy\nShipping Policy\n\nCOMPANY\n\nOur Story\nWeddings\nContact Us\n\nGET IN TOUCH\n\nQuestions about an order or a custom box? Send us a message.\n\nSEND MESSAGE\n\nFREQUENTLY ASKED QUESTIO",
+      "styles": {
+        "bg": "rgb(16, 24, 32)",
+        "color": "rgb(244, 249, 255)",
+        "fontFamily": "\"Source Sans 3\", \"Source Sans 3 Fallback\", \"Source Sans 3\", sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "padding": "0px",
+        "margin": "0px",
+        "display": "block",
+        "borderRadius": "0px"
+      },
+      "rect": {}
+    }
+  ],
+  "images": [
+    {
+      "src": "https://www.thehazelnutfactory.com/logo/thf-long.svg",
+      "alt": "The Hazelnut Factory",
+      "width": 2000,
+      "height": 185,
+      "className": "header-logo"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/icons/cup-blue.svg",
+      "alt": "",
+      "width": 117,
+      "height": 152,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fartboard%2Fartboard1.png&w=3840&q=75",
+      "alt": "Labon",
+      "width": 288,
+      "height": 444,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fartboard%2Fbaklavas.jpg&w=3840&q=75",
+      "alt": "Baklava",
+      "width": 288,
+      "height": 360,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fartboard%2Fassorted-gifting.jpg&w=3840&q=75",
+      "alt": "Assorted Gifting Boxes",
+      "width": 288,
+      "height": 360,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fartboard%2Fartboard4.jpg&w=3840&q=75",
+      "alt": "Retail",
+      "width": 288,
+      "height": 432,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fartboard%2Fartboard5.png&w=3840&q=75",
+      "alt": "Build Your Own Box",
+      "width": 288,
+      "height": 444,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/new-press/press-1.png",
+      "alt": "Press Feature 1",
+      "width": 864,
+      "height": 1080,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/new-press/press-2.png",
+      "alt": "Press Feature 2",
+      "width": 864,
+      "height": 1080,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/new-press/press-3.png",
+      "alt": "Press Feature 3",
+      "width": 864,
+      "height": 1080,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/new-press/press-4.jpeg",
+      "alt": "Press Feature 4",
+      "width": 864,
+      "height": 1080,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/new-press/press-5.jpeg",
+      "alt": "Press Feature 5",
+      "width": 864,
+      "height": 1080,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/new-press/press-6.jpeg",
+      "alt": "Press Feature 6",
+      "width": 864,
+      "height": 1080,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/new-press/press-7.png",
+      "alt": "Press Feature 7",
+      "width": 864,
+      "height": 1080,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fcoca-cola-seeklogo.png&w=384&q=75",
+      "alt": "Coca-Cola",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmercedes-benz-seeklogo.png&w=384&q=75",
+      "alt": "Mercedes-Benz",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Facc-cement.png&w=384&q=75",
+      "alt": "ACC Cement",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fdainik-jagran.png&w=384&q=75",
+      "alt": "Dainik Jagran",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fjw-marriott-washington.png&w=384&q=75",
+      "alt": "JW Marriott",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmp-birla-group.png&w=384&q=75",
+      "alt": "MP Birla Group",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fvolvo.png&w=384&q=75",
+      "alt": "Volvo",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fapco.png&w=384&q=75",
+      "alt": "APCO",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fadani.png&w=384&q=75",
+      "alt": "Adani",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fbmw.png&w=384&q=75",
+      "alt": "BMW",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fhdfc.png&w=384&q=75",
+      "alt": "HDFC Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ficici.png&w=384&q=75",
+      "alt": "ICICI Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fpepsico.png&w=384&q=75",
+      "alt": "Pepsico",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ftanishq.png&w=384&q=75",
+      "alt": "Tanishq",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fcoca-cola-seeklogo.png&w=384&q=75",
+      "alt": "Coca-Cola",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmercedes-benz-seeklogo.png&w=384&q=75",
+      "alt": "Mercedes-Benz",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Facc-cement.png&w=384&q=75",
+      "alt": "ACC Cement",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fdainik-jagran.png&w=384&q=75",
+      "alt": "Dainik Jagran",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fjw-marriott-washington.png&w=384&q=75",
+      "alt": "JW Marriott",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmp-birla-group.png&w=384&q=75",
+      "alt": "MP Birla Group",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fvolvo.png&w=384&q=75",
+      "alt": "Volvo",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fapco.png&w=384&q=75",
+      "alt": "APCO",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fadani.png&w=384&q=75",
+      "alt": "Adani",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fbmw.png&w=384&q=75",
+      "alt": "BMW",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fhdfc.png&w=384&q=75",
+      "alt": "HDFC Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ficici.png&w=384&q=75",
+      "alt": "ICICI Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fpepsico.png&w=384&q=75",
+      "alt": "Pepsico",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ftanishq.png&w=384&q=75",
+      "alt": "Tanishq",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fcoca-cola-seeklogo.png&w=384&q=75",
+      "alt": "Coca-Cola",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmercedes-benz-seeklogo.png&w=384&q=75",
+      "alt": "Mercedes-Benz",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Facc-cement.png&w=384&q=75",
+      "alt": "ACC Cement",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fdainik-jagran.png&w=384&q=75",
+      "alt": "Dainik Jagran",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fjw-marriott-washington.png&w=384&q=75",
+      "alt": "JW Marriott",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmp-birla-group.png&w=384&q=75",
+      "alt": "MP Birla Group",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fvolvo.png&w=384&q=75",
+      "alt": "Volvo",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fapco.png&w=384&q=75",
+      "alt": "APCO",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fadani.png&w=384&q=75",
+      "alt": "Adani",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fbmw.png&w=384&q=75",
+      "alt": "BMW",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fhdfc.png&w=384&q=75",
+      "alt": "HDFC Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ficici.png&w=384&q=75",
+      "alt": "ICICI Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fpepsico.png&w=384&q=75",
+      "alt": "Pepsico",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ftanishq.png&w=384&q=75",
+      "alt": "Tanishq",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fcoca-cola-seeklogo.png&w=384&q=75",
+      "alt": "Coca-Cola",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmercedes-benz-seeklogo.png&w=384&q=75",
+      "alt": "Mercedes-Benz",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Facc-cement.png&w=384&q=75",
+      "alt": "ACC Cement",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fdainik-jagran.png&w=384&q=75",
+      "alt": "Dainik Jagran",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fjw-marriott-washington.png&w=384&q=75",
+      "alt": "JW Marriott",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmp-birla-group.png&w=384&q=75",
+      "alt": "MP Birla Group",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fvolvo.png&w=384&q=75",
+      "alt": "Volvo",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fapco.png&w=384&q=75",
+      "alt": "APCO",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fadani.png&w=384&q=75",
+      "alt": "Adani",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fbmw.png&w=384&q=75",
+      "alt": "BMW",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fhdfc.png&w=384&q=75",
+      "alt": "HDFC Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ficici.png&w=384&q=75",
+      "alt": "ICICI Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fpepsico.png&w=384&q=75",
+      "alt": "Pepsico",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ftanishq.png&w=384&q=75",
+      "alt": "Tanishq",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fcoca-cola-seeklogo.png&w=384&q=75",
+      "alt": "Coca-Cola",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmercedes-benz-seeklogo.png&w=384&q=75",
+      "alt": "Mercedes-Benz",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Facc-cement.png&w=384&q=75",
+      "alt": "ACC Cement",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fdainik-jagran.png&w=384&q=75",
+      "alt": "Dainik Jagran",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fjw-marriott-washington.png&w=384&q=75",
+      "alt": "JW Marriott",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmp-birla-group.png&w=384&q=75",
+      "alt": "MP Birla Group",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fvolvo.png&w=384&q=75",
+      "alt": "Volvo",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fapco.png&w=384&q=75",
+      "alt": "APCO",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fadani.png&w=384&q=75",
+      "alt": "Adani",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fbmw.png&w=384&q=75",
+      "alt": "BMW",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fhdfc.png&w=384&q=75",
+      "alt": "HDFC Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ficici.png&w=384&q=75",
+      "alt": "ICICI Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fpepsico.png&w=384&q=75",
+      "alt": "Pepsico",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ftanishq.png&w=384&q=75",
+      "alt": "Tanishq",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fcoca-cola-seeklogo.png&w=384&q=75",
+      "alt": "Coca-Cola",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmercedes-benz-seeklogo.png&w=384&q=75",
+      "alt": "Mercedes-Benz",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Facc-cement.png&w=384&q=75",
+      "alt": "ACC Cement",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fdainik-jagran.png&w=384&q=75",
+      "alt": "Dainik Jagran",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fjw-marriott-washington.png&w=384&q=75",
+      "alt": "JW Marriott",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fmp-birla-group.png&w=384&q=75",
+      "alt": "MP Birla Group",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fvolvo.png&w=384&q=75",
+      "alt": "Volvo",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fapco.png&w=384&q=75",
+      "alt": "APCO",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fadani.png&w=384&q=75",
+      "alt": "Adani",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fbmw.png&w=384&q=75",
+      "alt": "BMW",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fhdfc.png&w=384&q=75",
+      "alt": "HDFC Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ficici.png&w=384&q=75",
+      "alt": "ICICI Bank",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Fpepsico.png&w=384&q=75",
+      "alt": "Pepsico",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fclients%2Ftanishq.png&w=384&q=75",
+      "alt": "Tanishq",
+      "width": 114,
+      "height": 48,
+      "className": "w-full h-full object-contain"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F1.jpg&w=3840&q=75",
+      "alt": "THF post 1",
+      "width": 360,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F2.jpg&w=3840&q=75",
+      "alt": "THF post 2",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F3.jpg&w=3840&q=75",
+      "alt": "THF post 3",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F4.jpg&w=3840&q=75",
+      "alt": "THF post 4",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F5.jpg&w=3840&q=75",
+      "alt": "THF post 5",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F6.jpg&w=3840&q=75",
+      "alt": "THF post 6",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F7.jpg&w=3840&q=75",
+      "alt": "THF post 7",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F8.jpg&w=3840&q=75",
+      "alt": "THF post 8",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F9.jpg&w=3840&q=75",
+      "alt": "THF post 9",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F10.jpg&w=3840&q=75",
+      "alt": "THF post 10",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F11.jpg&w=3840&q=75",
+      "alt": "THF post 11",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F12.jpg&w=3840&q=75",
+      "alt": "THF post 12",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F13.jpg&w=3840&q=75",
+      "alt": "THF post 13",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F14.jpg&w=3840&q=75",
+      "alt": "THF post 14",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F15.jpg&w=3840&q=75",
+      "alt": "THF post 15",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F16.jpg&w=3840&q=75",
+      "alt": "THF post 16",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F1.jpg&w=3840&q=75",
+      "alt": "THF post 1",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F2.jpg&w=3840&q=75",
+      "alt": "THF post 2",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F3.jpg&w=3840&q=75",
+      "alt": "THF post 3",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F4.jpg&w=3840&q=75",
+      "alt": "THF post 4",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F5.jpg&w=3840&q=75",
+      "alt": "THF post 5",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F6.jpg&w=3840&q=75",
+      "alt": "THF post 6",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F7.jpg&w=3840&q=75",
+      "alt": "THF post 7",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F8.jpg&w=3840&q=75",
+      "alt": "THF post 8",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F9.jpg&w=3840&q=75",
+      "alt": "THF post 9",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F10.jpg&w=3840&q=75",
+      "alt": "THF post 10",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F11.jpg&w=3840&q=75",
+      "alt": "THF post 11",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F12.jpg&w=3840&q=75",
+      "alt": "THF post 12",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F13.jpg&w=3840&q=75",
+      "alt": "THF post 13",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F14.jpg&w=3840&q=75",
+      "alt": "THF post 14",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F15.jpg&w=3840&q=75",
+      "alt": "THF post 15",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/_next/image?url=%2Fcarousel%2F16.jpg&w=3840&q=75",
+      "alt": "THF post 16",
+      "width": 358,
+      "height": 450,
+      "className": ""
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/icons/cup-blue.svg",
+      "alt": "THF Brew Club",
+      "width": 117,
+      "height": 152,
+      "className": "w-10 h-10"
+    },
+    {
+      "src": "https://www.thehazelnutfactory.com/logo/headerLogo.svg",
+      "alt": "The Hazelnut Factory",
+      "width": 3106,
+      "height": 145,
+      "className": "w-full object-contain opacity-[0.08]"
+    }
+  ]
+}

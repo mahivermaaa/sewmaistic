@@ -7,16 +7,18 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-bodoni), serif;
-  --font-editorial: var(--font-bodoni), serif;
-  --font-brand: var(--font-source-sans), sans-serif;
+  --font-sans: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-script: var(--font-script), cursive;
   
-  --color-sage-light: #DAD7CD;
-  --color-fern-green: #588157;
-  --color-sage-green: #A3B18A;
-  --color-hunter-green: #3A5A40;
-  --color-forest-dark: #344E41;
+  --color-linen: #FBF9F4;
+  --color-slate-blue: #B0C2D1;
+  --color-slate-navy: #34444F;
+  --color-slate-dark: #4F5A5E;
+  --color-dusty-rose: #D8A7A7;
+  --color-dusty-rose-hover: #C89696;
+  --color-mauve-rose: #D5B3B3;
+  --color-footer-slate: #667073;
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -45,32 +47,26 @@
 }
 
 :root {
-  --sage-light: #DAD7CD;
-  --fern-green: #588157;
-  --sage-green: #A3B18A;
-  --hunter-green: #3A5A40;
-  --forest-dark: #344E41;
-
-  --background: #DAD7CD;
-  --foreground: #344E41;
+  --background: #FBF9F4;
+  --foreground: #4F5A5E;
 
   --card: #FFFFFF;
-  --card-foreground: #344E41;
-  --popover: #344E41;
-  --popover-foreground: #DAD7CD;
-  --primary: #588157;
-  --primary-foreground: #DAD7CD;
-  --secondary: #A3B18A;
-  --secondary-foreground: #344E41;
-  --muted: rgba(163, 177, 138, 0.2);
-  --muted-foreground: #3A5A40;
-  --accent: #588157;
-  --accent-foreground: #DAD7CD;
+  --card-foreground: #4F5A5E;
+  --popover: #FFFFFF;
+  --popover-foreground: #4F5A5E;
+  --primary: #D8A7A7;
+  --primary-foreground: #FFFFFF;
+  --secondary: #B0C2D1;
+  --secondary-foreground: #34444F;
+  --muted: #F2EFE9;
+  --muted-foreground: #7E8C91;
+  --accent: #D8A7A7;
+  --accent-foreground: #FFFFFF;
   --destructive: #ef4444;
-  --border: rgba(58, 90, 64, 0.2);
-  --input: rgba(58, 90, 64, 0.2);
-  --ring: #588157;
-  --radius: 0.75rem;
+  --border: #E8E3DB;
+  --input: #E8E3DB;
+  --ring: #D8A7A7;
+  --radius: 9999px;
 }
 
 @layer base {
@@ -78,13 +74,32 @@
     @apply border-border;
   }
   body {
-    background-color: #DAD7CD;
-    color: #344E41;
-    font-family: var(--font-inter), sans-serif;
+    background-color: #FBF9F4;
+    color: #4F5A5E;
+    font-family: var(--font-sora), sans-serif;
     overflow-x: hidden;
   }
 }
 
+/* Gingham background pattern */
+.bg-gingham-pink {
+  background-color: #F9E7E0;
+  background-image: 
+    linear-gradient(90deg, rgba(236, 194, 185, 0.45) 50%, transparent 50%),
+    linear-gradient(rgba(236, 194, 185, 0.45) 50%, transparent 50%);
+  background-size: 54px 54px;
+}
+
+/* Hide scrollbars while allowing touch/drag scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Marquee animation */
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
@@ -93,47 +108,9 @@
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 25s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
-}
-
-@keyframes brew-wobble {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-14deg); }
-  75% { transform: rotate(14deg); }
-}
-
-.animate-brew-wobble {
-  animation: brew-wobble 3.5s ease-in-out infinite;
-}
-
-@keyframes call-wobble {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  15% { transform: scale(1.15) rotate(-12deg); }
-  30% { transform: scale(1.15) rotate(12deg); }
-  45% { transform: scale(1.15) rotate(-12deg); }
-  60% { transform: scale(1.15) rotate(12deg); }
-  75% { transform: scale(1) rotate(0deg); }
-}
-
-.animate-call-wobble {
-  animation: call-wobble 3.85s ease-in-out infinite;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #DAD7CD;
-}
-::-webkit-scrollbar-thumb {
-  background: #A3B18A;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #588157;
 }

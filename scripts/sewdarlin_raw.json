@@ -1,0 +1,899 @@
+{
+  "title": "Sew Darlin' | country inspired accessories",
+  "fontFaces": [
+    {
+      "family": "swiper-icons",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "avenir-lt-w01_35-light1475496",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "avenir-lt-w01_35-light1475496",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorantgaramond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorantgaramond-semibold",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond-semibold",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond-semibold",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorantgaramond-semibold",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "raleway",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "raleway",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "raleway",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "raleway",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "raleway",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "raleway",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "raleway",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "raleway",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "raleway",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "raleway",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "raleway",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "raleway",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "raleway",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "raleway",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "raleway",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "raleway",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "raleway",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "raleway",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "raleway",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "raleway",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "sora",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "sora",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "sora",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "sora",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "avenir-lt-w01_35-light1475496",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "avenir-lt-w01_35-light1475496",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "avenir-lt-w01_85-heavy1475544",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "avenir-lt-w01_85-heavy1475544",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorant garamond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorantgaramond",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorantgaramond-light",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond-light",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond-light",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorantgaramond-light",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "cormorantgaramond-semibold",
+      "weight": "700",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond-semibold",
+      "weight": "400",
+      "style": "italic"
+    },
+    {
+      "family": "cormorantgaramond-semibold",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "cormorantgaramond-semibold",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "sora",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "sora",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "sora",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "sora",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "Sora",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "Sora",
+      "weight": "400",
+      "style": "normal"
+    },
+    {
+      "family": "Sora",
+      "weight": "700",
+      "style": "normal"
+    },
+    {
+      "family": "Sora",
+      "weight": "700",
+      "style": "normal"
+    }
+  ],
+  "links": [
+    {
+      "rel": "icon",
+      "href": "https://static.wixstatic.com/media/39a655_065bcd9c3a9c49e788408da17d558fb8%7Emv2.jpg/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/39a655_065bcd9c3a9c49e788408da17d558fb8%7Emv2.jpg"
+    },
+    {
+      "rel": "shortcut icon",
+      "href": "https://static.wixstatic.com/media/39a655_065bcd9c3a9c49e788408da17d558fb8%7Emv2.jpg/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/39a655_065bcd9c3a9c49e788408da17d558fb8%7Emv2.jpg"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://static.wixstatic.com/media/39a655_065bcd9c3a9c49e788408da17d558fb8%7Emv2.jpg/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/39a655_065bcd9c3a9c49e788408da17d558fb8%7Emv2.jpg"
+    },
+    {
+      "rel": "canonical",
+      "href": "https://www.sewdarlin.com.au/"
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.sewdarlin.com.au/"
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.sewdarlin.com.au/de"
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.sewdarlin.com.au/fr"
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.sewdarlin.com.au/it"
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.sewdarlin.com.au/ja"
+    },
+    {
+      "rel": "alternate",
+      "href": "https://www.sewdarlin.com.au/"
+    },
+    {
+      "rel": "modulepreload",
+      "href": "https://cf06bdf3-5bab-4f20-b165-97fb723dac6a.wixappcloud.com/browser/assets/_virtual_wix-context-reexport-script.ch.CnSZZUzD.js"
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://fonts.googleapis.com/css?family=Sora:400regular%7CSora:700"
+    },
+    {
+      "rel": "prefetch",
+      "href": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%3A%221684%22%2C%22b976560c-3122-4351-878f-453f337b7245%22%3A%221358%22%2C%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%2214bcded7-0066-7c35-14d7-466cb3f09103%22%3A%221335%22%2C%227479d596-137c-4fa3-89cd-d7091042ba61%22%3A%22132%22%7D&appDefinitionIdsWithCustomCss=%5B%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%5D&beckyExperiments=.DatePickerPortal%2C.DisableDocumentScrollWhenLightBoxOpen%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNestedLoginSocialBarMenuItems%2C.UseNewLoginBarDropdownMenuAlignment%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.a11yContrast%2C.addIdAsClassName%2C.allowWebpAvifTransforms%2C.builderBoxSizingBorderBox%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.customImageDomain%2C.dom_store%2C.dontApplyDacOverridesOnBoBApps%2C.dynamicPageLinkTarget%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.fixDocumentLinkInPremiumPreview%2C.fixFirefoxLinkBarIntrinsicSizing%2C.imageEncodingAVIF%2C.interactionsUseReactionEffectId%2C.isClassNameToRootEnabled%2C.logVsmFeaturesModuleDiff%2C.plainClassSelectors%2C.resolveManifestInTB%2C.responsiveContainerRoleGroup%2C.sectionA11yProps%2C.shouldUseResponsiveImages%2C.splitSlotSelectors%2C.svgResolver_2%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useFragmentHrefForTopBottomAnchor%2C.useImageAvifFormatInNativeProGallery%2C.useResponsiveImgClassicFixed%2C.useSvgLoaderFeature%2C.useSvgLoaderFeatureOnBuilderComps%2C.useWowImageInFastGallery%2C.vsmFeaturesModule%2C.vsm_interactions_v1%2C.vsm_shapes%2CglobalCssStudio2&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=application%2Fjson&deviceType=Desktop&dfCk=6&dfVersion=1.5650.0&disableStaticPagesUrlHierarchy=false&editorName=Unknown&experiments=dm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&externalBaseUrl=https%3A%2F%2Fwww.sewdarlin.com.au&fileId=97ce16b3.bundle.min&formFactor=desktop&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isClientSdkOnSite=true&isHttps=true&isInSeo=false&isMultilingualEnabled=true&isPremiumDomain=true&isTrackClicksAnalyticsEnabled=true&isUrlMigrated=true&isWixCodeOnPage=false&isWixCodeOnSite=false&language=en&languageResolutionMethod=QueryParam&locale=en-au&metaSiteId=24b0afc1-9482-4d27-b36a-c6524731ee87&module=thunderbolt-features&originalLanguage=en&pageId=39a655_1ddd2815d19d6fc6200b1024cc390c7e_244.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15579.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15579.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&siteId=d613eb7b-74ed-4685-b386-114ce5af53ef&siteRevision=244&staticHTMLComponentUrl=https%3A%2F%2Fwww-sewdarlin-com-au.filesusr.com%2F&useSandboxInHTMLComp=false&viewMode=desktop"
+    },
+    {
+      "rel": "prefetch",
+      "href": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%3A%221684%22%2C%22b976560c-3122-4351-878f-453f337b7245%22%3A%221358%22%2C%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%2214bcded7-0066-7c35-14d7-466cb3f09103%22%3A%221335%22%2C%227479d596-137c-4fa3-89cd-d7091042ba61%22%3A%22132%22%7D&appDefinitionIdsWithCustomCss=%5B%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%5D&beckyExperiments=.DatePickerPortal%2C.DisableDocumentScrollWhenLightBoxOpen%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNestedLoginSocialBarMenuItems%2C.UseNewLoginBarDropdownMenuAlignment%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.a11yContrast%2C.addIdAsClassName%2C.allowWebpAvifTransforms%2C.builderBoxSizingBorderBox%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.customImageDomain%2C.dom_store%2C.dontApplyDacOverridesOnBoBApps%2C.dynamicPageLinkTarget%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.fixDocumentLinkInPremiumPreview%2C.fixFirefoxLinkBarIntrinsicSizing%2C.imageEncodingAVIF%2C.interactionsUseReactionEffectId%2C.isClassNameToRootEnabled%2C.logVsmFeaturesModuleDiff%2C.plainClassSelectors%2C.resolveManifestInTB%2C.responsiveContainerRoleGroup%2C.sectionA11yProps%2C.shouldUseResponsiveImages%2C.splitSlotSelectors%2C.svgResolver_2%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useFragmentHrefForTopBottomAnchor%2C.useImageAvifFormatInNativeProGallery%2C.useResponsiveImgClassicFixed%2C.useSvgLoaderFeature%2C.useSvgLoaderFeatureOnBuilderComps%2C.useWowImageInFastGallery%2C.vsmFeaturesModule%2C.vsm_interactions_v1%2C.vsm_shapes%2CglobalCssStudio2&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=application%2Fjson&deviceType=Desktop&dfCk=6&dfVersion=1.5650.0&disableStaticPagesUrlHierarchy=false&editorName=Unknown&experiments=dm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&externalBaseUrl=https%3A%2F%2Fwww.sewdarlin.com.au&fileId=97ce16b3.bundle.min&formFactor=desktop&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isClientSdkOnSite=true&isHttps=true&isInSeo=false&isMultilingualEnabled=true&isPremiumDomain=true&isTrackClicksAnalyticsEnabled=true&isUrlMigrated=true&isWixCodeOnPage=false&isWixCodeOnSite=false&language=en&languageResolutionMethod=QueryParam&locale=en-au&metaSiteId=24b0afc1-9482-4d27-b36a-c6524731ee87&module=thunderbolt-features&originalLanguage=en&pageId=39a655_4683dddda91d7f9233e66f1cc1e8fe7e_244.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15579.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15579.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&siteId=d613eb7b-74ed-4685-b386-114ce5af53ef&siteRevision=244&staticHTMLComponentUrl=https%3A%2F%2Fwww-sewdarlin-com-au.filesusr.com%2F&useSandboxInHTMLComp=false&viewMode=desktop"
+    },
+    {
+      "rel": "prefetch",
+      "href": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%3A%221684%22%2C%22b976560c-3122-4351-878f-453f337b7245%22%3A%221358%22%2C%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%2214bcded7-0066-7c35-14d7-466cb3f09103%22%3A%221335%22%2C%227479d596-137c-4fa3-89cd-d7091042ba61%22%3A%22132%22%7D&appDefinitionIdsWithCustomCss=%5B%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%5D&beckyExperiments=.DatePickerPortal%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNestedLoginSocialBarMenuItems%2C.UseNewLoginBarDropdownMenuAlignment%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.addIdAsClassName%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.customImageDomain%2C.dynamicPageLinkTarget%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.fixFirefoxLinkBarIntrinsicSizing%2C.isClassNameToRootEnabled%2C.logVsmPlatformDiff%2C.migrateSdkDataMappers%2C.plainClassSelectors%2C.resolveManifestInTB%2C.splitSlotSelectors%2C.svgResolver_2%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useImageAvifFormatInNativeProGallery%2C.useWowImageInFastGallery%2C.vsmPlatform%2C.vsm_shapes&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=application%2Fjson&dfCk=6&dfVersion=1.5650.0&editorName=Unknown&experiments=dm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&externalBaseUrl=https%3A%2F%2Fwww.sewdarlin.com.au&fileId=d171ccad.bundle.min&formFactor=desktop&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isClientSdkOnSite=true&isHttps=true&isInSeo=false&isPremiumDomain=true&isUrlMigrated=true&isWixCodeOnPage=false&isWixCodeOnSite=false&language=en&locale=en-au&metaSiteId=24b0afc1-9482-4d27-b36a-c6524731ee87&module=thunderbolt-platform&originalLanguage=en&pageId=39a655_1ddd2815d19d6fc6200b1024cc390c7e_244.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15579.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15579.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&siteId=d613eb7b-74ed-4685-b386-114ce5af53ef&siteRevision=244&staticHTMLComponentUrl=https%3A%2F%2Fwww-sewdarlin-com-au.filesusr.com%2F&viewMode=desktop"
+    },
+    {
+      "rel": "prefetch",
+      "href": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%3A%221684%22%2C%22b976560c-3122-4351-878f-453f337b7245%22%3A%221358%22%2C%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%2214bcded7-0066-7c35-14d7-466cb3f09103%22%3A%221335%22%2C%227479d596-137c-4fa3-89cd-d7091042ba61%22%3A%22132%22%7D&appDefinitionIdsWithCustomCss=%5B%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%5D&beckyExperiments=.DatePickerPortal%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNestedLoginSocialBarMenuItems%2C.UseNewLoginBarDropdownMenuAlignment%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.addIdAsClassName%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.customImageDomain%2C.dynamicPageLinkTarget%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.fixFirefoxLinkBarIntrinsicSizing%2C.isClassNameToRootEnabled%2C.logVsmPlatformDiff%2C.migrateSdkDataMappers%2C.plainClassSelectors%2C.resolveManifestInTB%2C.splitSlotSelectors%2C.svgResolver_2%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useImageAvifFormatInNativeProGallery%2C.useWowImageInFastGallery%2C.vsmPlatform%2C.vsm_shapes&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=application%2Fjson&dfCk=6&dfVersion=1.5650.0&editorName=Unknown&experiments=dm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&externalBaseUrl=https%3A%2F%2Fwww.sewdarlin.com.au&fileId=d171ccad.bundle.min&formFactor=desktop&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isClientSdkOnSite=true&isHttps=true&isInSeo=false&isPremiumDomain=true&isUrlMigrated=true&isWixCodeOnPage=false&isWixCodeOnSite=false&language=en&locale=en-au&metaSiteId=24b0afc1-9482-4d27-b36a-c6524731ee87&module=thunderbolt-platform&originalLanguage=en&pageId=39a655_4683dddda91d7f9233e66f1cc1e8fe7e_244.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15579.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15579.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&siteId=d613eb7b-74ed-4685-b386-114ce5af53ef&siteRevision=244&staticHTMLComponentUrl=https%3A%2F%2Fwww-sewdarlin-com-au.filesusr.com%2F&viewMode=desktop"
+    },
+    {
+      "rel": "preload",
+      "href": "https://static.parastorage.com/services/ecom-platform-cart-icon/1.2421.0/CartIconViewerWidgetNoCss.bundle.min.js"
+    }
+  ],
+  "images": [
+    {
+      "src": "https://static.wixstatic.com/media/39a655_d14feff807b44afeacff430010b5f13b~mv2.jpg/v1/fill/w_168,h_166,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/840e4a01-c64b-4ee4-96aa-c051d0404287.jpg",
+      "alt": "840e4a01-c64b-4ee4-96aa-c051d0404287.jpg",
+      "width": 168,
+      "height": 166,
+      "className": "gRkIq0 sFiSiq"
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_a856103bef0d46dd8073ea0565a2ed2a~mv2.png/v1/fill/w_1440,h_589,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_a856103bef0d46dd8073ea0565a2ed2a~mv2.png",
+      "alt": "Copy of EOFY Sale Now Live.png",
+      "width": 1440,
+      "height": 589,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_74b71cf39624419eb1efd97dc3a23cec~mv2.png/v1/fill/w_130,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_74b71cf39624419eb1efd97dc3a23cec~mv2.png",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_d319ce41e4344826ba85b4b0c24d126d~mv2.jpg/v1/fill/w_130,h_130,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_d319ce41e4344826ba85b4b0c24d126d~mv2.jpg",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_116dad3fac404f0c8c168a8872877b6d~mv2.jpg/v1/fill/w_130,h_130,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_116dad3fac404f0c8c168a8872877b6d~mv2.jpg",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_0fa28519770e4e86be52e4ec564b68ea~mv2.jpg/v1/fill/w_130,h_130,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_0fa28519770e4e86be52e4ec564b68ea~mv2.jpg",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_f5535b33db0242109628fe46bcaa3615~mv2.jpg/v1/fill/w_130,h_130,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_f5535b33db0242109628fe46bcaa3615~mv2.jpg",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_60c762b8dd334b72a80a7c370ab6b79c~mv2.jpg/v1/fill/w_130,h_130,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_60c762b8dd334b72a80a7c370ab6b79c~mv2.jpg",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_18c858d49dda4efbae8aad0cf6d4798f~mv2.jpg/v1/fill/w_130,h_130,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_18c858d49dda4efbae8aad0cf6d4798f~mv2.jpg",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_0034a08f05ca4dda90c9bf800f872e47~mv2.jpg/v1/fill/w_130,h_130,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_0034a08f05ca4dda90c9bf800f872e47~mv2.jpg",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_5216201c8cf9428f8b40e4c200cd906c~mv2.jpg/v1/fill/w_130,h_130,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_5216201c8cf9428f8b40e4c200cd906c~mv2.jpg",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_634457815ec14b4bbac41e438a87db1f~mv2.jpg/v1/fill/w_130,h_130,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_634457815ec14b4bbac41e438a87db1f~mv2.jpg",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_b8049b9b05c54d3a9786a3cdc6768eea~mv2.jpg/v1/fill/w_130,h_130,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_b8049b9b05c54d3a9786a3cdc6768eea~mv2.jpg",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_6e6950e41fe94cf991ee2eec82289e90~mv2.png/v1/fill/w_48,h_78,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_6e6950e41fe94cf991ee2eec82289e90~mv2.png",
+      "alt": "",
+      "width": 48,
+      "height": 78,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_6cbac1477b3d40aea7999b494556f455~mv2.png/v1/fill/w_49,h_67,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_6cbac1477b3d40aea7999b494556f455~mv2.png",
+      "alt": "",
+      "width": 49,
+      "height": 67,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_172fc6f1379348e68b38c5d24a7fd49c~mv2.png/v1/fill/w_49,h_76,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_172fc6f1379348e68b38c5d24a7fd49c~mv2.png",
+      "alt": "",
+      "width": 49,
+      "height": 76,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_cb58d36a70fd436596528f2876c04728~mv2.png/v1/fill/w_49,h_65,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_cb58d36a70fd436596528f2876c04728~mv2.png",
+      "alt": "",
+      "width": 49,
+      "height": 65,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_f7b747564654442eb11a68d207977f83~mv2.png/v1/fill/w_48,h_78,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_f7b747564654442eb11a68d207977f83~mv2.png",
+      "alt": "",
+      "width": 48,
+      "height": 78,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_4a31c7300c00420e8411a53890c27e07~mv2.png/v1/fill/w_49,h_65,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_4a31c7300c00420e8411a53890c27e07~mv2.png",
+      "alt": "",
+      "width": 49,
+      "height": 65,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_8494bb5f9d6d42eab885a44e116bba63~mv2.png/v1/fill/w_49,h_71,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_8494bb5f9d6d42eab885a44e116bba63~mv2.png",
+      "alt": "",
+      "width": 49,
+      "height": 71,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_9ef019ac3bd54344b70b34798bf88fa2~mv2.png/v1/fill/w_49,h_70,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_9ef019ac3bd54344b70b34798bf88fa2~mv2.png",
+      "alt": "",
+      "width": 49,
+      "height": 70,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_5f30a7e2794e447ba6f90cc2a7a2b8e4~mv2.png/v1/fill/w_49,h_64,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_5f30a7e2794e447ba6f90cc2a7a2b8e4~mv2.png",
+      "alt": "",
+      "width": 49,
+      "height": 64,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_cd76f5ef493449cdabac5dcc9128af5f~mv2.png/v1/fill/w_49,h_65,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_cd76f5ef493449cdabac5dcc9128af5f~mv2.png",
+      "alt": "",
+      "width": 49,
+      "height": 65,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_a2dc9e1265ea4f298b307b9f88cb3896~mv2.jpg/v1/fill/w_147,h_147,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_a2dc9e1265ea4f298b307b9f88cb3896~mv2.jpg",
+      "alt": "",
+      "width": 147,
+      "height": 147,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_84cbe11d59924aed80085dd5cacce8a3~mv2.png/v1/fill/w_49,h_65,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/39a655_84cbe11d59924aed80085dd5cacce8a3~mv2.png",
+      "alt": "",
+      "width": 49,
+      "height": 65,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_8b4347b79b4c41cfaece616243749d2a~mv2.png/v1/fill/w_130,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_8b4347b79b4c41cfaece616243749d2a~mv2.png",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_4c327c13092d489eaa4986048835176d~mv2.png/v1/fill/w_130,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_4c327c13092d489eaa4986048835176d~mv2.png",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_82d540dbb5104421b0f9bc14c3df9ff4~mv2.png/v1/fill/w_130,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_82d540dbb5104421b0f9bc14c3df9ff4~mv2.png",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_f8dee08cb41e401ea0f4f36060e72f18~mv2.png/v1/fill/w_130,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_f8dee08cb41e401ea0f4f36060e72f18~mv2.png",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_3cc5bddaf20e4ad78cab63004936dced~mv2.png/v1/fill/w_130,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_3cc5bddaf20e4ad78cab63004936dced~mv2.png",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_f17f8c9a448547f782ae2111d8705ffd~mv2.png/v1/fill/w_130,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_f17f8c9a448547f782ae2111d8705ffd~mv2.png",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_ae09e98acd15428da3e792c7f40d147e~mv2.png/v1/fill/w_130,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_ae09e98acd15428da3e792c7f40d147e~mv2.png",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_6bfb7f55d17b49cda105c21d5a2df5cc~mv2.png/v1/fill/w_130,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_6bfb7f55d17b49cda105c21d5a2df5cc~mv2.png",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_74b71cf39624419eb1efd97dc3a23cec~mv2.png/v1/fill/w_130,h_130,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/39a655_74b71cf39624419eb1efd97dc3a23cec~mv2.png",
+      "alt": "",
+      "width": 130,
+      "height": 130,
+      "className": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_c478f9aee7b54343bb40d11b3a584c85~mv2.png/v1/fill/w_272,h_274,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/10.png",
+      "alt": "10.png",
+      "width": 272,
+      "height": 274,
+      "className": "gRkIq0 sFiSiq"
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_f1dc900dcfce41e9a2de0138be5c4d0e~mv2.png/v1/fill/w_272,h_274,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/13.png",
+      "alt": "13.png",
+      "width": 272,
+      "height": 274,
+      "className": "gRkIq0 sFiSiq"
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_31015e1ebc7e46599b8498a6a3458510~mv2.jpg/v1/fill/w_272,h_274,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Website%20Collection%20thumbnails_edited.jpg",
+      "alt": "Website Collection thumbnails_edited.jpg",
+      "width": 272,
+      "height": 274,
+      "className": "gRkIq0 sFiSiq"
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_df52c5ad47994e98957cce560b161281~mv2.png/v1/crop/x_7,y_0,w_1639,h_1654/fill/w_272,h_274,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/12.png",
+      "alt": "12.png",
+      "width": 272,
+      "height": 274,
+      "className": "gRkIq0 sFiSiq"
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_a297b8fd706045959b3886d748ff2c72~mv2.png/v1/fill/w_272,h_274,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Website%20Collection%20thumbnails%20(1).png",
+      "alt": "Website Collection thumbnails (1).png",
+      "width": 272,
+      "height": 274,
+      "className": "gRkIq0 sFiSiq"
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_aa9d39be37bb47fbb90aa79706536a18~mv2.jpg/v1/fill/w_272,h_274,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Website%20Collection%20thumbnails_edited.jpg",
+      "alt": "Website Collection thumbnails_edited.jpg",
+      "width": 272,
+      "height": 274,
+      "className": "gRkIq0 sFiSiq"
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_e2eaa7ae03254dc28f8530c8d79caadf~mv2.png/v1/crop/x_7,y_0,w_1639,h_1654/fill/w_272,h_274,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11.png",
+      "alt": "11.png",
+      "width": 272,
+      "height": 274,
+      "className": "gRkIq0 sFiSiq"
+    },
+    {
+      "src": "https://static.wixstatic.com/media/39a655_6e849385150f43309c180a5fd15b7c68~mv2.png/v1/fill/w_272,h_274,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/14.png",
+      "alt": "14.png",
+      "width": 272,
+      "height": 274,
+      "className": "gRkIq0 sFiSiq"
+    },
+    {
+      "src": "https://static.wixstatic.com/media/8d6893330740455c96d218258a458aa4.png/v1/fill/w_39,h_39,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8d6893330740455c96d218258a458aa4.png",
+      "alt": "Instagram",
+      "width": 39,
+      "height": 39,
+      "className": "ZK9snE sFiSiq"
+    },
+    {
+      "src": "https://static.wixstatic.com/media/e316f544f9094143b9eac01f1f19e697.png/v1/fill/w_39,h_39,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e316f544f9094143b9eac01f1f19e697.png",
+      "alt": "Facebook",
+      "width": 39,
+      "height": 39,
+      "className": "ZK9snE sFiSiq"
+    },
+    {
+      "src": "https://static.wixstatic.com/media/11062b_7a80704b0d4547c4a6a39347d587411d~mv2.png/v1/fill/w_39,h_39,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_7a80704b0d4547c4a6a39347d587411d~mv2.png",
+      "alt": "TikTok   ",
+      "width": 39,
+      "height": 39,
+      "className": "ZK9snE sFiSiq"
+    }
+  ],
+  "bgElements": [],
+  "body": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  },
+  "h1": {
+    "fontFamily": "cormorantgaramond-semibold, cormorantgaramond, \"cormorant garamond\", serif",
+    "fontSize": "60px",
+    "fontWeight": "400",
+    "color": "rgb(79, 90, 94)"
+  }
+}

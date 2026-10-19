@@ -1,15 +1,24 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Source_Sans_3, Inter } from "next/font/google";
+import { Cormorant_Garamond, Sora, Alex_Brush, Inter } from "next/font/google";
 import "./globals.css";
 
-const bodoniModa = Bodoni_Moda({
-  variable: "--font-bodoni",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
-const sourceSans3 = Source_Sans_3({
-  variable: "--font-source-sans",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const alexBrush = Alex_Brush({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 const inter = Inter({
@@ -18,22 +27,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "The Sugar House | Handcrafted Sweets, Baklava & Gifting",
-  description: "Handcrafted sweets, baklava, and gifting collections made with the finest ingredients.",
+  title: "Sew Darlin' | country inspired accessories",
+  description:
+    "Sew Darlin' offers handmade scrunchies, hair bows, and Kindle cases designed with cottagecore charm and a touch of country style. Small batch designs created in QLD Australia.",
   icons: {
-    icon: "/sites/thf/root-default/icon.png",
+    icon: "/sites/sewdarlin/root-default/logo.jpg",
+    apple: "/sites/sewdarlin/root-default/logo.jpg",
   },
   openGraph: {
-    title: "The Sugar House",
-    description: "Handcrafted sweets, baklava, and gifting collections made with the finest ingredients.",
-    url: "https://www.thesugarhouse.com",
-    siteName: "The Sugar House",
+    title: "Sew Darlin' | country inspired accessories",
+    description:
+      "Sew Darlin' offers handmade scrunchies, hair bows, and Kindle cases designed with cottagecore charm and a touch of country style.",
+    url: "https://www.sewdarlin.com.au",
+    siteName: "Sew Darlin'",
     images: [
       {
-        url: "/sites/thf/root-default/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "The Sugar House",
+        url: "/sites/sewdarlin/root-default/hero-banner.png",
+        width: 1440,
+        height: 589,
+        alt: "Sew Darlin' Handmade Accessories",
       },
     ],
     type: "website",
@@ -48,9 +60,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bodoniModa.variable} ${sourceSans3.variable} ${inter.variable} antialiased`}
+      className={`${cormorant.variable} ${sora.variable} ${alexBrush.variable} ${inter.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-[#DAD7CD] text-[#344E41]">
+      <body className="min-h-screen flex flex-col bg-[#FBF9F4] text-[#4F5A5E]">
         {children}
       </body>
     </html>

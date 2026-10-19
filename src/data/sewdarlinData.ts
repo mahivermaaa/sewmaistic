@@ -162,12 +162,15 @@ export const FAN_FAVOURITES: Product[] = [
   },
 ];
 
+// Add thrift products here; they appear in the home page section and /category/thrift-store
+export const THRIFT_STORE: Product[] = [];
+
 export const ALL_PRODUCTS = [...NEW_ARRIVALS, ...FAN_FAVOURITES.slice(0, 4)];
 
 // Exactly the 5 requested categories in the exact order requested:
 // 1. shop bags
 // 2. shop cosplay costumes
-// 3. Thift store
+// 3. Thrift Store
 // 4. shop little somethings
 // 5. shop sale
 export const COLLECTIONS: Collection[] = [
@@ -177,7 +180,7 @@ export const COLLECTIONS: Collection[] = [
     buttonText: "Shop Bags",
     image: "/sites/sewdarlin/root-default/col-bows.jpg", // Contains high-res "Shop Bags"
     hasOverlayText: true,
-    link: "#new-arrivals",
+    link: "/category/bags",
   },
   {
     id: "shop-cosplay-costumes",
@@ -187,17 +190,17 @@ export const COLLECTIONS: Collection[] = [
     displayTitle: "Cosplay Costumes",
     image: "/sites/sewdarlin/root-default/col-cosplay.jpg",
     hasOverlayText: false,
-    link: "#new-arrivals",
+    link: "/category/cosplay-costumes",
   },
   {
-    id: "thift-store",
-    title: "Thift store",
-    buttonText: "Thift store",
+    id: "thrift-store",
+    title: "Thrift Store",
+    buttonText: "Thrift Store",
     scriptText: "Shop",
-    displayTitle: "Thift store",
+    displayTitle: "Thrift Store",
     image: "/sites/sewdarlin/root-default/col-thrift.jpg",
     hasOverlayText: false,
-    link: "#fan-favourites",
+    link: "/category/thrift-store",
   },
   {
     id: "shop-little-somethings",
@@ -207,7 +210,7 @@ export const COLLECTIONS: Collection[] = [
     displayTitle: "Little Somethings",
     image: "/sites/sewdarlin/root-default/col-little-somethings.jpg",
     hasOverlayText: false,
-    link: "#fan-favourites",
+    link: "/category/little-somethings",
   },
   {
     id: "shop-sale",
@@ -215,7 +218,7 @@ export const COLLECTIONS: Collection[] = [
     buttonText: "Shop Sale",
     image: "/sites/sewdarlin/root-default/col-sale.png", // Contains high-res "Shop Sale"
     hasOverlayText: true,
-    link: "#new-arrivals",
+    link: "/category/sale",
   },
 ];
 

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { X, Sparkles } from "lucide-react";
+import { X } from "lucide-react";
 
 export function DiscountPopup() {
   const [show, setShow] = useState(false);
@@ -54,8 +54,8 @@ export function DiscountPopup() {
         {/* Decorative Badge */}
         <div className="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden border border-[#D5CEC2] bg-white flex items-center justify-center">
           <Image
-            src="/sites/sewdarlin/root-default/logo.jpg"
-            alt="Sew Darlin"
+            src="/sites/sewdarlin/root-default/logo.png"
+            alt="Sewmaistic"
             width={64}
             height={64}
             className="object-cover"
@@ -63,20 +63,19 @@ export function DiscountPopup() {
         </div>
 
         <span className="inline-flex items-center text-xs tracking-widest uppercase font-serif text-[#D8A7A7] font-semibold mb-2">
-          <Sparkles className="w-3.5 h-3.5 mr-1 text-[#D8A7A7]" />
-          Welcome Darling
+          ✦ Be an Insider ✦
         </span>
 
         <h3 className="font-serif text-[28px] sm:text-[32px] text-[#2E3A42] leading-tight mb-2">
-          Take 10% Off
+          Never Miss a Drop!
         </h3>
         <p className="font-sans text-[14px] text-[#556368] mb-6 leading-relaxed">
-          Join our newsletter for exclusive small batch drops, cottage inspiration, and 10% off your first handcrafted order.
+          Our quirky, handcrafted pieces are made in tiny batches and find homes fast. Join the list to get first dibs before public restocks.
         </p>
 
         {submitted ? (
           <div className="bg-[#EBF3EA] text-[#2F5229] p-3 rounded-lg text-sm font-sans animate-in zoom-in-95">
-            Use code <strong className="font-mono text-base font-bold">DARLIN10</strong> at checkout!
+            You&apos;re on the list! We&apos;ll be in touch before the next drop.
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-3 font-sans">
@@ -92,14 +91,14 @@ export function DiscountPopup() {
               type="submit"
               className="w-full bg-[#D8A7A7] hover:bg-[#C89696] text-[#34444F] font-medium py-2.5 rounded-full text-sm transition-all shadow-2xs hover:shadow-xs active:scale-98"
             >
-              Claim My 10% Off
+              Keep Me in the Loop
             </button>
             <button
               type="button"
               onClick={handleDismiss}
               className="text-xs text-[#8C989C] hover:text-[#4F5A5E] underline underline-offset-2 transition-colors pt-1"
             >
-              No thanks, I’ll pay full price
+              No thanks, I’ll browse on my own
             </button>
           </form>
         )}

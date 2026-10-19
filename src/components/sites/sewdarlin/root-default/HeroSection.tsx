@@ -15,7 +15,7 @@ export function HeroSection() {
       <div className="md:hidden relative w-full aspect-[750/734] max-w-[640px] mx-auto">
         <Image
           src="/sites/sewdarlin/root-default/hero-banner-mobile.jpg"
-          alt="Handcrafted Country & Cottage Inspired Accessories - Sew Darlin'"
+          alt="Handcrafted Country & Cottage Inspired Accessories - Sewmaistic"
           fill
           priority
           sizes="100vw"
@@ -31,7 +31,7 @@ export function HeroSection() {
         <div className="relative w-full aspect-[1440/589] min-h-[480px] lg:min-h-[560px]">
           <Image
             src="/sites/sewdarlin/root-default/hero-banner.png"
-            alt="Handcrafted Country & Cottage Inspired Accessories - Sew Darlin'"
+            alt="Handcrafted Country & Cottage Inspired Accessories - Sewmaistic"
             fill
             priority
             sizes="100vw"

@@ -7,11 +7,11 @@ import { Search, ShoppingBag, ShoppingCart, Menu, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 const NAV_LINKS = [
-  { label: "Bags", href: "#collections" },
-  { label: "Cosplay Costumes", href: "#collections" },
-  { label: "Thift store", href: "#collections" },
-  { label: "Little Somethings", href: "#collections" },
-  { label: "Sale", href: "#collections" },
+  { label: "Bags", href: "/category/bags" },
+  { label: "Cosplay Costumes", href: "/category/cosplay-costumes" },
+  { label: "Thrift Store", href: "/category/thrift-store" },
+  { label: "Little Somethings", href: "/category/little-somethings" },
+  { label: "Sale", href: "/category/sale" },
 ];
 
 export function Header() {
@@ -33,8 +33,8 @@ export function Header() {
           <Link href="/" className="inline-block">
             <div className="w-[118px] h-[118px] rounded-full overflow-hidden border border-[#D5CEC2] shadow-xs bg-white flex items-center justify-center">
               <Image
-                src="/sites/sewdarlin/root-default/logo.jpg"
-                alt="Sew Darlin' Logo"
+                src="/sites/sewdarlin/root-default/logo.png"
+                alt="Sewmaistic Logo"
                 width={118}
                 height={118}
                 priority
@@ -89,13 +89,22 @@ export function Header() {
         {/* 3. Mobile Announcement Bar on pure white */}
         <div className="w-full bg-white text-[#4F5A5E] py-2 overflow-hidden border-b border-[#EBE6DD] select-none">
           <div className="animate-marquee whitespace-nowrap text-[13px] sm:text-[14px] font-serif tracking-wide flex items-center">
-            <span className="mx-3">Spend $80+ for FREE Shipping Australia-Wide!</span>
             <span className="text-[10px] opacity-70">✦</span>
-            <span className="mx-3">Spend $80+ for FREE Shipping Australia-Wide!</span>
+            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
             <span className="text-[10px] opacity-70">✦</span>
-            <span className="mx-3">Spend $80+ for FREE Shipping Australia-Wide!</span>
+            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
             <span className="text-[10px] opacity-70">✦</span>
-            <span className="mx-3">Spend $80+ for FREE Shipping Australia-Wide!</span>
+            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
+            <span className="text-[10px] opacity-70">✦</span>
+            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
+            <span className="text-[10px] opacity-70">✦</span>
+            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
+            <span className="text-[10px] opacity-70">✦</span>
+            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
+            <span className="text-[10px] opacity-70">✦</span>
+            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
+            <span className="text-[10px] opacity-70">✦</span>
+            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
             <span className="text-[10px] opacity-70">✦</span>
           </div>
         </div>
@@ -130,8 +139,8 @@ export function Header() {
               <Link href="/" className="inline-block group">
                 <div className="w-[96px] h-[96px] rounded-full overflow-hidden border border-[#D5CEC2] shadow-xs group-hover:scale-105 transition-transform duration-300 bg-white flex items-center justify-center">
                   <Image
-                    src="/sites/sewdarlin/root-default/logo.jpg"
-                    alt="Sew Darlin' Logo"
+                    src="/sites/sewdarlin/root-default/logo.png"
+                    alt="Sewmaistic Logo"
                     width={96}
                     height={96}
                     priority

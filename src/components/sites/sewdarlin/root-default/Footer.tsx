@@ -35,7 +35,7 @@ export function Footer() {
         {/* Bottom row with copyright and language selector */}
         <div className="w-full flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-white/20 gap-4 text-center sm:text-left">
           <p className="text-[13px] text-white/80 font-sans">
-            © 2026 Sew Darlin
+            © 2026 Sewmaistic
           </p>
 
           {/* Language selector */}

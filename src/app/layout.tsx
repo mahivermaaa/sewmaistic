@@ -27,25 +27,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sew Darlin' | country inspired accessories",
+  title: "Sewmaistic | country inspired accessories",
   description:
-    "Sew Darlin' offers handmade scrunchies, hair bows, and Kindle cases designed with cottagecore charm and a touch of country style. Small batch designs created in QLD Australia.",
+    "Sewmaistic offers handmade scrunchies, hair bows, and Kindle cases designed with cottagecore charm and a touch of country style. Small batch designs created in QLD Australia.",
   icons: {
-    icon: "/sites/sewdarlin/root-default/logo.jpg",
-    apple: "/sites/sewdarlin/root-default/logo.jpg",
+    icon: "/sites/sewdarlin/root-default/logo.png",
+    apple: "/sites/sewdarlin/root-default/logo.png",
   },
   openGraph: {
-    title: "Sew Darlin' | country inspired accessories",
+    title: "Sewmaistic | country inspired accessories",
     description:
-      "Sew Darlin' offers handmade scrunchies, hair bows, and Kindle cases designed with cottagecore charm and a touch of country style.",
+      "Sewmaistic offers handmade scrunchies, hair bows, and Kindle cases designed with cottagecore charm and a touch of country style.",
     url: "https://www.sewdarlin.com.au",
-    siteName: "Sew Darlin'",
+    siteName: "Sewmaistic",
     images: [
       {
         url: "/sites/sewdarlin/root-default/hero-banner.png",
         width: 1440,
         height: 589,
-        alt: "Sew Darlin' Handmade Accessories",
+        alt: "Sewmaistic Handmade Accessories",
       },
     ],
     type: "website",

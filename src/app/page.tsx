@@ -1,10 +1,9 @@
 import React from "react";
 import { CartProvider } from "@/context/CartContext";
-import { AnnouncementBar } from "@/components/sites/sewdarlin/root-default/AnnouncementBar";
 import { Header } from "@/components/sites/sewdarlin/root-default/Header";
 import { HeroSection } from "@/components/sites/sewdarlin/root-default/HeroSection";
 import { NewArrivals } from "@/components/sites/sewdarlin/root-default/NewArrivals";
-import { FanFavourites } from "@/components/sites/sewdarlin/root-default/FanFavourites";
+import { ThriftStore } from "@/components/sites/sewdarlin/root-default/ThriftStore";
 import { CollectionsGrid } from "@/components/sites/sewdarlin/root-default/CollectionsGrid";
 import { Testimonials } from "@/components/sites/sewdarlin/root-default/Testimonials";
 import { NewsletterSection } from "@/components/sites/sewdarlin/root-default/NewsletterSection";
@@ -19,9 +18,6 @@ export default function HomePage() {
   return (
     <CartProvider>
       <main className="min-h-screen bg-[#FBF9F4] text-[#4F5A5E] flex flex-col font-sans selection:bg-[#D8A7A7]/30 selection:text-[#2E3A42]">
-        {/* Top Notification Announcement Bar */}
-        <AnnouncementBar />
-
         {/* Brand Header with Navigation and Search/Cart Triggers */}
         <Header />
 
@@ -31,8 +27,8 @@ export default function HomePage() {
         {/* New Arrivals Product Carousel */}
         <NewArrivals />
 
-        {/* Fan Favourites Product Carousel */}
-        <FanFavourites />
+        {/* Thrift Store Section */}
+        <ThriftStore />
 
         {/* Shop By Collection Grid */}
         <CollectionsGrid />

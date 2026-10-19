@@ -9,7 +9,7 @@ export function FloatingChatButton() {
   const [chatLog, setChatLog] = useState<{ sender: "bot" | "user"; text: string }[]>([
     {
       sender: "bot",
-      text: "Hi darling! 👋 Welcome to Sew Darlin'. We lovingly handmade every single piece right here in Queensland. How can we help you today?",
+      text: "Hi darling! 👋 Welcome to Sewmaistic. We lovingly handmade every single piece right here in Queensland. How can we help you today?",
     },
   ]);
 
@@ -41,7 +41,7 @@ export function FloatingChatButton() {
             <div className="flex items-center space-x-2">
               <div className="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse" />
               <div>
-                <h4 className="font-serif text-[17px] leading-tight">Sew Darlin&apos;</h4>
+                <h4 className="font-serif text-[17px] leading-tight">Sewmaistic</h4>
                 <p className="text-[11px] text-white/80 font-sans">Usually replies within an hour</p>
               </div>
             </div>

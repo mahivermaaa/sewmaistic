@@ -9,7 +9,7 @@ export function FloatingChatButton() {
   const [chatLog, setChatLog] = useState<{ sender: "bot" | "user"; text: string }[]>([
     {
       sender: "bot",
-      text: "Hi darling! 👋 Welcome to Sewmaistic. We lovingly handmade every single piece right here in Queensland. How can we help you today?",
+      text: "Hi darling! 👋 Welcome to Sewmaistic. We lovingly handmade every single piece right here in Delhi, India. How can we help you today?",
     },
   ]);
 
@@ -23,9 +23,7 @@ export function FloatingChatButton() {
     setTimeout(() => {
       let reply = "Thank you so much for reaching out! We typically respond within an hour. You can also contact us through our Contact Us form.";
       if (text.toLowerCase().includes("ship")) {
-        reply = "We offer FREE tracked shipping across Australia for orders over $80! Orders are dispatched from QLD within 2-3 business days.";
-      } else if (text.toLowerCase().includes("custom") || text.toLowerCase().includes("size")) {
-        reply = "Yes, we love custom orders! Whether you need a specific Kindle sleeve size or matching party scrunchies, send us a message via the Contact page.";
+        reply = "We offer FREE tracked shipping across India for orders over $80! Orders are dispatched from Delhi within 2-3 business days.";
       }
       setChatLog((prev) => [...prev, { sender: "bot", text: reply }]);
     }, 600);
@@ -63,7 +61,7 @@ export function FloatingChatButton() {
                 <div
                   className={`max-w-[82%] p-3 rounded-xl leading-relaxed ${
                     item.sender === "user"
-                      ? "bg-[#D8A7A7] text-[#34444F] rounded-br-none"
+                      ? "bg-[#E8B7AF] text-[#34444F] rounded-br-none"
                       : "bg-white text-[#4F5A5E] border border-[#EBE6DD] rounded-bl-none shadow-2xs"
                   }`}
                 >
@@ -75,7 +73,7 @@ export function FloatingChatButton() {
 
           {/* Quick suggestions */}
           <div className="px-3 pb-2 flex flex-wrap gap-1.5 border-t border-[#EBE6DD] pt-2 bg-white/60">
-            {["Shipping & delivery info", "Custom Kindle size", "Party favors"].map((chip) => (
+            {["Shipping & delivery info"].map((chip) => (
               <button
                 key={chip}
                 onClick={() => handleSend(chip)}
@@ -84,6 +82,12 @@ export function FloatingChatButton() {
                 {chip}
               </button>
             ))}
+            <a
+              href="mailto:hello@sewmaistic.com"
+              className="text-[11px] bg-[#F2ECE1] hover:bg-[#E8E0D2] text-[#4F5A5E] px-2.5 py-1 rounded-full transition-colors"
+            >
+              Mail us
+            </a>
           </div>
 
           {/* Input field */}
@@ -98,7 +102,7 @@ export function FloatingChatButton() {
             />
             <button
               onClick={() => handleSend()}
-              className="p-1.5 rounded-full bg-[#D8A7A7] hover:bg-[#C89696] text-[#34444F] transition-colors"
+              className="p-1.5 rounded-full bg-[#E8B7AF] hover:bg-[#D9A59C] text-[#34444F] transition-colors"
             >
               <Send className="w-3.5 h-3.5" />
             </button>

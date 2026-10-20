@@ -68,7 +68,7 @@ export function ProductCard({ product }: ProductCardProps) {
       ) : (
         <button
           onClick={() => addToCart(product, 1)}
-          className="w-auto px-6 py-2 rounded-full bg-[#D8A7A7] hover:bg-[#C89696] active:bg-[#B88585] text-[#34444F] font-sans text-[13px] sm:text-[14px] transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-95"
+          className="w-auto px-6 py-2 rounded-full bg-[#E8B7AF] hover:bg-[#D9A59C] active:bg-[#C9958C] text-[#34444F] font-sans text-[13px] sm:text-[14px] transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-95"
         >
           Add to Cart
         </button>

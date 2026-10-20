@@ -8,6 +8,7 @@ export interface Product {
   outOfStock?: boolean;
   description?: string;
   badge?: string;
+  currency?: "INR"; // omit for AUD
 }
 
 export interface Collection {

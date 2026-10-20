@@ -53,19 +53,19 @@ export function CartDrawer() {
             <div className="flex items-center justify-between text-xs text-[#4F5A5E] mb-2 font-sans">
               {amountNeededForFreeShipping > 0 ? (
                 <span>
-                  Add <strong className="text-[#2E3A42] font-semibold">${amountNeededForFreeShipping.toFixed(2)}</strong> more for FREE shipping Australia-wide!
+                  Add <strong className="text-[#2E3A42] font-semibold">${amountNeededForFreeShipping.toFixed(2)}</strong> more for FREE shipping India-wide!
                 </span>
               ) : (
                 <span className="flex items-center text-emerald-800 font-medium">
                   <Sparkles className="w-3.5 h-3.5 mr-1 text-emerald-600" />
-                  You’ve unlocked FREE Australia-wide shipping!
+                  You’ve unlocked FREE India-wide shipping!
                 </span>
               )}
               <span className="font-mono text-[11px]">${subtotal.toFixed(2)} / ${freeShippingThreshold}</span>
             </div>
             <div className="w-full bg-[#E5DFD5] h-2 rounded-full overflow-hidden">
               <div
-                className="bg-[#D8A7A7] h-full rounded-full transition-all duration-500"
+                className="bg-[#E8B7AF] h-full rounded-full transition-all duration-500"
                 style={{ width: `${freeShippingProgress}%` }}
               />
             </div>
@@ -82,7 +82,7 @@ export function CartDrawer() {
                 </p>
                 <button
                   onClick={() => setIsCartOpen(false)}
-                  className="bg-[#D8A7A7] hover:bg-[#C89696] text-[#34444F] font-sans px-6 py-2.5 rounded-full text-[13px] transition-colors shadow-2xs"
+                  className="bg-[#E8B7AF] hover:bg-[#D9A59C] text-[#34444F] font-sans px-6 py-2.5 rounded-full text-[13px] transition-colors shadow-2xs"
                 >
                   Start Shopping
                 </button>
@@ -142,7 +142,9 @@ export function CartDrawer() {
                         </button>
                       </div>
                       <span className="text-xs text-[#7A878B] font-mono ml-auto">
-                        ${(product.price * quantity).toFixed(2)}
+                        {product.currency === "INR"
+                          ? `₹${(product.price * quantity).toLocaleString("en-IN")}`
+                          : `$${(product.price * quantity).toFixed(2)}`}
                       </span>
                     </div>
                   </div>
@@ -165,7 +167,7 @@ export function CartDrawer() {
               </p>
               <button
                 onClick={() => alert("Proceeding to secure checkout demo!")}
-                className="w-full bg-[#D8A7A7] hover:bg-[#C89696] active:bg-[#B88585] text-[#34444F] font-sans font-medium py-3 rounded-full text-[15px] transition-all duration-200 shadow-xs active:scale-98"
+                className="w-full bg-[#E8B7AF] hover:bg-[#D9A59C] active:bg-[#C9958C] text-[#34444F] font-sans font-medium py-3 rounded-full text-[15px] transition-all duration-200 shadow-xs active:scale-98"
               >
                 Checkout Now • ${subtotal.toFixed(2)}
               </button>

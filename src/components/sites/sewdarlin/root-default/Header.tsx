@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Search, ShoppingBag, ShoppingCart, Menu, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
@@ -14,42 +13,86 @@ const NAV_LINKS = [
   { label: "Sale", href: "/category/sale" },
 ];
 
+// Scrolling announcement bar (shown on phone and desktop).
+// Two identical groups so the -50% loop animation is seamless on any width.
+function MarqueeBar() {
+  return (
+    <div
+      className="w-full bg-white text-[#4F5A5E] py-2 overflow-hidden border-b border-[#EBE6DD] select-none"
+      aria-label="New arrivals just dropped"
+    >
+      <div className="animate-marquee whitespace-nowrap text-[13px] sm:text-[14px] font-serif tracking-wide flex items-center">
+        {[0, 1].map((group) => (
+          <div key={group} className="flex items-center shrink-0" aria-hidden={group === 1}>
+            {Array.from({ length: 10 }).map((_, i) => (
+              <React.Fragment key={i}>
+                <span className="text-[10px] opacity-70">✦</span>
+                <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
+              </React.Fragment>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Thin pink strip above the navigation: newsletter link + Instagram / email icons
+function TopStrip() {
+  return (
+    <div className="w-full bg-[#E8B7AF] text-[#34444F]">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-8 grid grid-cols-[1fr_auto_1fr] items-center font-sans text-[10px] sm:text-[11px] tracking-[0.14em] uppercase">
+        <span aria-hidden="true" />
+        <Link href="/#newsletter" className="underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap">
+          Subscribe to newsletter
+        </Link>
+        <div className="flex items-center justify-end gap-4">
+          <a
+            href="https://www.instagram.com/sewmaistic/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="hover:opacity-70 transition-opacity"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="mailto:hello@sewmaistic.com" aria-label="Email us" className="hover:opacity-70 transition-opacity">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="M3 7l9 6 9-6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Header() {
   const { cartCount, setIsCartOpen, setIsSearchOpen } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="w-full">
+      <TopStrip />
       {/* ========================================================= */}
       {/* MOBILE HEADER (Visible on screens < md)                    */}
       {/* Exactly matching phone screenshot:                        */}
       {/* 1. Large centered logo on white                           */}
-      {/* 2. Blush pink bar (#E8C7C8) with Hamburger, Cart, Search  */}
+      {/* 2. Blush pink bar (#E8B7AF) with Hamburger, Cart, Search  */}
       {/* 3. White announcement ticker                              */}
       {/* ========================================================= */}
       <div className="md:hidden w-full">
-        {/* 1. Logo area on pure white */}
-        <div className="w-full bg-white flex justify-center items-center py-4 px-4 border-b border-[#EFEBE4]">
-          <Link href="/" className="inline-block">
-            <div className="w-[118px] h-[118px] rounded-full overflow-hidden border border-[#D5CEC2] shadow-xs bg-white flex items-center justify-center">
-              <Image
-                src="/sites/sewdarlin/root-default/logo.png"
-                alt="Sewmaistic Logo"
-                width={118}
-                height={118}
-                priority
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </Link>
-        </div>
-
-        {/* 2. Blush pink action bar (#E8C7C8) */}
-        <div className="w-full bg-[#E8C7C8] px-4 py-2 flex items-center justify-between shadow-xs">
+        {/* 2. Blush pink action bar (#E8B7AF) */}
+        <div className="w-full bg-white border-b border-[#EBE6DD] px-4 py-2 grid grid-cols-[1fr_auto_1fr] items-center">
           {/* Hamburger Menu Toggle on Left */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1.5 text-[#4F5A5E] hover:text-[#2E3A42] transition-colors"
+            className="justify-self-start p-1.5 text-[#4F5A5E] hover:text-[#2E3A42] transition-colors"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? (
@@ -59,12 +102,27 @@ export function Header() {
             )}
           </button>
 
+          {/* Centre: wordmark */}
+          <Link href="/" aria-label="Sewmaistic home" className="justify-self-center pt-3">
+            <span className="relative block text-center leading-none select-none">
+              <span
+                className="absolute -top-4 left-1/2 -translate-x-1/2 text-[28px] leading-none text-[#E8B7AF] pointer-events-none"
+                style={{ fontFamily: "var(--font-script), cursive" }}
+              >
+                Sew
+              </span>
+              <span className="block font-serif text-[24px] font-medium tracking-[0.14em] uppercase text-[#2E3A42]">
+                Maistic
+              </span>
+            </span>
+          </Link>
+
           {/* Right Side: Cart + Search Pill */}
-          <div className="flex items-center space-x-3">
+          <div className="justify-self-end flex items-center space-x-3">
             {/* Shopping Cart Icon with Badge */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative p-1.5 text-white/90 hover:text-white transition-colors"
+              className="relative p-1.5 text-[#4F5A5E] hover:text-[#2E3A42] transition-colors"
               aria-label="Shopping Cart"
             >
               <ShoppingCart className="w-6 h-6 stroke-[1.7]" />
@@ -78,36 +136,16 @@ export function Header() {
             {/* Rounded Search Pill */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="flex items-center space-x-2 bg-white/75 hover:bg-white text-[#4F5A5E] border border-white/80 rounded-full px-3.5 py-1 text-[13px] font-sans transition-all shadow-2xs"
+              className="flex items-center space-x-2 bg-white hover:bg-[#F2ECE1] text-[#4F5A5E] border border-[#4F5A5E] rounded-full px-3 py-1.5 text-[13px] font-sans transition-all"
             >
-              <span className="tracking-wide">Search</span>
+              <span className="tracking-wide hidden min-[400px]:inline">Search</span>
               <Search className="w-3.5 h-3.5 opacity-80" />
             </button>
           </div>
         </div>
 
-        {/* 3. Mobile Announcement Bar on pure white */}
-        <div className="w-full bg-white text-[#4F5A5E] py-2 overflow-hidden border-b border-[#EBE6DD] select-none">
-          <div className="animate-marquee whitespace-nowrap text-[13px] sm:text-[14px] font-serif tracking-wide flex items-center">
-            <span className="text-[10px] opacity-70">✦</span>
-            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
-            <span className="text-[10px] opacity-70">✦</span>
-            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
-            <span className="text-[10px] opacity-70">✦</span>
-            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
-            <span className="text-[10px] opacity-70">✦</span>
-            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
-            <span className="text-[10px] opacity-70">✦</span>
-            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
-            <span className="text-[10px] opacity-70">✦</span>
-            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
-            <span className="text-[10px] opacity-70">✦</span>
-            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
-            <span className="text-[10px] opacity-70">✦</span>
-            <span className="mx-3">NEW ARRIVALS JUST DROPPED</span>
-            <span className="text-[10px] opacity-70">✦</span>
-          </div>
-        </div>
+        {/* 3. Announcement marquee */}
+        <MarqueeBar />
 
         {/* Mobile Dropdown Navigation Menu */}
         {mobileMenuOpen && (
@@ -118,7 +156,7 @@ export function Header() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-[#4F5A5E] hover:text-[#D8A7A7] font-serif text-[19px] tracking-wide border-b border-[#EFEBE4] pb-2 last:border-0"
+                  className="text-[#4F5A5E] hover:text-[#E8B7AF] font-serif text-[19px] tracking-wide border-b border-[#EFEBE4] pb-2 last:border-0"
                 >
                   {link.label}
                 </Link>
@@ -130,28 +168,42 @@ export function Header() {
 
       {/* ========================================================= */}
       {/* DESKTOP HEADER (Visible on screens >= md)                  */}
+      {/* Nav left | "Sew" script + MAISTIC wordmark centre | Search right */}
       {/* ========================================================= */}
       <div className="hidden md:block w-full bg-[#FBF9F4] border-b border-[#EBE6DD] sticky top-0 z-40">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-8 pt-3 pb-2 relative">
-          <div className="flex items-center justify-between min-h-[80px]">
-            {/* Logo Centered */}
-            <div className="absolute left-1/2 -translate-x-1/2">
-              <Link href="/" className="inline-block group">
-                <div className="w-[96px] h-[96px] rounded-full overflow-hidden border border-[#D5CEC2] shadow-xs group-hover:scale-105 transition-transform duration-300 bg-white flex items-center justify-center">
-                  <Image
-                    src="/sites/sewdarlin/root-default/logo.png"
-                    alt="Sewmaistic Logo"
-                    width={96}
-                    height={96}
-                    priority
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </Link>
-            </div>
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-4">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-[64px]">
+            {/* Left: navigation (single row on large screens) */}
+            <nav className="hidden lg:flex items-center gap-x-6 xl:gap-x-8">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-[#4F5A5E] hover:text-[#E8B7AF] transition-colors font-serif text-[15px] xl:text-[17px] tracking-wide whitespace-nowrap"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="lg:hidden" />
 
-            {/* Right actions */}
-            <div className="flex items-center space-x-4 ml-auto">
+            {/* Centre: wordmark */}
+            <Link href="/" aria-label="Sewmaistic home" className="justify-self-center pt-3">
+              <span className="relative block text-center leading-none select-none">
+                <span
+                  className="absolute -top-5 left-1/2 -translate-x-1/2 text-[38px] leading-none text-[#E8B7AF] pointer-events-none"
+                  style={{ fontFamily: "var(--font-script), cursive" }}
+                >
+                  Sew
+                </span>
+                <span className="block font-serif text-[34px] lg:text-[38px] font-medium tracking-[0.14em] uppercase text-[#2E3A42]">
+                  Maistic
+                </span>
+              </span>
+            </Link>
+
+            {/* Right: cart + search */}
+            <div className="flex items-center justify-end space-x-4">
               <button
                 onClick={() => setIsCartOpen(true)}
                 className="relative p-2 text-[#4F5A5E] hover:text-[#2E3A42] transition-colors"
@@ -159,7 +211,7 @@ export function Header() {
               >
                 <ShoppingBag className="w-[22px] h-[22px]" strokeWidth={1.8} />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[#D8A7A7] text-white text-[11px] font-medium w-5 h-5 rounded-full flex items-center justify-center animate-in zoom-in-50">
+                  <span className="absolute -top-1 -right-1 bg-[#E8B7AF] text-white text-[11px] font-medium w-5 h-5 rounded-full flex items-center justify-center animate-in zoom-in-50">
                     {cartCount}
                   </span>
                 )}
@@ -175,19 +227,24 @@ export function Header() {
             </div>
           </div>
 
-          {/* Desktop Navigation Links */}
-          <nav className="flex items-center justify-center space-x-10 pt-4 pb-1">
+          {/* Navigation row for medium screens (not enough room beside the logo) */}
+          <nav className="lg:hidden flex items-center justify-center gap-x-6 pt-4">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[#4F5A5E] hover:text-[#D8A7A7] transition-colors font-serif text-[18px] tracking-wide"
+                className="text-[#4F5A5E] hover:text-[#E8B7AF] transition-colors font-serif text-[16px] tracking-wide whitespace-nowrap"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
         </div>
+      </div>
+
+      {/* Desktop announcement marquee, under the navigation */}
+      <div className="hidden md:block w-full">
+        <MarqueeBar />
       </div>
     </header>
   );

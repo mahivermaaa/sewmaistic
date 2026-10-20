@@ -71,12 +71,12 @@ export function QuickViewModal() {
 
               <p className="text-[14px] text-[#556368] leading-relaxed mb-6 font-sans">
                 {quickViewProduct.description ||
-                  "Handcrafted with exquisite cottage charm in Queensland, Australia. Perfect for gifting or treating yourself."}
+                  "Handcrafted with exquisite cottage charm in Delhi, India. Perfect for gifting or treating yourself."}
               </p>
 
               <div className="flex items-center space-x-2 text-xs text-[#6F7D82] mb-6">
                 <ShieldCheck className="w-4 h-4 text-emerald-700" />
-                <span>Small batch handmade in QLD Australia</span>
+                <span>Small batch handmade in Delhi, India</span>
               </div>
             </div>
 
@@ -110,7 +110,7 @@ export function QuickViewModal() {
                   {/* Add button */}
                   <button
                     onClick={handleAdd}
-                    className="flex-1 bg-[#D8A7A7] hover:bg-[#C89696] active:bg-[#B88585] text-[#34444F] font-sans py-2.5 px-6 rounded-full text-[14px] font-medium transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-98 flex items-center justify-center space-x-2"
+                    className="flex-1 bg-[#E8B7AF] hover:bg-[#D9A59C] active:bg-[#C9958C] text-[#34444F] font-sans py-2.5 px-6 rounded-full text-[14px] font-medium transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-98 flex items-center justify-center space-x-2"
                   >
                     {added ? (
                       <>

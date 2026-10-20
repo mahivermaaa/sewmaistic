@@ -41,11 +41,11 @@ export function CollectionsGrid() {
               {!col.hasOverlayText && (
                 <div className="absolute inset-0 bg-white/25 group-hover:bg-white/15 transition-colors flex flex-col items-center justify-center text-center p-3 z-10">
                   {col.scriptText && (
-                    <span className="font-serif italic text-[28px] sm:text-[32px] text-[#2E3A42] leading-none drop-shadow-sm select-none">
+                    <span className="font-serif italic text-[34px] sm:text-[40px] font-normal text-[#3A4A54] leading-none select-none">
                       {col.scriptText}
                     </span>
                   )}
-                  <span className="font-serif text-[24px] sm:text-[28px] text-[#2E3A42] leading-tight font-normal drop-shadow-sm mt-0.5 select-none">
+                  <span className="font-serif text-[24px] sm:text-[28px] text-[#2E3A42] leading-tight font-bold mt-0.5 select-none">
                     {col.displayTitle || col.title}
                   </span>
                 </div>

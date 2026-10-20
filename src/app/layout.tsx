@@ -29,7 +29,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Sewmaistic | country inspired accessories",
   description:
-    "Sewmaistic offers handmade scrunchies, hair bows, and Kindle cases designed with cottagecore charm and a touch of country style. Small batch designs created in QLD Australia.",
+    "Sewmaistic offers handmade scrunchies, hair bows, and Kindle cases designed with cottagecore charm and a touch of country style. Small batch designs created in Delhi, India.",
   icons: {
     icon: "/sites/sewdarlin/root-default/logo.png",
     apple: "/sites/sewdarlin/root-default/logo.png",

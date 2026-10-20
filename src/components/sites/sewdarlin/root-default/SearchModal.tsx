@@ -86,7 +86,7 @@ export function SearchModal() {
               {results.map((product) => (
                 <div
                   key={product.id}
-                  className="flex items-center space-x-3 p-2.5 rounded-xl bg-white border border-[#EBE6DD] hover:border-[#D8A7A7] transition-colors group cursor-pointer"
+                  className="flex items-center space-x-3 p-2.5 rounded-xl bg-white border border-[#EBE6DD] hover:border-[#E8B7AF] transition-colors group cursor-pointer"
                   onClick={() => {
                     handleClose();
                     setQuickViewProduct(product);
@@ -101,7 +101,7 @@ export function SearchModal() {
                     />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-sans text-[13px] text-[#2E3A42] font-medium leading-snug line-clamp-1 group-hover:text-[#D8A7A7] transition-colors">
+                    <h4 className="font-sans text-[13px] text-[#2E3A42] font-medium leading-snug line-clamp-1 group-hover:text-[#E8B7AF] transition-colors">
                       {product.title}
                     </h4>
                     <span className="text-xs text-[#4F5A5E] font-medium">
@@ -115,7 +115,7 @@ export function SearchModal() {
                         addToCart(product, 1);
                         handleClose();
                       }}
-                      className="p-2 rounded-full bg-[#FAF7F2] hover:bg-[#D8A7A7] hover:text-white text-[#4F5A5E] transition-colors shadow-2xs"
+                      className="p-2 rounded-full bg-[#FAF7F2] hover:bg-[#E8B7AF] hover:text-white text-[#4F5A5E] transition-colors shadow-2xs"
                       aria-label="Add to cart"
                     >
                       <ShoppingBag className="w-4 h-4" />

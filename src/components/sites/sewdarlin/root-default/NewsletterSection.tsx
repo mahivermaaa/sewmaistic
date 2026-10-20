@@ -3,82 +3,60 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Mail } from "lucide-react";
 
 export function NewsletterSection() {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
-  const [agreed, setAgreed] = useState(false);
+  const [wants, setWants] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !firstName || !agreed) return;
+    if (!email || !firstName || !wants.trim()) return;
     setSubmitted(true);
   };
 
   return (
-    <section className="w-full bg-[#FBF9F4] py-16 sm:py-20 px-4 sm:px-8 border-b border-[#EBE6DD]">
+    <section id="newsletter" className="w-full bg-[#FBF9F4] py-16 sm:py-20 px-4 sm:px-8 border-b border-[#EBE6DD]">
       <div className="max-w-[620px] mx-auto flex flex-col items-center text-center">
         {/* Title */}
         <h2 className="font-serif text-[34px] sm:text-[42px] text-[#4F5A5E] mb-6 tracking-tight">
-          Find Us Online
+          Want Customizations?
         </h2>
 
         {/* Social Icons */}
         <div className="flex items-center space-x-4 mb-8">
           <Link
-            href="https://www.instagram.com/sewdarlin"
+            href="https://www.instagram.com/sewmaistic/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform duration-200"
             aria-label="Instagram"
           >
-            <div className="w-[38px] h-[38px] relative">
+            <div className="w-[38px] h-[38px] relative rounded-[10px] overflow-hidden">
               <Image
                 src="/sites/sewdarlin/root-default/icon-instagram.png"
                 alt="Instagram"
                 fill
-                className="object-contain"
+                className="object-cover"
               />
             </div>
           </Link>
-          <Link
-            href="https://www.facebook.com/sewdarlin"
-            target="_blank"
-            rel="noopener noreferrer"
+          <a
+            href="mailto:hello@sewmaistic.com"
             className="hover:scale-110 transition-transform duration-200"
-            aria-label="Facebook"
+            aria-label="Email"
           >
-            <div className="w-[38px] h-[38px] relative">
-              <Image
-                src="/sites/sewdarlin/root-default/icon-facebook.png"
-                alt="Facebook"
-                fill
-                className="object-contain"
-              />
+            <div className="w-[38px] h-[38px] rounded-[10px] bg-[#FF0069] flex items-center justify-center">
+              <Mail className="w-5 h-5 text-white" strokeWidth={2} />
             </div>
-          </Link>
-          <Link
-            href="https://www.tiktok.com/@sewdarlin"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-110 transition-transform duration-200"
-            aria-label="TikTok"
-          >
-            <div className="w-[38px] h-[38px] relative">
-              <Image
-                src="/sites/sewdarlin/root-default/icon-tiktok.png"
-                alt="TikTok"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </Link>
+          </a>
         </div>
 
         {/* Subtitle */}
         <p className="font-sans text-[15px] sm:text-[16px] text-[#4F5A5E] mb-8">
-          We only send emails once or twice a month, good stuff only!
+          Pick your vibe, add your personal touch, and create something that’s uniquely you.
         </p>
 
         {submitted ? (
@@ -112,18 +90,16 @@ export function NewsletterSection() {
               />
             </div>
 
-            {/* Checkbox */}
-            <div className="w-full flex items-center justify-start space-x-2.5 pt-2 text-left">
-              <label className="flex items-center space-x-2 text-[13px] text-[#4F5A5E] cursor-pointer">
-                <input
-                  type="checkbox"
-                  required
-                  checked={agreed}
-                  onChange={(e) => setAgreed(e.target.checked)}
-                  className="w-4 h-4 rounded-sm border-[#9EA8AC] text-[#D8A7A7] focus:ring-[#D8A7A7]"
-                />
-                <span>Yes, subscribe me to your newsletter.*</span>
-              </label>
+            {/* What do you want? */}
+            <div className="w-full text-left">
+              <textarea
+                rows={3}
+                required
+                placeholder="What do you want? *"
+                value={wants}
+                onChange={(e) => setWants(e.target.value)}
+                className="w-full bg-transparent border-b border-[#9EA8AC] focus:border-[#4F5A5E] outline-hidden py-2 px-1 text-[15px] text-[#2E3A42] placeholder-[#7E8C91] transition-colors resize-none"
+              />
             </div>
 
             {/* Submit Button */}
@@ -132,7 +108,7 @@ export function NewsletterSection() {
                 type="submit"
                 className="w-full sm:w-[240px] border border-[#4F5A5E] hover:bg-[#4F5A5E] text-[#4F5A5E] hover:text-white rounded-full py-2.5 px-8 text-[14px] font-sans tracking-wide transition-all duration-300 shadow-2xs hover:shadow-xs"
               >
-                Subscribe Now
+                Send
               </button>
             </div>
           </form>

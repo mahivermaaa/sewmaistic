@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { X, Plus, Minus, Trash2, ShoppingBag, Sparkles } from "lucide-react";
+import { X, Plus, Minus, Trash2, ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 export function CartDrawer() {
@@ -13,9 +13,6 @@ export function CartDrawer() {
     updateQuantity,
     removeFromCart,
     subtotal,
-    freeShippingThreshold,
-    amountNeededForFreeShipping,
-    freeShippingProgress,
   } = useCart();
 
   if (!isCartOpen) return null;
@@ -46,29 +43,6 @@ export function CartDrawer() {
             >
               <X className="w-5 h-5" />
             </button>
-          </div>
-
-          {/* Free Shipping Progress Bar */}
-          <div className="bg-[#FAF7F2] p-4 border-b border-[#EBE6DD]">
-            <div className="flex items-center justify-between text-xs text-[#4F5A5E] mb-2 font-sans">
-              {amountNeededForFreeShipping > 0 ? (
-                <span>
-                  Add <strong className="text-[#2E3A42] font-semibold">${amountNeededForFreeShipping.toFixed(2)}</strong> more for FREE shipping India-wide!
-                </span>
-              ) : (
-                <span className="flex items-center text-emerald-800 font-medium">
-                  <Sparkles className="w-3.5 h-3.5 mr-1 text-emerald-600" />
-                  You’ve unlocked FREE India-wide shipping!
-                </span>
-              )}
-              <span className="font-mono text-[11px]">${subtotal.toFixed(2)} / ${freeShippingThreshold}</span>
-            </div>
-            <div className="w-full bg-[#E5DFD5] h-2 rounded-full overflow-hidden">
-              <div
-                className="bg-[#E8B7AF] h-full rounded-full transition-all duration-500"
-                style={{ width: `${freeShippingProgress}%` }}
-              />
-            </div>
           </div>
 
           {/* Cart Item List */}
@@ -142,9 +116,7 @@ export function CartDrawer() {
                         </button>
                       </div>
                       <span className="text-xs text-[#7A878B] font-mono ml-auto">
-                        {product.currency === "INR"
-                          ? `₹${(product.price * quantity).toLocaleString("en-IN")}`
-                          : `$${(product.price * quantity).toFixed(2)}`}
+                        {`₹${(product.price * quantity).toLocaleString("en-IN")}`}
                       </span>
                     </div>
                   </div>
@@ -159,7 +131,7 @@ export function CartDrawer() {
               <div className="flex items-center justify-between text-[15px] font-sans">
                 <span className="text-[#4F5A5E]">Subtotal</span>
                 <span className="font-serif text-[20px] text-[#2E3A42] font-medium">
-                  ${subtotal.toFixed(2)} AUD
+                  ₹{subtotal.toLocaleString("en-IN")}
                 </span>
               </div>
               <p className="text-[12px] text-[#7A878B]">
@@ -169,7 +141,7 @@ export function CartDrawer() {
                 onClick={() => alert("Proceeding to secure checkout demo!")}
                 className="w-full bg-[#E8B7AF] hover:bg-[#D9A59C] active:bg-[#C9958C] text-[#34444F] font-sans font-medium py-3 rounded-full text-[15px] transition-all duration-200 shadow-xs active:scale-98"
               >
-                Checkout Now • ${subtotal.toFixed(2)}
+                Checkout Now • ₹{subtotal.toLocaleString("en-IN")}
               </button>
             </div>
           )}

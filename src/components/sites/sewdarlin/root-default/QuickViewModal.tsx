@@ -118,7 +118,7 @@ export function QuickViewModal() {
                         <span>Added to Bag!</span>
                       </>
                     ) : (
-                      <span>Add to Cart • ${(quickViewProduct.price * qty).toFixed(2)}</span>
+                      <span>Add to Cart • ₹{(quickViewProduct.price * qty).toLocaleString("en-IN")}</span>
                     )}
                   </button>
                 </div>

@@ -23,7 +23,7 @@ export function FloatingChatButton() {
     setTimeout(() => {
       let reply = "Thank you so much for reaching out! We typically respond within an hour. You can also contact us through our Contact Us form.";
       if (text.toLowerCase().includes("ship")) {
-        reply = "We offer FREE tracked shipping across India for orders over $80! Orders are dispatched from Delhi within 2-3 business days.";
+        reply = "We offer tracked shipping across India for all orders. Orders are dispatched from Delhi within 3 to 4 business days.";
       }
       setChatLog((prev) => [...prev, { sender: "bot", text: reply }]);
     }, 600);

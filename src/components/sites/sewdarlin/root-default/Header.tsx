@@ -44,7 +44,7 @@ function TopStrip() {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-8 grid grid-cols-[1fr_auto_1fr] items-center font-sans text-[10px] sm:text-[11px] tracking-[0.14em] uppercase">
         <span aria-hidden="true" />
         <Link href="/#newsletter" className="underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap">
-          Subscribe to newsletter
+          Get your ideas customized
         </Link>
         <div className="flex items-center justify-end gap-4">
           <a
@@ -151,6 +151,13 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="bg-[#FBF9F4] px-5 py-4 border-b border-[#EBE6DD] animate-in slide-in-from-top-2 shadow-md">
             <nav className="flex flex-col space-y-3">
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-[#4F5A5E] hover:text-[#E8B7AF] font-serif text-[19px] tracking-wide border-b border-[#EFEBE4] pb-2"
+              >
+                Home
+              </Link>
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.label}

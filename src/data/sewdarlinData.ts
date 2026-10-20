@@ -552,19 +552,19 @@ export const COLLECTIONS: Collection[] = [
 export const REVIEWS: Review[] = [
   {
     id: "review-1",
-    author: "Lillie",
+    author: "XYZ",
     quote:
       "Literally the most perfect ereader sleeve! The seller was super kind and easy to deal with. They quickly made and sent my custom sized order to ensure it would arrive before Christmas. Would 100% purchase again and recommend to others.",
   },
   {
     id: "review-2",
-    author: "D. McKenzie",
+    author: "XYZ",
     quote:
       "Gorgeous colours and well made. My daughter loves them thank you!",
   },
   {
     id: "review-3",
-    author: "Katie",
+    author: "XYZ",
     quote:
       "Custom made 17 scrunchies for me to gift at our hens party giveaway. They were made to great quality, shipped quickly and I’ve had so many compliments - the girls all loved them!",
   },

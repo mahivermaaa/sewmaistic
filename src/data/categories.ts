@@ -52,6 +52,9 @@ export const CATEGORIES: CategoryDef[] = [
   { slug: "rodeo-collection", title: "Rodeo Collection", filter: (p) => WESTERN.test(p.title) || WESTERN.test(p.id) },
   { slug: "scrunchies", title: "Scrunchies", filter: (p) => p.category === "Scrunchies" },
   { slug: "sale", title: "Sale", filter: () => false },
+  { slug: "dresses", title: "Dresses", filter: (p) => /dress/i.test(p.title) },
+  { slug: "tops", title: "Tops", filter: (p) => /\b(top|tee|camisole|tank)\b/i.test(p.title) },
+  { slug: "clay-art", title: "Clay Art", filter: () => false },
   // Top-level homepage collections
   { slug: "cosplay-costumes", title: "Cosplay Costumes", filter: (p) => COSPLAY_COSTUMES.some((c) => c.id === p.id) },
   { slug: "thrift-store", title: "Thrift Store", filter: (p) => THRIFT_STORE.some((t) => t.id === p.id) },
@@ -64,8 +67,7 @@ export const CATEGORIES: CategoryDef[] = [
 
 // Sidebar "Browse by" list (same order as the reference design)
 export const BROWSE_SLUGS = [
-  "all-products", "bags", "bows", "boot-bows", "fan-favourites", "home-goods",
-  "kindle-book-essentials", "new-arrivals", "rodeo-collection", "scrunchies", "sale",
+  "all-products", "bags", "dresses", "tops", "cosplay-costumes", "clay-art", "little-somethings", "sale",
 ];
 
 export function getCategory(slug: string) {

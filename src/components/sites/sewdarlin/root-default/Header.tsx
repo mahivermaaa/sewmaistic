@@ -106,7 +106,7 @@ export function Header() {
           <Link href="/" aria-label="Sewmaistic home" className="justify-self-center pt-3">
             <span className="relative block text-center leading-none select-none">
               <span
-                className="absolute -top-4 left-1/2 -translate-x-1/2 text-[28px] leading-none text-[#E8B7AF] pointer-events-none"
+                className="absolute -top-4 left-1/2 -translate-x-1/2 text-[28px] leading-none text-black pointer-events-none"
                 style={{ fontFamily: "var(--font-script), cursive" }}
               >
                 Sew
@@ -198,7 +198,7 @@ export function Header() {
             <Link href="/" aria-label="Sewmaistic home" className="justify-self-center pt-3">
               <span className="relative block text-center leading-none select-none">
                 <span
-                  className="absolute -top-5 left-1/2 -translate-x-1/2 text-[38px] leading-none text-[#E8B7AF] pointer-events-none"
+                  className="absolute -top-5 left-1/2 -translate-x-1/2 text-[38px] leading-none text-black pointer-events-none"
                   style={{ fontFamily: "var(--font-script), cursive" }}
                 >
                   Sew

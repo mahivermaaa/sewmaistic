@@ -99,6 +99,19 @@ export function CheckoutModal({ onClose }: { onClose: () => void }) {
         description: "Handmade with love, Delhi",
         prefill: { name: form.name, email: form.email, contact: phone },
         theme: { color: "#000000" },
+        // Only UPI and Cards: hide EMI, Netbanking, Wallet and Pay Later.
+        method: { upi: true, card: true, netbanking: false, wallet: false, emi: false, paylater: false },
+        config: {
+          display: {
+            blocks: {
+              upi: { name: "Pay via UPI", instruments: [{ method: "upi" }] },
+              card: { name: "Pay via Card", instruments: [{ method: "card" }] },
+            },
+            hide: [{ method: "emi" }, { method: "netbanking" }, { method: "wallet" }, { method: "paylater" }],
+            sequence: ["block.upi", "block.card"],
+            preferences: { show_default_blocks: false },
+          },
+        },
         modal: { ondismiss: () => setBusy(false) },
         handler: async (resp: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string }) => {
           try {

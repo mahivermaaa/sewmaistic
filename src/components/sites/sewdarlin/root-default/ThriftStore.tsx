@@ -15,7 +15,7 @@ const SLOTS = [
   { top: "58%", left: "52%", w: "46%", rot: -3 },
 ];
 
-const STRIPES = "repeating-linear-gradient(90deg, #FBF3EE 0 16px, #F6E5DE 16px 32px)";
+const STRIPES = "repeating-linear-gradient(90deg, #FFFFFF 0 16px, #F0F0F0 16px 32px)";
 
 export function ThriftStore() {
   const { setQuickViewProduct } = useCart();
@@ -31,7 +31,7 @@ export function ThriftStore() {
         <div className="max-w-[800px] mx-auto px-4 sm:px-8 pt-6 sm:pt-8 pb-7 sm:pb-9">
         {/* Title (links to the Thrift Store page) */}
         <div className="text-center mb-4 sm:mb-6">
-          <h2 className="font-serif text-[34px] sm:text-[44px] text-[#34444F] leading-none tracking-tight">
+          <h2 className="font-serif text-[34px] sm:text-[44px] text-black leading-none tracking-tight">
             <Link href="/category/thrift-store" className="hover:text-black transition-colors">
               Thrift <span className="uppercase tracking-[0.04em]">Store</span>
             </Link>
@@ -83,7 +83,7 @@ export function ThriftStore() {
             </div>
 
             {/* Right: selected piece with numbered tabs */}
-            <div className="bg-[#F1DDD6] p-3 sm:p-4 flex gap-3 sm:gap-4 rounded-sm">
+            <div className="bg-[#E8E8E8] p-3 sm:p-4 flex gap-3 sm:gap-4 rounded-sm">
               <div className="flex-1 min-w-0 flex flex-col">
                 <button
                   type="button"
@@ -100,7 +100,7 @@ export function ThriftStore() {
                   />
                 </button>
                 <div className="mt-2 text-center">
-                  <h3 className="font-serif text-[16px] sm:text-[18px] text-[#34444F] leading-snug">{current.title}</h3>
+                  <h3 className="font-serif text-[16px] sm:text-[18px] text-black leading-snug">{current.title}</h3>
                   <p className="font-serif text-[16px] text-[#DC2626] mt-0.5">{current.formattedPrice}</p>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export function ThriftStore() {
                     className={`h-9 sm:h-10 font-sans text-[10px] sm:text-[11px] tracking-wider transition-colors ${
                       i === active
                         ? "bg-black text-white"
-                        : "bg-white text-[#4F5A5E] hover:bg-[#FBF3EE]"
+                        : "bg-white text-[#4F5A5E] hover:bg-[#EDEDED]"
                     }`}
                   >
                     {String(i + 1).padStart(2, "0")}
@@ -131,7 +131,7 @@ export function ThriftStore() {
         <div className="mt-5 sm:mt-7 flex justify-center">
           <Link
             href="/category/thrift-store"
-            className="inline-block px-10 sm:px-14 py-3 border border-[#4F5A5E]/70 bg-white text-[#34444F] font-serif text-[15px] sm:text-[16px] tracking-[0.22em] uppercase hover:bg-[#FBF3EE] transition"
+            className="inline-block px-10 sm:px-14 py-3 border border-black bg-black text-white font-serif text-[15px] sm:text-[16px] tracking-[0.22em] uppercase hover:bg-[#262626] transition"
           >
             Explore more
           </Link>

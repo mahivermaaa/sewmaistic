@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 
@@ -34,21 +33,20 @@ export function NewsletterSection() {
             className="hover:scale-110 transition-transform duration-200"
             aria-label="Instagram"
           >
-            <div className="w-[38px] h-[38px] relative rounded-[10px] overflow-hidden">
-              <Image
-                src="/sites/sewdarlin/root-default/icon-instagram.png"
-                alt="Instagram"
-                fill
-                className="object-cover"
-              />
+            <div className="w-[38px] h-[38px] rounded-[10px] bg-black flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.8" fill="white" stroke="none" />
+              </svg>
             </div>
           </Link>
           <a
-            href="mailto:hello@sewmaistic.com"
+            href="mailto:sumaistic01@gmail.com"
             className="hover:scale-110 transition-transform duration-200"
             aria-label="Email"
           >
-            <div className="w-[38px] h-[38px] rounded-[10px] bg-[#FF0069] flex items-center justify-center">
+            <div className="w-[38px] h-[38px] rounded-[10px] bg-black flex items-center justify-center">
               <Mail className="w-5 h-5 text-white" strokeWidth={2} />
             </div>
           </a>

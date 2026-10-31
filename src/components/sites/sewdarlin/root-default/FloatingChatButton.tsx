@@ -83,7 +83,7 @@ export function FloatingChatButton() {
               </button>
             ))}
             <a
-              href="mailto:hello@sewmaistic.com"
+              href="mailto:sumaistic01@gmail.com"
               className="text-[11px] bg-[#F2ECE1] hover:bg-[#E8E0D2] text-[#4F5A5E] px-2.5 py-1 rounded-full transition-colors"
             >
               Mail us

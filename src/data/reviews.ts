@@ -9,17 +9,15 @@ export interface ProductReviewData {
 // "strawberry-hair-bow": { text: "…customer's own words…", author: "A.B.", rating: 5 },
 export const PRODUCT_REVIEWS: Record<string, ProductReviewData> = {};
 
-// DEMO ONLY: when true, products without a real review show a placeholder
-// clearly labelled "Sample review". Set to false before the site goes live.
+// DEMO ONLY: when true, products without a real review show a lorem ipsum
+// placeholder. Set to false before the site goes live.
 export const SHOW_SAMPLE_REVIEWS = true;
 
 export const SAMPLE_REVIEW_POOL: { text: string; rating: number }[] = [
-  { text: "Lovely stitching, feels sturdy.", rating: 5 },
-  { text: "Colours look just like the photos.", rating: 5 },
-  { text: "Cute and well made.", rating: 5 },
-  { text: "Great quality for the price.", rating: 4 },
-  { text: "Soft fabric, neat finish.", rating: 5 },
-  { text: "Arrived well packed.", rating: 4 },
-  { text: "Perfect gift idea.", rating: 5 },
-  { text: "Looks even better in person.", rating: 5 },
+  { text: "Lorem ipsum dolor sit amet.", rating: 5 },
+  { text: "Consectetur adipiscing elit.", rating: 5 },
+  { text: "Sed do eiusmod tempor.", rating: 5 },
+  { text: "Ut enim ad minim veniam.", rating: 5 },
+  { text: "Duis aute irure dolor.", rating: 5 },
+  { text: "Excepteur sint occaecat.", rating: 5 },
 ];

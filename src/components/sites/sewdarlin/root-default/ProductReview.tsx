@@ -11,7 +11,7 @@ function pickSample(id: string) {
 export function ProductReview({ productId, productTitle }: { productId: string; productTitle: string }) {
   const real = PRODUCT_REVIEWS[productId];
   const sample = !real && SHOW_SAMPLE_REVIEWS ? pickSample(productId) : null;
-  const review = real ?? (sample && { ...sample, author: "Sample review" });
+  const review = real ?? (sample && { ...sample, author: "Lorem Ipsum" });
   if (!review) return null;
 
   return (

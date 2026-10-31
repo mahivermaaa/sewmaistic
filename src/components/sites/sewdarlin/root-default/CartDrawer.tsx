@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { X, Plus, Minus, Trash2, ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { CheckoutModal } from "./CheckoutModal";
 
 export function CartDrawer() {
   const {
@@ -14,6 +15,8 @@ export function CartDrawer() {
     removeFromCart,
     subtotal,
   } = useCart();
+
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   if (!isCartOpen) return null;
 
@@ -138,7 +141,7 @@ export function CartDrawer() {
                 Taxes and shipping calculated at checkout.
               </p>
               <button
-                onClick={() => alert("Proceeding to secure checkout demo!")}
+                onClick={() => setCheckoutOpen(true)}
                 className="w-full bg-black hover:bg-[#262626] active:bg-[#404040] text-white font-sans font-medium py-3 rounded-full text-[15px] transition-all duration-200 shadow-xs active:scale-98"
               >
                 Checkout Now • ₹{subtotal.toLocaleString("en-IN")}
@@ -147,6 +150,7 @@ export function CartDrawer() {
           )}
         </div>
       </div>
+      {checkoutOpen && <CheckoutModal onClose={() => setCheckoutOpen(false)} />}
     </div>
   );
 }

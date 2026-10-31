@@ -8,6 +8,7 @@ interface CartContextType {
   addToCart: (product: Product, quantity?: number) => void;
   removeFromCart: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
+  clearCart: () => void;
   isCartOpen: boolean;
   setIsCartOpen: (open: boolean) => void;
   quickViewProduct: Product | null;
@@ -65,6 +66,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     );
   };
 
+  const clearCart = () => setCart([]);
+
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
   const subtotal = cart.reduce(
     (total, item) => total + item.product.price * item.quantity,
@@ -82,6 +85,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         addToCart,
         removeFromCart,
         updateQuantity,
+        clearCart,
         isCartOpen,
         setIsCartOpen,
         quickViewProduct,

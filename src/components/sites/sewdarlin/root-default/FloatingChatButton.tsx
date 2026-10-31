@@ -61,7 +61,7 @@ export function FloatingChatButton() {
                 <div
                   className={`max-w-[82%] p-3 rounded-xl leading-relaxed ${
                     item.sender === "user"
-                      ? "bg-[#E8B7AF] text-[#34444F] rounded-br-none"
+                      ? "bg-black text-white rounded-br-none"
                       : "bg-white text-[#4F5A5E] border border-[#EBE6DD] rounded-bl-none shadow-2xs"
                   }`}
                 >
@@ -102,7 +102,7 @@ export function FloatingChatButton() {
             />
             <button
               onClick={() => handleSend()}
-              className="p-1.5 rounded-full bg-[#E8B7AF] hover:bg-[#D9A59C] text-[#34444F] transition-colors"
+              className="p-1.5 rounded-full bg-black hover:bg-[#262626] text-white transition-colors"
             >
               <Send className="w-3.5 h-3.5" />
             </button>

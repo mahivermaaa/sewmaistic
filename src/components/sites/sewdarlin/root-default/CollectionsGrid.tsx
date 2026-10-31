@@ -56,7 +56,7 @@ export function CollectionsGrid() {
             <div className="mt-3.5 w-full flex justify-center">
               <Link
                 href={col.link}
-                className="inline-block px-5 sm:px-6 py-2 rounded-full bg-[#D8A7A7] hover:bg-[#C89696] active:bg-[#B88585] text-[#34444F] font-serif text-[14px] sm:text-[15px] transition-all duration-200 text-center shadow-2xs hover:shadow-xs active:scale-95 whitespace-nowrap"
+                className="inline-block px-5 sm:px-6 py-2 rounded-full bg-black hover:bg-[#262626] active:bg-[#404040] text-white font-serif text-[14px] sm:text-[15px] transition-all duration-200 text-center shadow-2xs hover:shadow-xs active:scale-95 whitespace-nowrap"
               >
                 {col.buttonText}
               </Link>

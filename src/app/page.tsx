@@ -17,7 +17,7 @@ import { DiscountPopup } from "@/components/sites/sewdarlin/root-default/Discoun
 export default function HomePage() {
   return (
     <CartProvider>
-      <main className="min-h-screen bg-[#FBF9F4] text-[#4F5A5E] flex flex-col font-sans selection:bg-[#E8B7AF]/30 selection:text-[#2E3A42]">
+      <main className="min-h-screen bg-[#FBF9F4] text-[#4F5A5E] flex flex-col font-sans selection:bg-black selection:text-white">
         {/* Brand Header with Navigation and Search/Cart Triggers */}
         <Header />
 

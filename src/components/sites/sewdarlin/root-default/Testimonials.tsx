@@ -30,7 +30,7 @@ export function Testimonials() {
             <span aria-hidden className="absolute -bottom-9 right-3 font-serif font-bold text-[60px] sm:text-[84px] leading-none text-[#F6DAD5] select-none">”</span>
 
             {/* Avatar */}
-            <div className="absolute -top-6 sm:-top-8 left-1/2 -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 rounded-full border-4 border-white bg-[#E8B7AF] flex items-center justify-center font-serif text-[26px] text-white shadow-sm">
+            <div className="absolute -top-6 sm:-top-8 left-1/2 -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 rounded-full border-4 border-white bg-black flex items-center justify-center font-serif text-[26px] text-white shadow-sm">
               {review.author.replace(/^D\.\s*/, "").charAt(0)}
             </div>
 

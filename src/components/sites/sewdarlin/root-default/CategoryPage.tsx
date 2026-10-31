@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/types/sewdarlin";
 import { useCart } from "@/context/CartContext";
+import { ProductReview } from "./ProductReview";
 
 interface Props {
   slug: string;
@@ -36,7 +37,7 @@ export function CategoryPage({ slug, title, products, browse }: Props) {
             <li key={c.slug}>
               <Link
                 href={`/category/${c.slug}`}
-                className={`hover:text-[#E8B7AF] transition-colors ${
+                className={`hover:text-black transition-colors ${
                   c.slug === slug ? "underline underline-offset-4 text-[#2E3A42]" : ""
                 }`}
               >
@@ -76,7 +77,7 @@ export function CategoryPage({ slug, title, products, browse }: Props) {
             <p className="mt-2 text-[15px] opacity-80">New pieces are on their way — check back soon.</p>
             <Link
               href="/category/all-products"
-              className="inline-block mt-6 px-6 py-2 bg-[#E8B7AF] hover:bg-[#D9A59C] text-[#4F5A5E] transition-colors"
+              className="inline-block mt-6 px-6 py-2 bg-black hover:bg-[#262626] text-white transition-colors"
             >
               Shop All Products
             </Link>
@@ -99,7 +100,7 @@ export function CategoryPage({ slug, title, products, browse }: Props) {
                   />
                 </button>
                 <h3 className="mt-4 font-serif text-[17px] text-[#4F5A5E] leading-snug px-1">{p.title}</h3>
-                <p className="mt-2 font-serif text-[16px] text-[#4F5A5E]">{p.formattedPrice}</p>
+                <p className="mt-2 font-serif text-[16px] text-[#DC2626]">{p.formattedPrice}</p>
                 <div className="mt-auto pt-5">
                   {p.outOfStock ? (
                     <button
@@ -111,12 +112,13 @@ export function CategoryPage({ slug, title, products, browse }: Props) {
                   ) : (
                     <button
                       onClick={() => addToCart(p, 1)}
-                      className="px-5 py-2.5 bg-[#E8B7AF] hover:bg-[#D9A59C] active:bg-[#C9958C] text-[#4F5A5E] font-serif text-[16px] transition-colors"
+                      className="px-5 py-2.5 bg-black hover:bg-[#262626] active:bg-[#404040] text-white font-serif text-[16px] transition-colors"
                     >
                       Add to Cart
                     </button>
                   )}
                 </div>
+                <ProductReview productId={p.id} productTitle={p.title} />
               </div>
             ))}
           </div>

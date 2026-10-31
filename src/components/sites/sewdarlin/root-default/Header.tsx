@@ -40,7 +40,7 @@ function MarqueeBar() {
 // Thin pink strip above the navigation: newsletter link + Instagram / email icons
 function TopStrip() {
   return (
-    <div className="w-full bg-[#E8B7AF] text-[#34444F]">
+    <div className="w-full bg-black text-white">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-8 grid grid-cols-[1fr_auto_1fr] items-center font-sans text-[10px] sm:text-[11px] tracking-[0.14em] uppercase">
         <span aria-hidden="true" />
         <Link href="/#newsletter" className="underline underline-offset-4 hover:opacity-70 transition-opacity whitespace-nowrap">
@@ -154,7 +154,7 @@ export function Header() {
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-[#4F5A5E] hover:text-[#E8B7AF] font-serif text-[19px] tracking-wide border-b border-[#EFEBE4] pb-2"
+                className="text-[#4F5A5E] hover:text-black font-serif text-[19px] tracking-wide border-b border-[#EFEBE4] pb-2"
               >
                 Home
               </Link>
@@ -163,7 +163,7 @@ export function Header() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-[#4F5A5E] hover:text-[#E8B7AF] font-serif text-[19px] tracking-wide border-b border-[#EFEBE4] pb-2 last:border-0"
+                  className="text-[#4F5A5E] hover:text-black font-serif text-[19px] tracking-wide border-b border-[#EFEBE4] pb-2 last:border-0"
                 >
                   {link.label}
                 </Link>
@@ -186,7 +186,7 @@ export function Header() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-[#4F5A5E] hover:text-[#E8B7AF] transition-colors font-serif text-[15px] xl:text-[17px] tracking-wide whitespace-nowrap"
+                  className="text-[#4F5A5E] hover:text-black transition-colors font-serif text-[15px] xl:text-[17px] tracking-wide whitespace-nowrap"
                 >
                   {link.label}
                 </Link>
@@ -218,7 +218,7 @@ export function Header() {
               >
                 <ShoppingBag className="w-[22px] h-[22px]" strokeWidth={1.8} />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[#E8B7AF] text-white text-[11px] font-medium w-5 h-5 rounded-full flex items-center justify-center animate-in zoom-in-50">
+                  <span className="absolute -top-1 -right-1 bg-black text-white text-[11px] font-medium w-5 h-5 rounded-full flex items-center justify-center animate-in zoom-in-50">
                     {cartCount}
                   </span>
                 )}
@@ -240,7 +240,7 @@ export function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[#4F5A5E] hover:text-[#E8B7AF] transition-colors font-serif text-[16px] tracking-wide whitespace-nowrap"
+                className="text-[#4F5A5E] hover:text-black transition-colors font-serif text-[16px] tracking-wide whitespace-nowrap"
               >
                 {link.label}
               </Link>

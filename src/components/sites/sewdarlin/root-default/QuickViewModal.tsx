@@ -65,7 +65,7 @@ export function QuickViewModal() {
               <h2 className="font-serif text-[24px] sm:text-[28px] text-[#2E3A42] leading-tight mt-1 mb-2">
                 {quickViewProduct.title}
               </h2>
-              <div className="text-[20px] font-sans text-[#4F5A5E] font-medium mb-4">
+              <div className="text-[20px] font-sans text-[#DC2626] font-medium mb-4">
                 {quickViewProduct.formattedPrice}
               </div>
 
@@ -110,7 +110,7 @@ export function QuickViewModal() {
                   {/* Add button */}
                   <button
                     onClick={handleAdd}
-                    className="flex-1 bg-[#E8B7AF] hover:bg-[#D9A59C] active:bg-[#C9958C] text-[#34444F] font-sans py-2.5 px-6 rounded-full text-[14px] font-medium transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-98 flex items-center justify-center space-x-2"
+                    className="flex-1 bg-black hover:bg-[#262626] active:bg-[#404040] text-white font-sans py-2.5 px-6 rounded-full text-[14px] font-medium transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-98 flex items-center justify-center space-x-2"
                   >
                     {added ? (
                       <>

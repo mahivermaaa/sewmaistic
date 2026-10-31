@@ -62,7 +62,7 @@ export function DiscountPopup() {
           />
         </div>
 
-        <span className="inline-flex items-center text-xs tracking-widest uppercase font-serif text-[#E8B7AF] font-semibold mb-2">
+        <span className="inline-flex items-center text-xs tracking-widest uppercase font-serif text-black font-semibold mb-2">
           ✦ Be an Insider ✦
         </span>
 
@@ -89,7 +89,7 @@ export function DiscountPopup() {
             />
             <button
               type="submit"
-              className="w-full bg-[#E8B7AF] hover:bg-[#D9A59C] text-[#34444F] font-medium py-2.5 rounded-full text-sm transition-all shadow-2xs hover:shadow-xs active:scale-98"
+              className="w-full bg-black hover:bg-[#262626] text-white font-medium py-2.5 rounded-full text-sm transition-all shadow-2xs hover:shadow-xs active:scale-98"
             >
               Keep Me in the Loop
             </button>

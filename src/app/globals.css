@@ -15,8 +15,8 @@
   --color-slate-blue: #B0C2D1;
   --color-slate-navy: #34444F;
   --color-slate-dark: #4F5A5E;
-  --color-dusty-rose: #E8B7AF;
-  --color-dusty-rose-hover: #D9A59C;
+  --color-dusty-rose: #000000;
+  --color-dusty-rose-hover: #262626;
   --color-mauve-rose: #D5B3B3;
   --color-footer-slate: #667073;
 
@@ -54,18 +54,18 @@
   --card-foreground: #4F5A5E;
   --popover: #FFFFFF;
   --popover-foreground: #4F5A5E;
-  --primary: #E8B7AF;
+  --primary: #000000;
   --primary-foreground: #FFFFFF;
   --secondary: #B0C2D1;
   --secondary-foreground: #34444F;
   --muted: #F2EFE9;
   --muted-foreground: #7E8C91;
-  --accent: #E8B7AF;
+  --accent: #000000;
   --accent-foreground: #FFFFFF;
   --destructive: #ef4444;
   --border: #E8E3DB;
   --input: #E8E3DB;
-  --ring: #E8B7AF;
+  --ring: #000000;
   --radius: 9999px;
 }
 

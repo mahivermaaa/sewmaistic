@@ -56,7 +56,7 @@ export function CartDrawer() {
                 </p>
                 <button
                   onClick={() => setIsCartOpen(false)}
-                  className="bg-[#E8B7AF] hover:bg-[#D9A59C] text-[#34444F] font-sans px-6 py-2.5 rounded-full text-[13px] transition-colors shadow-2xs"
+                  className="bg-black hover:bg-[#262626] text-white font-sans px-6 py-2.5 rounded-full text-[13px] transition-colors shadow-2xs"
                 >
                   Start Shopping
                 </button>
@@ -91,7 +91,7 @@ export function CartDrawer() {
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
-                      <p className="text-[13px] text-[#4F5A5E] mt-0.5">
+                      <p className="text-[13px] text-[#DC2626] mt-0.5">
                         {product.formattedPrice}
                       </p>
                     </div>
@@ -139,7 +139,7 @@ export function CartDrawer() {
               </p>
               <button
                 onClick={() => alert("Proceeding to secure checkout demo!")}
-                className="w-full bg-[#E8B7AF] hover:bg-[#D9A59C] active:bg-[#C9958C] text-[#34444F] font-sans font-medium py-3 rounded-full text-[15px] transition-all duration-200 shadow-xs active:scale-98"
+                className="w-full bg-black hover:bg-[#262626] active:bg-[#404040] text-white font-sans font-medium py-3 rounded-full text-[15px] transition-all duration-200 shadow-xs active:scale-98"
               >
                 Checkout Now • ₹{subtotal.toLocaleString("en-IN")}
               </button>

@@ -32,7 +32,7 @@ export function ThriftStore() {
         {/* Title (links to the Thrift Store page) */}
         <div className="text-center mb-4 sm:mb-6">
           <h2 className="font-serif text-[34px] sm:text-[44px] text-[#34444F] leading-none tracking-tight">
-            <Link href="/category/thrift-store" className="hover:text-[#C9958C] transition-colors">
+            <Link href="/category/thrift-store" className="hover:text-black transition-colors">
               Thrift <span className="uppercase tracking-[0.04em]">Store</span>
             </Link>
           </h2>
@@ -101,7 +101,7 @@ export function ThriftStore() {
                 </button>
                 <div className="mt-2 text-center">
                   <h3 className="font-serif text-[16px] sm:text-[18px] text-[#34444F] leading-snug">{current.title}</h3>
-                  <p className="font-serif text-[16px] text-[#4F5A5E] mt-0.5">{current.formattedPrice}</p>
+                  <p className="font-serif text-[16px] text-[#DC2626] mt-0.5">{current.formattedPrice}</p>
                 </div>
               </div>
 
@@ -115,7 +115,7 @@ export function ThriftStore() {
                     aria-pressed={i === active}
                     className={`h-9 sm:h-10 font-sans text-[10px] sm:text-[11px] tracking-wider transition-colors ${
                       i === active
-                        ? "bg-[#E8B7AF] text-[#34444F]"
+                        ? "bg-black text-white"
                         : "bg-white text-[#4F5A5E] hover:bg-[#FBF3EE]"
                     }`}
                   >

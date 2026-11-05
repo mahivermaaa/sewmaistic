@@ -30,7 +30,7 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sewmaistic.in"),
-  title: "Sewmaistic | country inspired accessories",
+  title: "Sewmaistic",
   description:
     "Sewmaistic — handmade bags, cosplay costumes, thrift finds and little somethings. Small batch designs made in Delhi, India.",
   icons: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     apple: "/sites/sewdarlin/root-default/logo.png",
   },
   openGraph: {
-    title: "Sewmaistic | country inspired accessories",
+    title: "Sewmaistic",
     description:
       "Sewmaistic — handmade bags, cosplay costumes, thrift finds and little somethings. Small batch designs made in Delhi, India.",
     url: "https://sewmaistic.in",

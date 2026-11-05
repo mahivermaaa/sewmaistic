@@ -75,7 +75,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </button>
       )}
 
-      <ProductReview productId={product.id} productTitle={product.title} />
+      <ProductReview productId={product.id} />
     </div>
   );
 }

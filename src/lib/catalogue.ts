@@ -1,5 +1,6 @@
 import { Product } from "@/types/sewdarlin";
 import seed from "@/data/products-seed.json";
+import { CategoryInfo, DEFAULT_CATEGORIES } from "./adminCategories";
 
 // Where products come from:
 //  - Sanity (the client's dashboard) when NEXT_PUBLIC_SANITY_PROJECT_ID is set
@@ -79,4 +80,25 @@ export async function getCatalogue(): Promise<Product[]> {
 export async function getProductById(id: string): Promise<Product | undefined> {
   const all = await getCatalogue();
   return all.find((p) => p.id === id);
+}
+
+// Category list managed from the admin panel (falls back to the default list).
+export async function getCategories(): Promise<CategoryInfo[]> {
+  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+  if (!projectId) return DEFAULT_CATEGORIES;
+  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+  const query = `*[_type == "category" && defined(slug.current) && defined(title)]
+    | order(coalesce(sortOrder, 0) asc, _createdAt asc){ "slug": slug.current, title }`;
+  const url =
+    `https://${projectId}.apicdn.sanity.io/v${API_VERSION}/data/query/${dataset}` +
+    `?query=${encodeURIComponent(query)}`;
+  try {
+    const res = await fetch(url, { next: { revalidate: 60 } });
+    if (!res.ok) throw new Error(`Sanity responded ${res.status}`);
+    const json = (await res.json()) as { result?: CategoryInfo[] };
+    return json.result && json.result.length > 0 ? json.result : DEFAULT_CATEGORIES;
+  } catch (err) {
+    console.error("Could not load categories from Sanity, using the default list:", err);
+    return DEFAULT_CATEGORIES;
+  }
 }

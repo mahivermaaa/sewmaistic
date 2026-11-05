@@ -4,8 +4,30 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { COLLECTIONS } from "@/data/sewdarlinData";
+import { useCatalogue } from "@/context/CatalogueContext";
+import type { CategoryInfo } from "@/lib/adminCategories";
 
-export function CollectionsGrid() {
+// The 5 designed cards stay as they are. A designed card (other than Sale) disappears if its category is
+// deleted in admin, and every other category added in admin gets its own "Shop <name>" card.
+export function CollectionsGrid({ categories }: { categories: CategoryInfo[] }) {
+  const { products } = useCatalogue();
+  const linkOf = (slug: string) => `/category/${slug}`;
+  const sale = COLLECTIONS.find((c) => c.id === "shop-sale");
+  const designed = COLLECTIONS.filter((c) => c.id !== "shop-sale" && categories.some((k) => linkOf(k.slug) === c.link));
+  const added = categories
+    .filter((k) => !COLLECTIONS.some((c) => c.link === linkOf(k.slug)))
+    .map((k) => ({
+      id: `cat-${k.slug}`,
+      title: k.title,
+      buttonText: `Shop ${k.title}`,
+      scriptText: "Shop",
+      displayTitle: k.title,
+      image: products.find((p) => p.category === k.title)?.image ?? "",
+      hasOverlayText: false,
+      link: linkOf(k.slug),
+    }));
+  const cards = [...designed, ...added, ...(sale ? [sale] : [])];
+
   return (
     <section id="collections" className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 py-10 sm:py-16">
       {/* Centered Heading */}
@@ -16,26 +38,28 @@ export function CollectionsGrid() {
       </div>
 
       {/* 5 Collection Cards Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-6 justify-center">
-        {COLLECTIONS.map((col, index) => (
+      <div className="flex flex-wrap justify-center gap-5 sm:gap-6">
+        {cards.map((col) => (
           <div
             key={col.id}
-            className={`flex flex-col items-center group ${
-              index === 4 ? "col-span-2 sm:col-span-1" : ""
-            }`}
+            className="flex flex-col items-center group w-[calc(50%-10px)] max-sm:[&:last-child:nth-child(odd)]:w-full sm:w-[calc(33.333%-16px)] lg:w-[calc(20%-19.2px)]"
           >
             {/* Card Image Box */}
             <Link
               href={col.link}
               className="relative w-full aspect-square max-w-[260px] bg-white rounded-xs overflow-hidden shadow-2xs group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-300 border border-[#ECE7DE] flex items-center justify-center"
             >
-              <Image
-                src={col.image}
-                alt={col.title}
-                fill
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-              />
+              {col.image ? (
+                <Image
+                  src={col.image}
+                  alt={col.title}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-[#EFEAE0]" />
+              )}
 
               {/* Text overlay for items that don't have text printed inside the asset */}
               {!col.hasOverlayText && (

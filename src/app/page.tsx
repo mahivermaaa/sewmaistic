@@ -12,8 +12,10 @@ import { CartDrawer } from "@/components/sites/sewdarlin/root-default/CartDrawer
 import { QuickViewModal } from "@/components/sites/sewdarlin/root-default/QuickViewModal";
 import { SearchModal } from "@/components/sites/sewdarlin/root-default/SearchModal";
 import { DiscountPopup } from "@/components/sites/sewdarlin/root-default/DiscountPopup";
+import { getCategories } from "@/lib/catalogue";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const categories = await getCategories();
   return (
     <CartProvider>
       <main className="min-h-screen bg-[#FBF9F4] text-[#4F5A5E] flex flex-col font-sans selection:bg-black selection:text-white">
@@ -30,7 +32,7 @@ export default function HomePage() {
         <ThriftStore />
 
         {/* Shop By Collection Grid */}
-        <CollectionsGrid />
+        <CollectionsGrid categories={categories} />
 
         {/* Testimonials and Customer Praise */}
         <Testimonials />

@@ -8,7 +8,7 @@ function pickSample(id: string) {
   return SAMPLE_REVIEW_POOL[h % SAMPLE_REVIEW_POOL.length];
 }
 
-export function ProductReview({ productId }: { productId: string }) {
+export function ProductReview({ productId }: { productId: string; productTitle?: string }) {
   const real = PRODUCT_REVIEWS[productId];
   const sample = !real && SHOW_SAMPLE_REVIEWS ? pickSample(productId) : null;
   const review = real ?? (sample && { ...sample });

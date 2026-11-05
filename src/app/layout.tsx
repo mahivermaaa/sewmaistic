@@ -1,31 +1,31 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Sora, Alex_Brush, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { getCatalogue } from "@/lib/catalogue";
 import { CatalogueProvider } from "@/context/CatalogueContext";
 
-const cormorant = Cormorant_Garamond({
+// Fonts are bundled with the site (src/app/fonts) so the build never needs to download them.
+const cormorant = localFont({
   variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "./fonts/cormorant-garamond-latin-wght-normal.woff2", style: "normal", weight: "300 700" },
+    { path: "./fonts/cormorant-garamond-latin-wght-italic.woff2", style: "italic", weight: "300 700" },
+  ],
 });
 
-const sora = Sora({
+const sora = localFont({
   variable: "--font-sora",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  src: [{ path: "./fonts/sora-latin-wght-normal.woff2", style: "normal", weight: "100 800" }],
 });
 
-const alexBrush = Alex_Brush({
+const alexBrush = localFont({
   variable: "--font-script",
-  subsets: ["latin"],
-  weight: ["400"],
+  src: [{ path: "./fonts/alex-brush-latin-400-normal.woff2", style: "normal", weight: "400" }],
 });
 
-const inter = Inter({
+const inter = localFont({
   variable: "--font-inter",
-  subsets: ["latin"],
+  src: [{ path: "./fonts/inter-latin-wght-normal.woff2", style: "normal", weight: "100 900" }],
 });
 
 export const metadata: Metadata = {

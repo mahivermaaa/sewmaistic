@@ -11,7 +11,6 @@ import { Footer } from "@/components/sites/sewdarlin/root-default/Footer";
 import { CartDrawer } from "@/components/sites/sewdarlin/root-default/CartDrawer";
 import { QuickViewModal } from "@/components/sites/sewdarlin/root-default/QuickViewModal";
 import { SearchModal } from "@/components/sites/sewdarlin/root-default/SearchModal";
-import { FloatingChatButton } from "@/components/sites/sewdarlin/root-default/FloatingChatButton";
 import { DiscountPopup } from "@/components/sites/sewdarlin/root-default/DiscountPopup";
 
 export default function HomePage() {
@@ -46,7 +45,6 @@ export default function HomePage() {
         <CartDrawer />
         <QuickViewModal />
         <SearchModal />
-        <FloatingChatButton />
         <DiscountPopup />
       </main>
     </CartProvider>

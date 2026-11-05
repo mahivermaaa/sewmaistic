@@ -7,7 +7,6 @@ import { Footer } from "@/components/sites/sewdarlin/root-default/Footer";
 import { CartDrawer } from "@/components/sites/sewdarlin/root-default/CartDrawer";
 import { QuickViewModal } from "@/components/sites/sewdarlin/root-default/QuickViewModal";
 import { SearchModal } from "@/components/sites/sewdarlin/root-default/SearchModal";
-import { FloatingChatButton } from "@/components/sites/sewdarlin/root-default/FloatingChatButton";
 import { CategoryPage } from "@/components/sites/sewdarlin/root-default/CategoryPage";
 import { CATEGORIES, BROWSE_SLUGS, getCategory, getCategoryProducts } from "@/data/categories";
 import { getCatalogue, getCategories } from "@/lib/catalogue";
@@ -48,7 +47,6 @@ export default async function CategoryRoute({ params }: { params: Promise<{ slug
         <CartDrawer />
         <QuickViewModal />
         <SearchModal />
-        <FloatingChatButton />
       </main>
     </CartProvider>
   );

@@ -11,7 +11,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#667073] text-white py-12 px-4 sm:px-8">
+    <footer className="w-full bg-black text-white py-12 px-4 sm:px-8">
       <div className="max-w-[1240px] mx-auto flex flex-col items-center">
         {/* Policy Links */}
         <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-10 text-center">

@@ -29,9 +29,10 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sewmaistic.in"),
   title: "Sewmaistic | country inspired accessories",
   description:
-    "Sewmaistic offers handmade scrunchies, hair bows, and Kindle cases designed with cottagecore charm and a touch of country style. Small batch designs created in Delhi, India.",
+    "Sewmaistic — handmade bags, cosplay costumes, thrift finds and little somethings. Small batch designs made in Delhi, India.",
   icons: {
     icon: "/sites/sewdarlin/root-default/logo.png",
     apple: "/sites/sewdarlin/root-default/logo.png",
@@ -39,8 +40,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sewmaistic | country inspired accessories",
     description:
-      "Sewmaistic offers handmade scrunchies, hair bows, and Kindle cases designed with cottagecore charm and a touch of country style.",
-    url: "https://www.sewdarlin.com.au",
+      "Sewmaistic — handmade bags, cosplay costumes, thrift finds and little somethings. Small batch designs made in Delhi, India.",
+    url: "https://sewmaistic.in",
     siteName: "Sewmaistic",
     images: [
       {

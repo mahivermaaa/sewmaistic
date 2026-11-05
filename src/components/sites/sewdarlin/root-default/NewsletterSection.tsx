@@ -9,11 +9,30 @@ export function NewsletterSection() {
   const [email, setEmail] = useState("");
   const [wants, setWants] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !firstName || !wants.trim()) return;
-    setSubmitted(true);
+    if (!email || !firstName || !wants.trim() || sending) return;
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("/api/customizations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: firstName, email, wants }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -59,8 +78,8 @@ export function NewsletterSection() {
 
         {submitted ? (
           <div className="bg-[#EBF3EA] border border-[#BFDBB9] text-[#2F5229] rounded-xl p-6 w-full animate-in zoom-in-95">
-            <h4 className="font-serif text-[22px] mb-1">Thank you for joining our circle!</h4>
-            <p className="text-[14px]">You’re officially on our darling list. Check your inbox soon for sweet updates.</p>
+            <h4 className="font-serif text-[22px] mb-1">Thank you, we got your idea!</h4>
+            <p className="text-[14px]">We’ll get back to you on your email soon.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="w-full flex flex-col items-center space-y-4">
@@ -102,11 +121,13 @@ export function NewsletterSection() {
 
             {/* Submit Button */}
             <div className="w-full pt-4">
+              {error && <p className="text-[13px] text-red-700 mb-3">{error}</p>}
               <button
                 type="submit"
+                disabled={sending}
                 className="w-full sm:w-[240px] border border-[#4F5A5E] hover:bg-[#4F5A5E] text-[#4F5A5E] hover:text-white rounded-full py-2.5 px-8 text-[14px] font-sans tracking-wide transition-all duration-300 shadow-2xs hover:shadow-xs"
               >
-                Send
+                {sending ? "Sending..." : "Send"}
               </button>
             </div>
           </form>

@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import { NEW_ARRIVALS } from "@/data/sewdarlinData";
+import { useCatalogue } from "@/context/CatalogueContext";
 import { ProductCarousel } from "./ProductCarousel";
 
 export function NewArrivals() {
+  const { newArrivals } = useCatalogue();
   return (
     <section id="new-arrivals" className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 py-6 sm:py-14">
       {/* Section Title */}
@@ -15,7 +16,7 @@ export function NewArrivals() {
       </div>
 
       {/* Product Carousel */}
-      <ProductCarousel products={NEW_ARRIVALS} />
+      <ProductCarousel products={newArrivals} />
     </section>
   );
 }

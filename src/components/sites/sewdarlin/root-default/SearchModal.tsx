@@ -3,11 +3,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Search, X, ShoppingBag } from "lucide-react";
-import { ALL_PRODUCTS } from "@/data/sewdarlinData";
+import { useCatalogue } from "@/context/CatalogueContext";
 import { useCart } from "@/context/CartContext";
 
 export function SearchModal() {
   const { isSearchOpen, setIsSearchOpen, addToCart, setQuickViewProduct } = useCart();
+  const { products: ALL_PRODUCTS } = useCatalogue();
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 

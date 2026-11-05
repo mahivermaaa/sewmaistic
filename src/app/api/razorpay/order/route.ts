@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getProductById } from "@/lib/catalogue";
+import { getDb } from "@/lib/mongodb";
 
 // Shipping fee in rupees. 0 = free tracked shipping across India.
 const SHIPPING_FEE = 0;
@@ -27,7 +28,7 @@ export async function POST(req: Request) {
   const lines = [];
   let subtotal = 0;
   for (const it of items) {
-    const product = it.id ? getProductById(it.id) : undefined;
+    const product = it.id ? await getProductById(it.id) : undefined;
     const quantity = Number(it.quantity);
     if (!product || !Number.isInteger(quantity) || quantity < 1 || quantity > 20) {
       return NextResponse.json({ error: "A product in your bag is invalid." }, { status: 400 });
@@ -66,6 +67,33 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Could not start the payment. Please try again." }, { status: 502 });
   }
   const order = await rzpRes.json();
+
+  // Save the order (status "pending" until the payment is verified).
+  try {
+    const db = await getDb();
+    await db?.collection("orders").insertOne({
+      razorpayOrderId: order.id,
+      receipt: order.receipt,
+      status: "pending",
+      customer: {
+        name: String(c.name ?? "").slice(0, 100),
+        email: String(c.email ?? "").slice(0, 100),
+        phone: String(c.phone ?? "").slice(0, 20),
+        address: String(c.address ?? "").slice(0, 250),
+        city: String(c.city ?? "").slice(0, 100),
+        state: String(c.state ?? "").slice(0, 100),
+        pincode: String(c.pincode ?? "").slice(0, 10),
+      },
+      items: lines,
+      subtotal,
+      shipping: SHIPPING_FEE,
+      total,
+      currency: "INR",
+      createdAt: new Date(),
+    });
+  } catch (err) {
+    console.error("Could not save order to MongoDB:", err);
+  }
 
   return NextResponse.json({
     orderId: order.id,

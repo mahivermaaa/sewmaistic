@@ -4,10 +4,13 @@ export interface Product {
   price: number;
   formattedPrice: string;
   image: string;
+  images?: string[]; // optional extra photos shown as a gallery in Quick View
   category: string;
   outOfStock?: boolean;
   description?: string;
   badge?: string;
+  isNewArrival?: boolean;
+  isFanFavourite?: boolean;
   currency?: "INR"; // omit for AUD
 }
 

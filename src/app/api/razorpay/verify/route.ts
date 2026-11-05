@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import crypto from "crypto";
+import { getDb } from "@/lib/mongodb";
 
 export async function POST(req: Request) {
   const keySecret = process.env.RAZORPAY_KEY_SECRET;
@@ -27,6 +28,18 @@ export async function POST(req: Request) {
   const a = Buffer.from(expected);
   const b = Buffer.from(razorpay_signature);
   const ok = a.length === b.length && crypto.timingSafeEqual(a, b);
+
+  if (ok) {
+    try {
+      const db = await getDb();
+      await db?.collection("orders").updateOne(
+        { razorpayOrderId: razorpay_order_id },
+        { $set: { status: "paid", razorpayPaymentId: razorpay_payment_id, paidAt: new Date() } }
+      );
+    } catch (err) {
+      console.error("Could not mark order as paid in MongoDB:", err);
+    }
+  }
 
   return NextResponse.json({ ok }, { status: ok ? 200 : 400 });
 }

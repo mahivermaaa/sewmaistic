@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Sora, Alex_Brush, Inter } from "next/font/google";
 import "./globals.css";
+import { getCatalogue } from "@/lib/catalogue";
+import { CatalogueProvider } from "@/context/CatalogueContext";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -52,18 +54,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const products = await getCatalogue();
+
   return (
     <html
       lang="en"
       className={`${cormorant.variable} ${sora.variable} ${alexBrush.variable} ${inter.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-[#FBF9F4] text-[#4F5A5E]">
-        {children}
+        <CatalogueProvider products={products}>{children}</CatalogueProvider>
       </body>
     </html>
   );

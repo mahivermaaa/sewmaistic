@@ -1,16 +1,43 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { X, Plus, Minus, Check, ShieldCheck } from "lucide-react";
+import { X, Plus, Minus, Check, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 export function QuickViewModal() {
   const { quickViewProduct, setQuickViewProduct, addToCart } = useCart();
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
+  const [imgIdx, setImgIdx] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+
+  // Start on the first photo whenever a different product is opened
+  const productId = quickViewProduct?.id;
+  useEffect(() => {
+    setImgIdx(0);
+  }, [productId]);
 
   if (!quickViewProduct) return null;
+
+  const gallery =
+    quickViewProduct.images && quickViewProduct.images.length > 1
+      ? quickViewProduct.images
+      : [quickViewProduct.image];
+  const hasMany = gallery.length > 1;
+  const shown = gallery[Math.min(imgIdx, gallery.length - 1)];
+  const go = (dir: number) => setImgIdx((i) => (i + dir + gallery.length) % gallery.length);
+
+  // Swipe left/right on touch screens
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null || !hasMany) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+  };
 
   const handleAdd = () => {
     addToCart(quickViewProduct, qty);
@@ -42,13 +69,53 @@ export function QuickViewModal() {
 
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Image Container */}
-          <div className="relative aspect-square md:aspect-auto md:h-full min-h-[300px] bg-[#F5F2EB] border-b md:border-b-0 md:border-r border-[#EBE6DD]">
+          <div
+            className="relative aspect-square md:aspect-auto md:h-full min-h-[300px] bg-[#F5F2EB] border-b md:border-b-0 md:border-r border-[#EBE6DD] touch-pan-y"
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+          >
             <Image
-              src={quickViewProduct.image}
+              key={shown}
+              src={shown}
               alt={quickViewProduct.title}
               fill
-              className="object-cover"
+              className="object-cover animate-in fade-in duration-200"
             />
+
+            {hasMany && (
+              <>
+                {/* Arrows (desktop) */}
+                <button
+                  type="button"
+                  onClick={() => go(-1)}
+                  className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 items-center justify-center rounded-full bg-white/85 hover:bg-white text-black shadow-sm transition-colors"
+                  aria-label="Previous photo"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => go(1)}
+                  className="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 items-center justify-center rounded-full bg-white/85 hover:bg-white text-black shadow-sm transition-colors"
+                  aria-label="Next photo"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+
+                {/* Dots (all screens) */}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
+                  {gallery.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setImgIdx(i)}
+                      className={`h-2 rounded-full transition-all ${i === imgIdx ? "w-5 bg-black" : "w-2 bg-black/30"}`}
+                      aria-label={`Show photo ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
             {quickViewProduct.outOfStock && (
               <div className="absolute top-4 left-4 bg-[#667073] text-white text-xs font-sans px-3 py-1 rounded-sm uppercase tracking-wider">
                 Out of Stock

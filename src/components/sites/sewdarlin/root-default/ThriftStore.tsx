@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { THRIFT_STORE } from "@/data/sewdarlinData";
+import { useCatalogue } from "@/context/CatalogueContext";
 import { useCart } from "@/context/CartContext";
 
 // Flat-lay positions for the collage card (percent of the card)
@@ -19,7 +19,8 @@ const STRIPES = "repeating-linear-gradient(90deg, #FFFFFF 0 16px, #F0F0F0 16px 3
 
 export function ThriftStore() {
   const { setQuickViewProduct } = useCart();
-  const items = THRIFT_STORE.slice(0, 5);
+  const { thriftStore } = useCatalogue();
+  const items = thriftStore.slice(0, 5);
   const [active, setActive] = useState(0);
   const current = items[active];
 

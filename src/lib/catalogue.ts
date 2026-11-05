@@ -1,24 +1,82 @@
 import { Product } from "@/types/sewdarlin";
-import {
-  NEW_ARRIVALS,
-  FAN_FAVOURITES,
-  THRIFT_STORE,
-  LIP_BALM_HOLDERS,
-  MORE_BAGS,
-  LITTLE_SOMETHINGS,
-  COSPLAY_COSTUMES,
-} from "@/data/sewdarlinData";
+import seed from "@/data/products-seed.json";
 
-const ALL: Product[] = [
-  ...NEW_ARRIVALS,
-  ...FAN_FAVOURITES,
-  ...THRIFT_STORE,
-  ...LIP_BALM_HOLDERS,
-  ...MORE_BAGS,
-  ...LITTLE_SOMETHINGS,
-  ...COSPLAY_COSTUMES,
-];
+// Where products come from:
+//  - Sanity (the client's dashboard) when NEXT_PUBLIC_SANITY_PROJECT_ID is set
+//  - otherwise (or if Sanity can't be reached) the local copy in products-seed.json
+const SEED = seed as Product[];
 
-export function getProductById(id: string): Product | undefined {
-  return ALL.find((p) => p.id === id);
+const API_VERSION = "2025-01-01";
+
+// Only complete, published products are shown. Order: sortOrder, then newest first.
+const QUERY = `*[_type == "product" && defined(slug.current) && defined(price) && count(images) > 0]
+  | order(coalesce(sortOrder, 0) asc, _createdAt desc){
+    "id": slug.current,
+    title,
+    price,
+    category,
+    description,
+    outOfStock,
+    isNewArrival,
+    isFanFavourite,
+    "images": images[].asset->url
+  }`;
+
+interface SanityProduct {
+  id: string;
+  title: string;
+  price: number;
+  category?: string;
+  description?: string;
+  outOfStock?: boolean;
+  isNewArrival?: boolean;
+  isFanFavourite?: boolean;
+  images: string[];
+}
+
+const toProduct = (p: SanityProduct): Product => {
+  const images = p.images.map((u) => `${u}?w=1200&auto=format`);
+  return {
+    id: p.id,
+    title: p.title,
+    price: p.price,
+    formattedPrice: `₹${p.price.toLocaleString("en-IN")}`,
+    currency: "INR",
+    image: images[0],
+    ...(images.length > 1 ? { images } : {}),
+    category: p.category || "Other",
+    description: p.description || undefined,
+    outOfStock: p.outOfStock || undefined,
+    isNewArrival: !!p.isNewArrival,
+    isFanFavourite: !!p.isFanFavourite,
+  };
+};
+
+export async function getCatalogue(): Promise<Product[]> {
+  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+  if (!projectId) return SEED;
+
+  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+  const url =
+    `https://${projectId}.apicdn.sanity.io/v${API_VERSION}/data/query/${dataset}` +
+    `?query=${encodeURIComponent(QUERY)}`;
+
+  try {
+    // Re-check Sanity at most once a minute, so client edits show up quickly.
+    const res = await fetch(url, { next: { revalidate: 60 } });
+    if (!res.ok) throw new Error(`Sanity responded ${res.status}`);
+    const json = (await res.json()) as { result?: SanityProduct[] };
+    const live = (json.result ?? []).map(toProduct);
+    // Nothing published in Sanity yet (before the first migration) -> keep showing the local copy.
+    return live.length > 0 ? live : SEED;
+  } catch (err) {
+    console.error("Could not load products from Sanity, using the local copy:", err);
+    return SEED;
+  }
+}
+
+// Used by checkout: prices always come from here, never from the browser.
+export async function getProductById(id: string): Promise<Product | undefined> {
+  const all = await getCatalogue();
+  return all.find((p) => p.id === id);
 }

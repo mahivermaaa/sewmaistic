@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import { FAN_FAVOURITES } from "@/data/sewdarlinData";
+import { useCatalogue } from "@/context/CatalogueContext";
 import { ProductCarousel } from "./ProductCarousel";
 
 export function FanFavourites() {
+  const { fanFavourites } = useCatalogue();
   return (
     <section id="fan-favourites" className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 py-8 sm:py-12 border-t border-[#EFEBE4]">
       {/* Section Title */}
@@ -15,7 +16,7 @@ export function FanFavourites() {
       </div>
 
       {/* Product Carousel */}
-      <ProductCarousel products={FAN_FAVOURITES} />
+      <ProductCarousel products={fanFavourites} />
     </section>
   );
 }

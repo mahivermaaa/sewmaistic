@@ -3,57 +3,57 @@
 import React from "react";
 import { REVIEWS } from "@/data/sewdarlinData";
 
+// Card shape: big rounded corners, extra-round bottom-left, with a black shape peeking out behind it.
+const SHAPE = "rounded-[32px] rounded-bl-[64px] rounded-br-[28px]";
+
 export function Testimonials() {
   return (
     <section className="w-full text-[#34444F]">
-      {/* Same width/padding as the sections above so the pink band lines up */}
+      {/* Same width/padding as the sections above */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-8 sm:py-12">
-       <div className="bg-black rounded-[28px] sm:rounded-[36px] pt-7 sm:pt-9 pb-9 sm:pb-16 px-4 sm:px-8">
-      {/* Heading */}
-      <div className="text-center mb-9 sm:mb-16 flex items-end justify-center gap-1 sm:gap-2">
-        <span className="font-sans font-semibold text-[28px] sm:text-[52px] text-white leading-none tracking-tight">
-          feedback
-        </span>
-        <span
-          style={{ fontFamily: "var(--font-script), cursive" }}
-          className="text-[36px] sm:text-[72px] text-[#FBEFEA] leading-none -mb-1"
-        >
-          diaries
-        </span>
-      </div>
+        {/* Heading */}
+        <div className="text-center mb-4 sm:mb-10 flex items-end justify-center gap-1 sm:gap-2">
+          <span className="font-sans font-semibold text-[28px] sm:text-[52px] text-black leading-none tracking-tight">
+            feedback
+          </span>
+          <span
+            style={{ fontFamily: "var(--font-script), cursive" }}
+            className="text-[36px] sm:text-[72px] text-black leading-none -mb-1"
+          >
+            diaries
+          </span>
+        </div>
 
-      <div className="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-        {REVIEWS.map((review) => (
-          <div key={review.id} className="relative bg-white rounded-[24px] sm:rounded-[28px] w-full max-w-[250px] sm:max-w-none mx-auto pt-9 pb-7 px-4 sm:pt-12 sm:pb-10 sm:px-7 text-center shadow-sm">
-            {/* Big quote marks */}
-            <span aria-hidden className="absolute -top-2 left-3 font-serif font-bold text-[60px] sm:text-[84px] leading-none text-black select-none">“</span>
-            <span aria-hidden className="absolute -bottom-9 right-3 font-serif font-bold text-[60px] sm:text-[84px] leading-none text-black select-none">”</span>
+        {/* Phone: swipe sideways. Desktop: 3 across. */}
+        <div className="no-scrollbar max-w-[1240px] mx-auto flex md:grid md:grid-cols-3 gap-7 md:gap-10 overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-12 pb-6 px-3 md:px-3">
+          {REVIEWS.map((review) => (
+            <div key={review.id} className="relative shrink-0 w-[78%] sm:w-[55%] md:w-auto snap-center">
+              {/* Black shape behind the card */}
+              <span aria-hidden className={`absolute inset-0 translate-x-2 -translate-y-2 bg-black ${SHAPE}`} />
 
-            {/* Avatar */}
-            <div className="absolute -top-6 sm:-top-8 left-1/2 -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 rounded-full border-4 border-white bg-black flex items-center justify-center font-serif text-[26px] text-white shadow-sm">
-              {review.author.replace(/^D\.\s*/, "").charAt(0)}
+              <div className={`relative bg-white ${SHAPE} px-5 pt-11 pb-9 text-center shadow-sm`}>
+                {/* Avatar */}
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border-4 border-white bg-black flex items-center justify-center font-serif text-[26px] text-white shadow-sm">
+                  {review.author.replace(/^D\.\s*/, "").charAt(0)}
+                </div>
+
+                <p className="font-sans text-[17px] sm:text-[19px] font-medium text-black">{review.author}</p>
+
+                <div className="flex justify-center gap-1 text-black text-[13px] leading-none mt-1.5" aria-label="5 out of 5 stars">
+                  {"★★★★★".split("").map((s, i) => (
+                    <span key={i}>{s}</span>
+                  ))}
+                </div>
+
+                <span aria-hidden className="block font-serif font-bold text-[46px] leading-[0.8] text-black mt-3 select-none">“</span>
+
+                <p className="font-sans italic text-[13px] sm:text-[14px] leading-relaxed text-[#4F5A5E] mt-1">
+                  {review.quote}
+                </p>
+              </div>
             </div>
-
-            {/* Stars */}
-            <div className="flex justify-center gap-1.5 text-black text-[15px] sm:text-[20px] leading-none mb-3 sm:mb-4" aria-label="5 out of 5 stars">
-              {"★★★★★".split("").map((s, i) => (
-                <span key={i}>{s}</span>
-              ))}
-            </div>
-
-            {/* Review text */}
-            <p className="font-sans text-[11.5px] sm:text-[14px] leading-relaxed text-[#2E3A42] max-w-[320px] mx-auto">
-              {review.quote}
-            </p>
-
-            {/* Author */}
-            <p className="mt-4 sm:mt-5 font-serif text-[14px] sm:text-[18px] font-semibold text-[#2E3A42] tracking-wide">
-              — {review.author}
-            </p>
-          </div>
-        ))}
-      </div>
-       </div>
+          ))}
+        </div>
       </div>
     </section>
   );

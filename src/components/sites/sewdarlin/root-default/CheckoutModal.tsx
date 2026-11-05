@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { X, Printer, Check } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
@@ -21,9 +21,12 @@ interface Invoice {
   lines: Line[];
   subtotal: number;
   shipping: number;
+  courier?: string;
   total: number;
   customer: Customer;
 }
+
+interface Quote { shipping: number; courier?: string; days?: number }
 
 const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
 const esc = (s: string) =>
@@ -54,6 +57,39 @@ export function CheckoutModal({ onClose }: { onClose: () => void }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [invoice, setInvoice] = useState<Invoice | null>(null);
+  const [quote, setQuote] = useState<Quote | null>(null);
+  const [quoting, setQuoting] = useState(false);
+  const [quoteErr, setQuoteErr] = useState("");
+  const latestPin = useRef("");
+
+  // Instant shipping charge as soon as the 6-digit pincode is typed.
+  const onPincode = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const pin = e.target.value.replace(/\D/g, "").slice(0, 6);
+    setForm((f) => ({ ...f, pincode: pin }));
+    setQuote(null);
+    setQuoteErr("");
+    latestPin.current = pin;
+    if (pin.length === 6) void fetchQuote(pin);
+  };
+
+  const fetchQuote = async (pin: string) => {
+    setQuoting(true);
+    try {
+      const res = await fetch("/api/shipping/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pincode: pin, items: cart.map(({ product, quantity }) => ({ id: product.id, quantity })) }),
+      });
+      const data = await res.json();
+      if (latestPin.current !== pin) return;
+      if (!res.ok) setQuoteErr(data.error || "Could not calculate shipping.");
+      else setQuote({ shipping: data.shipping, courier: data.courier, days: data.days });
+    } catch {
+      if (latestPin.current === pin) setQuoteErr("Could not calculate shipping. Check your internet and try again.");
+    } finally {
+      if (latestPin.current === pin) setQuoting(false);
+    }
+  };
 
   const set = (k: keyof Customer) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -64,6 +100,9 @@ export function CheckoutModal({ onClose }: { onClose: () => void }) {
     if (!normalizePhone(form.phone)) return "Enter a valid mobile number (10 digits, or with +91).";
     if (!form.address.trim() || !form.city.trim() || !form.state.trim()) return "Please complete your address.";
     if (!/^\d{6}$/.test(form.pincode)) return "Please enter a valid 6-digit pincode.";
+    if (quoting) return "Calculating shipping, one moment…";
+    if (quoteErr) return quoteErr;
+    if (!quote) return "Please wait while we calculate shipping.";
     return "";
   };
 
@@ -129,6 +168,7 @@ export function CheckoutModal({ onClose }: { onClose: () => void }) {
               lines: order.lines,
               subtotal: order.subtotal,
               shipping: order.shipping,
+              courier: order.courier,
               total: order.total,
               customer,
             });
@@ -167,7 +207,7 @@ export function CheckoutModal({ onClose }: { onClose: () => void }) {
       <p style="margin-top:12px"><b>Billed to</b><br/>${esc(c.name)}<br/>${esc(c.address)}, ${esc(c.city)}, ${esc(c.state)} ${esc(c.pincode)}<br/>${esc(c.phone)} · ${esc(c.email)}</p>
       <table><tr><th>Item</th><th style="text-align:center">Qty</th><th style="text-align:right">Price</th><th style="text-align:right">Amount</th></tr>${rows}</table>
       <p style="text-align:right;margin-top:16px">Subtotal: ${inr(invoice.subtotal)}</p>
-      <p style="text-align:right">Shipping: ${invoice.shipping === 0 ? "Free" : inr(invoice.shipping)}</p>
+      <p style="text-align:right">Shipping${invoice.courier ? ` (${esc(invoice.courier)})` : ""}: ${invoice.shipping === 0 ? "Free" : inr(invoice.shipping)}</p>
       <p style="text-align:right;font-size:18px"><b>Total paid: ${inr(invoice.total)}</b></p>
       <p style="margin-top:30px">Thank you for shopping with Sewmaistic!</p></body></html>`);
     w.document.close();
@@ -229,7 +269,7 @@ export function CheckoutModal({ onClose }: { onClose: () => void }) {
               <input className={input} placeholder="Full name" value={form.name} onChange={set("name")} autoComplete="name" />
               <input className={input} placeholder="Email" type="email" value={form.email} onChange={set("email")} autoComplete="email" />
               <input className={input} placeholder="Mobile number" inputMode="tel" value={form.phone} onChange={set("phone")} autoComplete="tel" />
-              <input className={input} placeholder="Pincode" inputMode="numeric" maxLength={6} value={form.pincode} onChange={set("pincode")} autoComplete="postal-code" />
+              <input className={input} placeholder="Pincode" inputMode="numeric" maxLength={6} value={form.pincode} onChange={onPincode} autoComplete="postal-code" />
               <input className={`${input} sm:col-span-2`} placeholder="Address (house, street, area)" value={form.address} onChange={set("address")} autoComplete="street-address" />
               <input className={input} placeholder="City" value={form.city} onChange={set("city")} autoComplete="address-level2" />
               <input className={input} placeholder="State" value={form.state} onChange={set("state")} autoComplete="address-level1" />
@@ -243,18 +283,29 @@ export function CheckoutModal({ onClose }: { onClose: () => void }) {
                 </div>
               ))}
               <hr className="my-2 border-[#EBE6DD]" />
-              <div className="flex justify-between"><span>Shipping</span><span>Free</span></div>
-              <div className="flex justify-between font-medium text-[16px] mt-1"><span>Total</span><span>{inr(subtotal)}</span></div>
+              <div className="flex justify-between">
+                <span>Shipping</span>
+                <span>
+                  {quoting ? "Calculating…" : quoteErr ? "—" : quote ? (quote.shipping === 0 ? "Free" : inr(quote.shipping)) : "Enter pincode"}
+                </span>
+              </div>
+              {quote?.courier && (
+                <p className="text-[12px] text-[#7A878B] text-right">
+                  via {quote.courier}{quote.days ? `, about ${quote.days} day${quote.days === 1 ? "" : "s"}` : ""}
+                </p>
+              )}
+              <div className="flex justify-between font-medium text-[16px] mt-1"><span>Total</span><span>{inr(subtotal + (quote?.shipping ?? 0))}</span></div>
             </div>
 
-            {error && <p className="mt-3 text-[13px] text-[#DC2626]">{error}</p>}
+            {quoteErr && <p className="mt-3 text-[13px] text-[#DC2626]">{quoteErr}</p>}
+            {error && error !== quoteErr && <p className="mt-3 text-[13px] text-[#DC2626]">{error}</p>}
 
             <button
               type="submit"
               disabled={busy || cart.length === 0}
               className="mt-5 w-full bg-black hover:bg-[#262626] active:bg-[#404040] disabled:opacity-60 text-white py-3 rounded-full text-[15px] font-medium transition-colors"
             >
-              {busy ? "Please wait…" : `Pay ${inr(subtotal)}`}
+              {busy ? "Please wait…" : `Pay ${inr(subtotal + (quote?.shipping ?? 0))}`}
             </button>
           </form>
         )}

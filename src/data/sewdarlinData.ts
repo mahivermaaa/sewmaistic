@@ -62,18 +62,18 @@ export const REVIEWS: Review[] = [
     id: "review-1",
     author: "XYZ",
     quote:
-      "Literally the most perfect ereader sleeve! The seller was super kind and easy to deal with. They quickly made and sent my custom sized order to ensure it would arrive before Christmas. Would 100% purchase again and recommend to others.",
+      "Such a lovely collection! Found some really unique pieces that you don't usually come across in regular stores. The clothes were in great condition and the whole shopping experience was smooth. Love finding affordable fashion like this!",
   },
   {
     id: "review-2",
     author: "XYZ",
     quote:
-      "Gorgeous colours and well made. My daughter loves them thank you!",
+      "Absolutely loved my bag! The attention to detail is amazing and you can genuinely see the effort that goes into making each piece. The quality is great and it looks even better in person. Definitely ordering again!",
   },
   {
     id: "review-3",
     author: "XYZ",
     quote:
-      "Custom made 17 scrunchies for me to gift at our hens party giveaway. They were made to great quality, shipped quickly and I’ve had so many compliments - the girls all loved them!",
+      "Everything is so beautifully made! You can tell that each piece is created with so much creativity and care. I ordered a clay piece and it turned out even prettier than I expected. Such a cute little store for anyone who loves handmade things!",
   },
 ];

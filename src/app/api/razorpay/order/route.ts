@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { getProductById } from "@/lib/catalogue";
+import { getShippingQuote, shiprocketConfigured, ShippingError, weightForItems } from "@/lib/shiprocket";
 import { getDb } from "@/lib/mongodb";
 
-// Shipping fee in rupees. 0 = free tracked shipping across India.
+// Shipping fee in rupees used when Shiprocket is NOT set up. 0 = free shipping across India.
 const SHIPPING_FEE = 0;
 
 export async function POST(req: Request) {
@@ -41,8 +42,26 @@ export async function POST(req: Request) {
     lines.push({ id: product.id, title: product.title, price: product.price, quantity, amount });
   }
 
-  const total = subtotal + SHIPPING_FEE;
   const c = body.customer ?? {};
+
+  // Real shipping charge from Shiprocket (calculated here, never trusted from the browser).
+  let shippingFee = SHIPPING_FEE;
+  let courier: string | undefined;
+  if (shiprocketConfigured()) {
+    const pin = String(c.pincode ?? "");
+    if (!/^\d{6}$/.test(pin)) return NextResponse.json({ error: "Please enter a valid 6-digit pincode." }, { status: 400 });
+    try {
+      const q = await getShippingQuote(pin, weightForItems(lines.reduce((n, l) => n + l.quantity, 0)));
+      shippingFee = q.shipping;
+      courier = q.courier;
+    } catch (err) {
+      if (err instanceof ShippingError) return NextResponse.json({ error: err.message }, { status: 422 });
+      console.error("Shipping quote failed:", err);
+      return NextResponse.json({ error: "Could not calculate shipping right now. Please try again in a moment." }, { status: 502 });
+    }
+  }
+
+  const total = subtotal + shippingFee;
 
   const rzpRes = await fetch("https://api.razorpay.com/v1/orders", {
     method: "POST",
@@ -86,7 +105,8 @@ export async function POST(req: Request) {
       },
       items: lines,
       subtotal,
-      shipping: SHIPPING_FEE,
+      shipping: shippingFee,
+      courier,
       total,
       currency: "INR",
       createdAt: new Date(),
@@ -102,7 +122,8 @@ export async function POST(req: Request) {
     keyId,
     lines,
     subtotal,
-    shipping: SHIPPING_FEE,
+    shipping: shippingFee,
+    courier,
     total,
   });
 }

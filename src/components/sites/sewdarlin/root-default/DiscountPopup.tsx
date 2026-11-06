@@ -8,6 +8,8 @@ export function DiscountPopup() {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const dismissed = sessionStorage.getItem("sewdarlin_promo_dismissed");
@@ -22,13 +24,30 @@ export function DiscountPopup() {
     sessionStorage.setItem("sewdarlin_promo_dismissed", "true");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
-    setSubmitted(true);
-    setTimeout(() => {
-      handleDismiss();
-    }, 2000);
+    if (!email || sending) return;
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("/api/insider", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+      setSubmitted(true);
+      setTimeout(() => {
+        handleDismiss();
+      }, 2000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   if (!show) return null;
@@ -87,11 +106,13 @@ export function DiscountPopup() {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full bg-white border border-[#D5CEC2] focus:border-[#4F5A5E] rounded-full py-2.5 px-4 text-sm text-[#2E3A42] outline-hidden placeholder-[#9EA8AC]"
             />
+            {error && <p className="text-xs text-red-700">{error}</p>}
             <button
               type="submit"
-              className="w-full bg-black hover:bg-[#262626] text-white font-medium py-2.5 rounded-full text-sm transition-all shadow-2xs hover:shadow-xs active:scale-98"
+              disabled={sending}
+              className="w-full bg-black hover:bg-[#262626] text-white font-medium py-2.5 rounded-full text-sm transition-all shadow-2xs hover:shadow-xs active:scale-98 disabled:opacity-60"
             >
-              Keep Me in the Loop
+              {sending ? "Joining..." : "Keep Me in the Loop"}
             </button>
             <button
               type="button"

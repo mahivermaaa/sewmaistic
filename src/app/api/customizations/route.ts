@@ -13,7 +13,7 @@ async function notifyOwner(r: { name: string; email: string; wants: string }) {
   const transporter = nodemailer.createTransport({ service: "gmail", auth: { user, pass } });
   await transporter.sendMail({
     from: `Sewmaistic Website <${user}>`,
-    to: process.env.NOTIFY_EMAIL || user,
+    to: process.env.NOTIFY_EMAIL || "sewmaistic@gmail.com",
     replyTo: r.email,
     subject: `New customization request from ${r.name}`,
     text: `Name: ${r.name}\nEmail: ${r.email}\n\nRequest:\n${r.wants}`,

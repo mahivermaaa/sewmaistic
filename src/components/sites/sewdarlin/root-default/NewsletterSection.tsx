@@ -61,7 +61,7 @@ export function NewsletterSection() {
             </div>
           </Link>
           <a
-            href="mailto:sumaistic01@gmail.com"
+            href="mailto:sewmaistic@gmail.com"
             className="hover:scale-110 transition-transform duration-200"
             aria-label="Email"
           >

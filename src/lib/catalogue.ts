@@ -59,7 +59,7 @@ export async function getCatalogue(): Promise<Product[]> {
 
   const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
   const url =
-    `https://${projectId}.apicdn.sanity.io/v${API_VERSION}/data/query/${dataset}` +
+    `https://${projectId}.api.sanity.io/v${API_VERSION}/data/query/${dataset}` +
     `?query=${encodeURIComponent(QUERY)}`;
 
   try {
@@ -90,7 +90,7 @@ export async function getCategories(): Promise<CategoryInfo[]> {
   const query = `*[_type == "category" && defined(slug.current) && defined(title)]
     | order(coalesce(sortOrder, 0) asc, _createdAt asc){ "slug": slug.current, title }`;
   const url =
-    `https://${projectId}.apicdn.sanity.io/v${API_VERSION}/data/query/${dataset}` +
+    `https://${projectId}.api.sanity.io/v${API_VERSION}/data/query/${dataset}` +
     `?query=${encodeURIComponent(query)}`;
   try {
     const res = await fetch(url, { next: { revalidate: 60 } });

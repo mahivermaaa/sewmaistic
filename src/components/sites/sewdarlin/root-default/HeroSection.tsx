@@ -12,15 +12,15 @@ export function HeroSection() {
       {/* 2 rows of polaroids: 3 on top, 2 below, text at bottom    */}
       {/* Exactly matches user's mobile screenshot                   */}
       {/* ========================================================= */}
-      <div className="md:hidden w-full bg-[#F6F4C1]">
+      <div className="md:hidden w-full bg-[#FCFCFC]">
         <Link
           href="#collections"
           aria-label="Shop the collection"
-          className="relative block w-full aspect-[736/981] max-w-[640px] mx-auto"
+          className="relative block w-full aspect-[1587/2245] max-w-[640px] mx-auto"
         >
           <Image
-            src="/sites/sewdarlin/root-default/hero-banner-mobile-pouch.jpg"
-            alt="The Pouch Bag - puffy, pretty, perfect - Sewmaistic"
+            src="/sites/sewdarlin/root-default/hero-banner-mobile-grid.jpg"
+            alt="Sewmaistic - quirky, handmade and full of personality. Shop now"
             fill
             priority
             sizes="100vw"
@@ -30,21 +30,21 @@ export function HeroSection() {
       </div>
 
       {/* ========================================================= */}
-      {/* DESKTOP HERO BANNER (Screens >= md) - "The Pouch Bag"      */}
+      {/* DESKTOP HERO BANNER (Screens >= md)                       */}
       {/* ========================================================= */}
-      <div className="hidden md:block w-full bg-[#F6F4C1]">
+      <div className="hidden md:block w-full bg-[#FCFCFC]">
         <Link
           href="#collections"
           aria-label="Shop the collection"
-          className="relative block w-full max-w-[1920px] mx-auto aspect-[2/1] max-h-[calc(100vh-160px)] min-h-[420px]"
+          className="relative block w-full aspect-[2245/1587] max-h-[calc(100vh-160px)]"
         >
           <Image
-            src="/sites/sewdarlin/root-default/hero-banner-pc.jpg"
-            alt="The Pouch Bag - puffy, pretty, perfect - Sewmaistic"
+            src="/sites/sewdarlin/root-default/hero-banner-pc-grid.png"
+            alt="Sewmaistic - quirky, handmade and full of personality. Shop now"
             fill
             priority
             sizes="100vw"
-            className="object-contain object-center"
+            className="object-cover object-center"
           />
         </Link>
       </div>

@@ -5,6 +5,7 @@ import { HeroSection } from "@/components/sites/sewdarlin/root-default/HeroSecti
 import { NewArrivals } from "@/components/sites/sewdarlin/root-default/NewArrivals";
 import { ThriftStore } from "@/components/sites/sewdarlin/root-default/ThriftStore";
 import { CollectionsGrid } from "@/components/sites/sewdarlin/root-default/CollectionsGrid";
+import { FAQSection } from "@/components/sites/sewdarlin/root-default/FAQSection";
 import { Testimonials } from "@/components/sites/sewdarlin/root-default/Testimonials";
 import { NewsletterSection } from "@/components/sites/sewdarlin/root-default/NewsletterSection";
 import { Footer } from "@/components/sites/sewdarlin/root-default/Footer";
@@ -33,6 +34,9 @@ export default async function HomePage() {
 
         {/* Shop By Collection Grid */}
         <CollectionsGrid categories={categories} />
+
+        {/* FAQ / Common Questions */}
+        <FAQSection />
 
         {/* Testimonials and Customer Praise */}
         <Testimonials />

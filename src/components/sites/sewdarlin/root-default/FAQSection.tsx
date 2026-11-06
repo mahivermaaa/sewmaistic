@@ -104,7 +104,7 @@ export function FAQSection() {
                 {/* Smooth expand/collapse without measuring height in JS */}
                 <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
                   <div className="overflow-hidden bg-[#FFFDFB] rounded-b-2xl">
-                    <p className="pl-9 sm:pl-10 pr-10 sm:pr-14 pb-4 sm:pb-5 font-sans text-[16px] sm:text-[17px] leading-relaxed text-[#4F5A5E]">
+                    <p className="pl-9 sm:pl-10 pr-10 sm:pr-14 pb-4 sm:pb-5 font-serif text-[16px] sm:text-[17px] leading-relaxed text-[#4F5A5E]">
                       {item.a}
                     </p>
                   </div>

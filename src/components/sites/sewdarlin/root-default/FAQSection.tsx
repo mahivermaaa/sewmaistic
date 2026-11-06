@@ -82,9 +82,7 @@ export function FAQSection() {
             return (
               <div
                 key={item.q}
-                className={`rounded-2xl border transition-colors ${
-                  isOpen ? "bg-white border-black" : "bg-[#FBF9F4] border-[#ECE7DE]"
-                }`}
+                className="rounded-2xl border bg-[#FBF9F4] border-[#ECE7DE]"
               >
                 <button
                   type="button"
@@ -95,7 +93,7 @@ export function FAQSection() {
                   <span className="shrink-0 w-6 font-sans text-[12px] text-black">
                     {i + 1}
                   </span>
-                  <span className="flex-1 font-serif text-[15px] sm:text-[17px] text-[#2E3A42] leading-snug">
+                  <span className="flex-1 font-serif font-semibold text-[15px] sm:text-[17px] text-[#2E3A42] leading-snug">
                     {item.q}
                   </span>
                   <span className="shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black text-white flex items-center justify-center">
@@ -105,8 +103,8 @@ export function FAQSection() {
 
                 {/* Smooth expand/collapse without measuring height in JS */}
                 <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
-                  <div className="overflow-hidden">
-                    <p className="pl-9 sm:pl-10 pr-10 sm:pr-14 pb-4 sm:pb-5 font-sans text-[13.5px] sm:text-[14px] leading-relaxed text-[#4F5A5E]">
+                  <div className="overflow-hidden bg-[#FFFDFB] rounded-b-2xl">
+                    <p className="pl-9 sm:pl-10 pr-10 sm:pr-14 pb-4 sm:pb-5 font-sans text-[16px] sm:text-[17px] leading-relaxed text-[#4F5A5E]">
                       {item.a}
                     </p>
                   </div>

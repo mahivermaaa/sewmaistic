@@ -2,7 +2,6 @@ export interface CategoryInfo {
   slug: string;
   title: string;
   image?: string;
-  onSale?: boolean;
 }
 
 // Starting list. After the first visit to /admin these live in Sanity and are managed from the Categories tab.
@@ -12,6 +11,7 @@ export const DEFAULT_CATEGORIES: CategoryInfo[] = [
   { slug: "thrift-store", title: "Thrift Store" },
   { slug: "little-somethings", title: "Little Somethings" },
   { slug: "clothing", title: "Clothing" },
+  { slug: "sale", title: "Sale" },
 ];
 
 // Page addresses that already mean something else on the shop.

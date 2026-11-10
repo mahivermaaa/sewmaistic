@@ -16,7 +16,7 @@ export async function PUT(req: Request, { params }: Ctx) {
   const { id } = await params;
   if (!ID.test(id)) return fail("Unknown category.", 404);
 
-  let body: { title?: unknown; image?: unknown; onSale?: unknown };
+  let body: { title?: unknown; image?: unknown };
   try {
     body = await req.json();
   } catch {
@@ -26,7 +26,6 @@ export async function PUT(req: Request, { params }: Ctx) {
   if (!title) return fail("Please enter a category name (up to 40 characters).", 400);
   // image: a Sanity asset ref string to set the cover photo, or null to remove it; omitted = leave as is.
   const imageRef = typeof body.image === "string" ? body.image : body.image === null ? null : undefined;
-  const onSale = typeof body.onSale === "boolean" ? body.onSale : undefined;
 
   try {
     const cats = await loadCategories();
@@ -43,7 +42,6 @@ export async function PUT(req: Request, { params }: Ctx) {
       if (imageRef) set.image = { _type: "image", asset: { _type: "reference", _ref: imageRef } };
       else unset.push("image");
     }
-    if (onSale !== undefined && onSale !== !!cur.onSale) set.onSale = onSale;
 
     const mutations: unknown[] = [];
     if (Object.keys(set).length > 0 || unset.length > 0) {

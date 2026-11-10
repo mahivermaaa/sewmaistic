@@ -7,7 +7,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sora), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-cormorant), Georgia, serif;
   --font-serif: var(--font-cormorant), Georgia, serif;
   --font-script: var(--font-script), cursive;
   
@@ -76,7 +76,7 @@
   body {
     background-color: #FBF9F4;
     color: #4F5A5E;
-    font-family: var(--font-sora), sans-serif;
+    font-family: var(--font-cormorant), serif;
     overflow-x: hidden;
   }
 }

@@ -29,14 +29,7 @@ export default async function CategoryRoute({ params }: { params: Promise<{ slug
   const cat = getCategory(slug);
   if (!dyn && !cat) notFound();
   const title = (dyn ?? cat)!.title;
-  // The built-in "Sale" page has no products of its own — it shows every product whose category
-  // has been marked "On Sale" in admin.
-  const onSaleTitles = new Set(dynamic.filter((c) => c.onSale).map((c) => c.title));
-  const list = dyn
-    ? products.filter((p) => p.category === dyn.title)
-    : slug === "sale"
-      ? products.filter((p) => onSaleTitles.has(p.category))
-      : getCategoryProducts(slug, products);
+  const list = dyn ? products.filter((p) => p.category === dyn.title) : getCategoryProducts(slug, products);
   const browse = [
     ...BROWSE_SLUGS.map((s) => getCategory(s)!).map((c) => ({
       slug: c.slug,

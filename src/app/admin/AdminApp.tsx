@@ -25,7 +25,6 @@ interface CatRow {
   title: string;
   count: number;
   image?: Photo | null;
-  onSale?: boolean;
 }
 
 const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
@@ -552,15 +551,6 @@ function CategoriesPanel({
     reload();
   }
 
-  async function toggleSale(c: CatRow) {
-    setErr("");
-    const next = !c.onSale;
-    const r = await call(`/api/admin/categories/${encodeURIComponent(c._id)}`, "PUT", { title: c.title, onSale: next });
-    if (!r.ok) return setErr(String(r.data.error ?? "Could not update."));
-    flash(next ? "Added to the Sale page" : "Removed from the Sale page");
-    reload();
-  }
-
   return (
     <div>
       <h1 className="font-serif text-[30px] text-black leading-none">Categories</h1>
@@ -616,19 +606,6 @@ function CategoriesPanel({
                 {c.image?.url && (
                   <button className="text-[13px] text-[#7A878B] underline whitespace-nowrap" onClick={() => removeCover(c)}>Remove</button>
                 )}
-
-                <button
-                  role="switch"
-                  aria-checked={!!c.onSale}
-                  onClick={() => toggleSale(c)}
-                  className="flex items-center gap-2 text-[12px] text-[#4F5A5E] whitespace-nowrap"
-                  title="Show this category's products on the Sale page"
-                >
-                  <span className={`relative inline-block w-9 h-5 rounded-full transition-colors ${c.onSale ? "bg-black" : "bg-[#C9C4BA]"}`}>
-                    <span className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-all ${c.onSale ? "left-[18px]" : "left-0.5"}`} />
-                  </span>
-                  On sale
-                </button>
 
                 <button className="text-[13px] text-black underline" onClick={() => { setEditId(c._id); setEditName(c.title); setErr(""); }}>Rename</button>
                 <button className="text-[13px] text-[#DC2626] underline" onClick={() => remove(c)}>Delete</button>

@@ -7,17 +7,20 @@ import { COLLECTIONS } from "@/data/sewdarlinData";
 import { useCatalogue } from "@/context/CatalogueContext";
 import type { CategoryInfo } from "@/lib/adminCategories";
 
-// The 5 designed cards stay as they are. A designed card (other than Sale) disappears if its category is
-// deleted in admin, and every other category added in admin gets its own "Shop <name>" card.
+// The 5 designed cards stay as they are, except their cover photo, which an admin category of the
+// same name can override. A designed card (other than Sale) disappears if its category is deleted in
+// admin, and every other category added in admin gets its own "Shop <name>" card.
 export function CollectionsGrid({ categories }: { categories: CategoryInfo[] }) {
   const { products } = useCatalogue();
   const linkOf = (slug: string) => `/category/${slug}`;
-  const sale = COLLECTIONS.find((c) => c.id === "shop-sale");
   // A custom cover photo set in admin always wins over the designed artwork (and drops the baked-in overlay text, since a plain photo has none printed on it).
-  const designed = COLLECTIONS.filter((c) => c.id !== "shop-sale" && categories.some((k) => linkOf(k.slug) === c.link)).map((c) => {
+  const withCustomCover = (c: (typeof COLLECTIONS)[number]) => {
     const match = categories.find((k) => linkOf(k.slug) === c.link);
     return match?.image ? { ...c, image: match.image, hasOverlayText: false } : c;
-  });
+  };
+  const saleCard = COLLECTIONS.find((c) => c.id === "shop-sale");
+  const sale = saleCard ? withCustomCover(saleCard) : undefined;
+  const designed = COLLECTIONS.filter((c) => c.id !== "shop-sale" && categories.some((k) => linkOf(k.slug) === c.link)).map(withCustomCover);
   const added = categories
     .filter((k) => !COLLECTIONS.some((c) => c.link === linkOf(k.slug)))
     .map((k) => ({

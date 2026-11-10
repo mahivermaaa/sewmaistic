@@ -16,7 +16,7 @@ export async function PUT(req: Request, { params }: Ctx) {
   const { id } = await params;
   if (!ID.test(id)) return fail("Unknown category.", 404);
 
-  let body: { title?: unknown };
+  let body: { title?: unknown; image?: unknown; onSale?: unknown };
   try {
     body = await req.json();
   } catch {
@@ -24,6 +24,9 @@ export async function PUT(req: Request, { params }: Ctx) {
   }
   const title = validCategoryTitle(body.title);
   if (!title) return fail("Please enter a category name (up to 40 characters).", 400);
+  // image: a Sanity asset ref string to set the cover photo, or null to remove it; omitted = leave as is.
+  const imageRef = typeof body.image === "string" ? body.image : body.image === null ? null : undefined;
+  const onSale = typeof body.onSale === "boolean" ? body.onSale : undefined;
 
   try {
     const cats = await loadCategories();
@@ -32,16 +35,30 @@ export async function PUT(req: Request, { params }: Ctx) {
     if (cats.some((c) => c._id !== id && c.title.toLowerCase() === title.toLowerCase())) {
       return fail("A category with that name already exists.", 400);
     }
+
+    const set: Record<string, unknown> = {};
+    const unset: string[] = [];
+    if (title !== cur.title) set.title = title;
+    if (imageRef !== undefined) {
+      if (imageRef) set.image = { _type: "image", asset: { _type: "reference", _ref: imageRef } };
+      else unset.push("image");
+    }
+    if (onSale !== undefined && onSale !== !!cur.onSale) set.onSale = onSale;
+
+    const mutations: unknown[] = [];
+    if (Object.keys(set).length > 0 || unset.length > 0) {
+      mutations.push({
+        patch: { id, ...(Object.keys(set).length ? { set } : {}), ...(unset.length ? { unset } : {}) },
+      });
+    }
     if (title !== cur.title) {
       const productIds = await sanityQuery<string[]>(`*[_type == "product" && category == $old]._id`, { old: cur.title });
-      await sanityMutate([
-        { patch: { id, set: { title } } },
-        ...productIds.map((pid) => ({ patch: { id: pid, set: { category: title } } })),
-      ]);
+      mutations.push(...productIds.map((pid) => ({ patch: { id: pid, set: { category: title } } })));
     }
+    if (mutations.length > 0) await sanityMutate(mutations);
   } catch (err) {
     console.error(err);
-    return fail("Could not rename the category. Please try again.", 502);
+    return fail("Could not save the category. Please try again.", 502);
   }
   refreshSite();
   return NextResponse.json({ ok: true });

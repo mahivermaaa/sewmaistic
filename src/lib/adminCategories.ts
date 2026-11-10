@@ -1,6 +1,8 @@
 export interface CategoryInfo {
   slug: string;
   title: string;
+  image?: string;
+  onSale?: boolean;
 }
 
 // Starting list. After the first visit to /admin these live in Sanity and are managed from the Categories tab.

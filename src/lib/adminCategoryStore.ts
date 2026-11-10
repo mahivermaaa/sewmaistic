@@ -6,10 +6,15 @@ export interface CategoryRow {
   slug: string;
   title: string;
   sortOrder?: number;
+  image?: { ref: string; url: string } | null;
+  onSale?: boolean;
 }
 
 const Q = `*[_type == "category" && defined(slug.current) && defined(title) && !(_id in path("drafts.**"))]
-  | order(coalesce(sortOrder, 0) asc, _createdAt asc){ _id, "slug": slug.current, title, sortOrder }`;
+  | order(coalesce(sortOrder, 0) asc, _createdAt asc){
+    _id, "slug": slug.current, title, sortOrder, onSale,
+    "image": image.asset->{ "ref": _id, url }
+  }`;
 
 // Reads the category list; the very first time (none saved yet) it saves the default list.
 export async function loadCategories(): Promise<CategoryRow[]> {

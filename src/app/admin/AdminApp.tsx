@@ -24,6 +24,8 @@ interface CatRow {
   slug: string;
   title: string;
   count: number;
+  image?: Photo | null;
+  onSale?: boolean;
 }
 
 const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
@@ -526,6 +528,39 @@ function CategoriesPanel({
     reload();
   }
 
+  async function uploadCover(c: CatRow, file: File) {
+    setErr("");
+    try {
+      const blob = await compress(file);
+      const res = await fetch("/api/admin/upload", { method: "POST", headers: { "Content-Type": "image/jpeg" }, body: blob });
+      const data = (await res.json().catch(() => ({}))) as { ref?: string; url?: string; error?: string };
+      if (!res.ok || !data.ref) throw new Error(data.error || "Upload failed.");
+      const r = await call(`/api/admin/categories/${encodeURIComponent(c._id)}`, "PUT", { title: c.title, image: data.ref });
+      if (!r.ok) throw new Error(String(r.data.error ?? "Could not save the cover photo."));
+      flash("Cover photo updated");
+      reload();
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Could not add that photo.");
+    }
+  }
+
+  async function removeCover(c: CatRow) {
+    setErr("");
+    const r = await call(`/api/admin/categories/${encodeURIComponent(c._id)}`, "PUT", { title: c.title, image: null });
+    if (!r.ok) return setErr(String(r.data.error ?? "Could not remove the cover photo."));
+    flash("Cover photo removed");
+    reload();
+  }
+
+  async function toggleSale(c: CatRow) {
+    setErr("");
+    const next = !c.onSale;
+    const r = await call(`/api/admin/categories/${encodeURIComponent(c._id)}`, "PUT", { title: c.title, onSale: next });
+    if (!r.ok) return setErr(String(r.data.error ?? "Could not update."));
+    flash(next ? "Added to the Sale page" : "Removed from the Sale page");
+    reload();
+  }
+
   return (
     <div>
       <h1 className="font-serif text-[30px] text-black leading-none">Categories</h1>
@@ -541,7 +576,7 @@ function CategoriesPanel({
 
       <ul className="mt-4 flex flex-col gap-2">
         {categories.map((c) => (
-          <li key={c._id} className="flex items-center gap-3 p-3 bg-white border border-[#EBE6DD] rounded-lg">
+          <li key={c._id} className="flex items-center gap-3 p-3 bg-white border border-[#EBE6DD] rounded-lg flex-wrap">
             {editId === c._id ? (
               <>
                 <input className={inputCls} value={editName} maxLength={40} autoFocus onChange={(e) => setEditName(e.target.value)} />
@@ -550,12 +585,51 @@ function CategoriesPanel({
               </>
             ) : (
               <>
+                <div className="relative w-14 h-14 rounded-md overflow-hidden bg-[#F5F2EB] border border-[#EBE6DD] shrink-0">
+                  {c.image?.url ? (
+                    <img src={thumb(c.image.url, 160)} alt="" className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-[9px] text-[#A9A398] text-center leading-tight px-1">No photo</div>
+                  )}
+                </div>
+
                 <div className="flex-1 min-w-0">
                   <p className="text-[15px] text-[#2E3A42] line-clamp-1">{c.title}</p>
                   <p className="text-[12px] text-[#7A878B]">
                     {c.count} product{c.count === 1 ? "" : "s"} · /category/{c.slug}
                   </p>
                 </div>
+
+                <label className="text-[13px] text-black underline cursor-pointer whitespace-nowrap">
+                  {c.image?.url ? "Change photo" : "Add photo"}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      e.target.value = "";
+                      if (f) void uploadCover(c, f);
+                    }}
+                  />
+                </label>
+                {c.image?.url && (
+                  <button className="text-[13px] text-[#7A878B] underline whitespace-nowrap" onClick={() => removeCover(c)}>Remove</button>
+                )}
+
+                <button
+                  role="switch"
+                  aria-checked={!!c.onSale}
+                  onClick={() => toggleSale(c)}
+                  className="flex items-center gap-2 text-[12px] text-[#4F5A5E] whitespace-nowrap"
+                  title="Show this category's products on the Sale page"
+                >
+                  <span className={`relative inline-block w-9 h-5 rounded-full transition-colors ${c.onSale ? "bg-black" : "bg-[#C9C4BA]"}`}>
+                    <span className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-all ${c.onSale ? "left-[18px]" : "left-0.5"}`} />
+                  </span>
+                  On sale
+                </button>
+
                 <button className="text-[13px] text-black underline" onClick={() => { setEditId(c._id); setEditName(c.title); setErr(""); }}>Rename</button>
                 <button className="text-[13px] text-[#DC2626] underline" onClick={() => remove(c)}>Delete</button>
               </>

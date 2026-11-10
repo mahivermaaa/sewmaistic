@@ -13,7 +13,11 @@ export function CollectionsGrid({ categories }: { categories: CategoryInfo[] }) 
   const { products } = useCatalogue();
   const linkOf = (slug: string) => `/category/${slug}`;
   const sale = COLLECTIONS.find((c) => c.id === "shop-sale");
-  const designed = COLLECTIONS.filter((c) => c.id !== "shop-sale" && categories.some((k) => linkOf(k.slug) === c.link));
+  // A custom cover photo set in admin always wins over the designed artwork (and drops the baked-in overlay text, since a plain photo has none printed on it).
+  const designed = COLLECTIONS.filter((c) => c.id !== "shop-sale" && categories.some((k) => linkOf(k.slug) === c.link)).map((c) => {
+    const match = categories.find((k) => linkOf(k.slug) === c.link);
+    return match?.image ? { ...c, image: match.image, hasOverlayText: false } : c;
+  });
   const added = categories
     .filter((k) => !COLLECTIONS.some((c) => c.link === linkOf(k.slug)))
     .map((k) => ({
@@ -22,7 +26,7 @@ export function CollectionsGrid({ categories }: { categories: CategoryInfo[] }) 
       buttonText: `Shop ${k.title}`,
       scriptText: "Shop",
       displayTitle: k.title,
-      image: products.find((p) => p.category === k.title)?.image ?? "",
+      image: k.image || products.find((p) => p.category === k.title)?.image || "",
       hasOverlayText: false,
       link: linkOf(k.slug),
     }));

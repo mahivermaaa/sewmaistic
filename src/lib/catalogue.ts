@@ -88,7 +88,7 @@ export async function getCategories(): Promise<CategoryInfo[]> {
   if (!projectId) return DEFAULT_CATEGORIES;
   const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
   const query = `*[_type == "category" && defined(slug.current) && defined(title)]
-    | order(coalesce(sortOrder, 0) asc, _createdAt asc){ "slug": slug.current, title }`;
+    | order(coalesce(sortOrder, 0) asc, _createdAt asc){ "slug": slug.current, title, "image": image.asset->url, onSale }`;
   const url =
     `https://${projectId}.api.sanity.io/v${API_VERSION}/data/query/${dataset}` +
     `?query=${encodeURIComponent(query)}`;

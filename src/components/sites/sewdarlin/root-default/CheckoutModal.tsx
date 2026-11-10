@@ -28,6 +28,15 @@ interface Invoice {
 
 interface Quote { shipping: number; courier?: string; days?: number }
 
+const INDIAN_STATES = [
+  "Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh",
+  "Chhattisgarh", "Dadra and Nagar Haveli and Daman and Diu", "Delhi", "Goa", "Gujarat", "Haryana",
+  "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Ladakh", "Lakshadweep",
+  "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry",
+  "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+  "West Bengal",
+];
+
 const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
 const esc = (s: string) =>
   s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c] as string));
@@ -43,10 +52,11 @@ function loadRazorpay(): Promise<boolean> {
   });
 }
 
-// Accepts "9876543210" or "+91 98765 43210" (spaces/dashes allowed). Returns "+919876543210" or null.
+// Phone input is kept to digits only, max 10, as the person types (see onPhone below).
+// This just turns a valid 10-digit Indian mobile number into "+919876543210", or null if invalid.
 function normalizePhone(raw: string): string | null {
-  const m = raw.replace(/[\s-]/g, "").match(/^(?:\+91)?([6-9]\d{9})$/);
-  return m ? `+91${m[1]}` : null;
+  const m = raw.match(/^[6-9]\d{9}$/);
+  return m ? `+91${m[0]}` : null;
 }
 
 const EMPTY: Customer = { name: "", email: "", phone: "", address: "", city: "", state: "", pincode: "" };
@@ -91,13 +101,21 @@ export function CheckoutModal({ onClose }: { onClose: () => void }) {
     }
   };
 
-  const set = (k: keyof Customer) => (e: React.ChangeEvent<HTMLInputElement>) =>
+  const set = (k: keyof Customer) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
+
+  // Only digits, max 10, as the person types — matches the pincode field's pattern.
+  const onPhone = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const phone = e.target.value.replace(/\D/g, "").slice(0, 10);
+    setForm((f) => ({ ...f, phone }));
+  };
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   const validate = () => {
     if (!form.name.trim()) return "Please enter your name.";
-    if (!/^\S+@\S+\.\S+$/.test(form.email)) return "Please enter a valid email.";
-    if (!normalizePhone(form.phone)) return "Enter a valid mobile number (10 digits, or with +91).";
+    if (!EMAIL_RE.test(form.email.trim())) return "Please enter a valid email address.";
+    if (!normalizePhone(form.phone)) return "Please enter a valid 10-digit mobile number.";
     if (!form.address.trim() || !form.city.trim() || !form.state.trim()) return "Please complete your address.";
     if (!/^\d{6}$/.test(form.pincode)) return "Please enter a valid 6-digit pincode.";
     if (quoting) return "Calculating shipping, one moment…";
@@ -268,11 +286,14 @@ export function CheckoutModal({ onClose }: { onClose: () => void }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <input className={input} placeholder="Full name" value={form.name} onChange={set("name")} autoComplete="name" />
               <input className={input} placeholder="Email" type="email" value={form.email} onChange={set("email")} autoComplete="email" />
-              <input className={input} placeholder="Mobile number" inputMode="tel" value={form.phone} onChange={set("phone")} autoComplete="tel" />
+              <input className={input} placeholder="Mobile number (10 digits)" inputMode="numeric" maxLength={10} value={form.phone} onChange={onPhone} autoComplete="tel" />
               <input className={input} placeholder="Pincode" inputMode="numeric" maxLength={6} value={form.pincode} onChange={onPincode} autoComplete="postal-code" />
               <input className={`${input} sm:col-span-2`} placeholder="Address (house, street, area)" value={form.address} onChange={set("address")} autoComplete="street-address" />
               <input className={input} placeholder="City" value={form.city} onChange={set("city")} autoComplete="address-level2" />
-              <input className={input} placeholder="State" value={form.state} onChange={set("state")} autoComplete="address-level1" />
+              <select className={input} value={form.state} onChange={set("state")} autoComplete="address-level1">
+                <option value="">Select state</option>
+                {INDIAN_STATES.map((s) => <option key={s} value={s}>{s}</option>)}
+              </select>
             </div>
 
             <div className="mt-5 bg-white border border-[#EBE6DD] rounded-md p-4 text-[14px] text-[#2E3A42]">

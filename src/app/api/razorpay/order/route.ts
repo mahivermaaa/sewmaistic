@@ -83,6 +83,8 @@ export async function POST(req: Request) {
   });
 
   if (!rzpRes.ok) {
+    const body = await rzpRes.text().catch(() => "");
+    console.error(`Razorpay order creation failed (${rzpRes.status}):`, body.slice(0, 500));
     return NextResponse.json({ error: "Could not start the payment. Please try again." }, { status: 502 });
   }
   const order = await rzpRes.json();

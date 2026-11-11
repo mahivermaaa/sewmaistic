@@ -18,11 +18,10 @@ export function CollectionsGrid({ categories }: { categories: CategoryInfo[] }) 
     const match = categories.find((k) => linkOf(k.slug) === c.link);
     return match?.image ? { ...c, image: match.image, hasOverlayText: false } : c;
   };
-  const saleCard = COLLECTIONS.find((c) => c.id === "shop-sale");
-  const sale = saleCard ? withCustomCover(saleCard) : undefined;
+  // The Sale tile is deliberately left out of this grid; "Sale" still has its own page via the nav link.
   const designed = COLLECTIONS.filter((c) => c.id !== "shop-sale" && categories.some((k) => linkOf(k.slug) === c.link)).map(withCustomCover);
   const added = categories
-    .filter((k) => !COLLECTIONS.some((c) => c.link === linkOf(k.slug)))
+    .filter((k) => !COLLECTIONS.some((c) => c.link === linkOf(k.slug)) && k.slug !== "sale")
     .map((k) => ({
       id: `cat-${k.slug}`,
       title: k.title,
@@ -33,7 +32,7 @@ export function CollectionsGrid({ categories }: { categories: CategoryInfo[] }) 
       hasOverlayText: false,
       link: linkOf(k.slug),
     }));
-  const cards = [...designed, ...added, ...(sale ? [sale] : [])];
+  const cards = [...designed, ...added];
 
   return (
     <section id="collections" className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 py-10 sm:py-16">

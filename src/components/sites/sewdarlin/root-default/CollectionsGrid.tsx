@@ -18,10 +18,11 @@ export function CollectionsGrid({ categories }: { categories: CategoryInfo[] }) 
     const match = categories.find((k) => linkOf(k.slug) === c.link);
     return match?.image ? { ...c, image: match.image, hasOverlayText: false } : c;
   };
-  // The Sale tile is deliberately left out of this grid; "Sale" still has its own page via the nav link.
+  // The old hand-designed Sale artwork is retired; "Sale" is now a normal admin category like any other,
+  // so its tile (cover photo, title, button) is fully editable from the Categories tab.
   const designed = COLLECTIONS.filter((c) => c.id !== "shop-sale" && categories.some((k) => linkOf(k.slug) === c.link)).map(withCustomCover);
   const added = categories
-    .filter((k) => !COLLECTIONS.some((c) => c.link === linkOf(k.slug)) && k.slug !== "sale")
+    .filter((k) => !COLLECTIONS.some((c) => c.link === linkOf(k.slug)))
     .map((k) => ({
       id: `cat-${k.slug}`,
       title: k.title,

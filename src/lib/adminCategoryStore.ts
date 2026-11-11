@@ -32,22 +32,6 @@ export async function loadCategories(): Promise<CategoryRow[]> {
     );
     return sanityQuery<CategoryRow[]>(Q);
   }
-  // The "Sale" card on the home page is always shown, even for shops created before this category
-  // existed — make sure it has a real category here too, so its cover photo can be edited.
-  if (!rows.some((r) => r.slug === "sale")) {
-    await sanityMutate([
-      {
-        createIfNotExists: {
-          _id: "category-sale",
-          _type: "category",
-          title: "Sale",
-          slug: { _type: "slug", current: "sale" },
-          sortOrder: Math.max(-1, ...rows.map((r) => r.sortOrder ?? 0)) + 1,
-        },
-      },
-    ]);
-    return sanityQuery<CategoryRow[]>(Q);
-  }
   return rows;
 }
 

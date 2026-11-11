@@ -13,10 +13,10 @@ import { CartDrawer } from "@/components/sites/sewdarlin/root-default/CartDrawer
 import { QuickViewModal } from "@/components/sites/sewdarlin/root-default/QuickViewModal";
 import { SearchModal } from "@/components/sites/sewdarlin/root-default/SearchModal";
 import { DiscountPopup } from "@/components/sites/sewdarlin/root-default/DiscountPopup";
-import { getCategories } from "@/lib/catalogue";
+import { getCategories, getReviews } from "@/lib/catalogue";
 
 export default async function HomePage() {
-  const categories = await getCategories();
+  const [categories, reviews] = await Promise.all([getCategories(), getReviews()]);
   return (
     <CartProvider>
       <main className="min-h-screen bg-[#FBF9F4] text-[#4F5A5E] flex flex-col font-sans selection:bg-black selection:text-white">
@@ -39,7 +39,7 @@ export default async function HomePage() {
         <FAQSection />
 
         {/* Testimonials and Customer Praise */}
-        <Testimonials />
+        <Testimonials reviews={reviews} />
 
         {/* Newsletter & Social Community ("Find Us Online") */}
         <NewsletterSection />

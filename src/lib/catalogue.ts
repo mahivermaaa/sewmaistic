@@ -1,5 +1,6 @@
-import { Product } from "@/types/sewdarlin";
+import { Product, Review } from "@/types/sewdarlin";
 import seed from "@/data/products-seed.json";
+import { REVIEWS as REVIEWS_SEED } from "@/data/sewdarlinData";
 import { CategoryInfo, DEFAULT_CATEGORIES } from "./adminCategories";
 
 // Where products come from:
@@ -100,5 +101,26 @@ export async function getCategories(): Promise<CategoryInfo[]> {
   } catch (err) {
     console.error("Could not load categories from Sanity, using the default list:", err);
     return DEFAULT_CATEGORIES;
+  }
+}
+
+// Customer reviews shown in "feedback diaries", managed from the admin panel (falls back to the built-in list).
+export async function getReviews(): Promise<Review[]> {
+  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+  if (!projectId) return REVIEWS_SEED;
+  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+  const query = `*[_type == "review" && defined(author) && defined(quote)]
+    | order(coalesce(sortOrder, 0) asc, _createdAt asc){ "id": _id, author, quote }`;
+  const url =
+    `https://${projectId}.api.sanity.io/v${API_VERSION}/data/query/${dataset}` +
+    `?query=${encodeURIComponent(query)}`;
+  try {
+    const res = await fetch(url, { next: { revalidate: 60 } });
+    if (!res.ok) throw new Error(`Sanity responded ${res.status}`);
+    const json = (await res.json()) as { result?: Review[] };
+    return json.result && json.result.length > 0 ? json.result : REVIEWS_SEED;
+  } catch (err) {
+    console.error("Could not load reviews from Sanity, using the built-in list:", err);
+    return REVIEWS_SEED;
   }
 }

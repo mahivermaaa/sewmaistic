@@ -22,7 +22,7 @@ export function CollectionsGrid({ categories }: { categories: CategoryInfo[] }) 
   // so its tile (cover photo, title, button) is fully editable from the Categories tab.
   const designed = COLLECTIONS.filter((c) => c.id !== "shop-sale" && categories.some((k) => linkOf(k.slug) === c.link)).map(withCustomCover);
   const added = categories
-    .filter((k) => !COLLECTIONS.some((c) => c.link === linkOf(k.slug)))
+    .filter((k) => !COLLECTIONS.some((c) => c.id !== "shop-sale" && c.link === linkOf(k.slug)))
     .map((k) => ({
       id: `cat-${k.slug}`,
       title: k.title,

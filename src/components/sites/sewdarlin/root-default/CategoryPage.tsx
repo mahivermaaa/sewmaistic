@@ -118,7 +118,7 @@ export function CategoryPage({ slug, title, products, browse }: Props) {
                     </button>
                   )}
                 </div>
-                <ProductReview productId={p.id} productTitle={p.title} />
+                <ProductReview text={p.reviewText} rating={p.reviewRating} />
               </div>
             ))}
           </div>

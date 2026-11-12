@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import type { Review } from "@/types/sewdarlin";
+import { REVIEWS } from "@/data/sewdarlinData";
 
 // Card shape: big rounded corners, extra-round bottom-left, with a black shape peeking out behind it.
 const SHAPE = "rounded-[32px] rounded-bl-[64px] rounded-br-[28px]";
 
-export function Testimonials({ reviews }: { reviews: Review[] }) {
+export function Testimonials() {
   return (
     <section className="w-full text-[#34444F]">
       {/* Same width/padding as the sections above */}
@@ -26,7 +26,7 @@ export function Testimonials({ reviews }: { reviews: Review[] }) {
 
         {/* Phone: swipe sideways. Desktop: 3 across. */}
         <div className="no-scrollbar max-w-[1240px] mx-auto flex md:grid md:grid-cols-3 gap-7 md:gap-10 overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-12 pb-6 px-3 md:px-3">
-          {reviews.map((review) => (
+          {REVIEWS.map((review) => (
             <div key={review.id} className="relative shrink-0 w-[78%] sm:w-[55%] md:w-auto snap-center">
               {/* Black shape behind the card */}
               <span aria-hidden className={`absolute inset-0 translate-x-2 -translate-y-2 bg-black ${SHAPE}`} />

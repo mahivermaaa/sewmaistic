@@ -10,7 +10,7 @@ const fail = (error: string, status: number) => NextResponse.json({ error }, { s
 const QUERY = `*[_type == "product" && !(_id in path("drafts.**"))]
   | order(coalesce(sortOrder, 0) asc, _createdAt desc){
     _id, "slug": slug.current, title, price, category, description,
-    outOfStock, isNewArrival, isFanFavourite,
+    outOfStock, isNewArrival, isFanFavourite, reviewText, reviewRating,
     "images": images[]{ "ref": asset._ref, "url": asset->url }
   }`;
 
@@ -69,6 +69,8 @@ export async function POST(req: Request) {
           outOfStock: d.outOfStock,
           isNewArrival: d.isNewArrival,
           isFanFavourite: d.isFanFavourite,
+          reviewText: d.reviewText,
+          reviewRating: d.reviewRating,
           images: imageObjects(d.images as string[]),
         },
       },

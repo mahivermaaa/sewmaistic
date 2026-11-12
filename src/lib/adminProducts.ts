@@ -10,6 +10,8 @@ export interface ProductInput {
   isNewArrival?: boolean;
   isFanFavourite?: boolean;
   images?: string[];
+  reviewText?: string;
+  reviewRating?: number;
 }
 
 const IMAGE_REF = /^image-[A-Za-z0-9]+-\d+x\d+-[a-z0-9]+$/;
@@ -42,6 +44,16 @@ export function parseProduct(body: unknown, requireAll: boolean, categories: str
   }
   for (const k of ["outOfStock", "isNewArrival", "isFanFavourite"] as const) {
     if (requireAll || has(k)) out[k] = r[k] === true;
+  }
+  if (has("reviewText")) {
+    const t = typeof r.reviewText === "string" ? r.reviewText.trim() : "";
+    if (t.length > 200) return { error: "The review is too long (max 200 characters)." };
+    out.reviewText = t;
+  }
+  if (has("reviewRating")) {
+    const n = Number(r.reviewRating);
+    if (!Number.isInteger(n) || n < 1 || n > 5) return { error: "Rating must be a whole number from 1 to 5." };
+    out.reviewRating = n;
   }
   if (requireAll || has("images")) {
     const imgs = r.images;

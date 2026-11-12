@@ -60,19 +60,19 @@ export const COLLECTIONS: Collection[] = [
 export const REVIEWS: Review[] = [
   {
     id: "review-1",
-    author: "XYZ",
+    author: "Archi",
     quote:
       "Such a lovely collection! Found some really unique pieces that you don't usually come across in regular stores. The clothes were in great condition and the whole shopping experience was smooth. Love finding affordable fashion like this!",
   },
   {
     id: "review-2",
-    author: "XYZ",
+    author: "Bisman",
     quote:
       "Absolutely loved my bag! The attention to detail is amazing and you can genuinely see the effort that goes into making each piece. The quality is great and it looks even better in person. Definitely ordering again!",
   },
   {
     id: "review-3",
-    author: "XYZ",
+    author: "Rashmeet",
     quote:
       "Everything is so beautifully made! You can tell that each piece is created with so much creativity and care. I ordered a clay piece and it turned out even prettier than I expected. Such a cute little store for anyone who loves handmade things!",
   },

@@ -16,6 +16,8 @@ interface AdminProduct {
   outOfStock?: boolean;
   isNewArrival?: boolean;
   isFanFavourite?: boolean;
+  reviewText?: string;
+  reviewRating?: number;
   images: Photo[];
 }
 
@@ -25,12 +27,6 @@ interface CatRow {
   title: string;
   count: number;
   image?: Photo | null;
-}
-
-interface ReviewRow {
-  _id: string;
-  author: string;
-  quote: string;
 }
 
 const inr = (n: number) => `₹${n.toLocaleString("en-IN")}`;
@@ -78,8 +74,7 @@ export function AdminApp() {
   const [errMsg, setErrMsg] = useState("");
   const [products, setProducts] = useState<AdminProduct[]>([]);
   const [categories, setCategories] = useState<CatRow[]>([]);
-  const [reviews, setReviews] = useState<ReviewRow[]>([]);
-  const [tab, setTab] = useState<"products" | "categories" | "reviews">("products");
+  const [tab, setTab] = useState<"products" | "categories">("products");
   const [editing, setEditing] = useState<AdminProduct | "new" | null>(null);
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("All");
@@ -91,15 +86,14 @@ export function AdminApp() {
   };
 
   const load = useCallback(async () => {
-    const [r, c, rv] = await Promise.all([call("/api/admin/products"), call("/api/admin/categories"), call("/api/admin/reviews")]);
-    if (r.status === 401 || c.status === 401 || rv.status === 401) return setState("login");
-    if (!r.ok || !c.ok || !rv.ok) {
-      setErrMsg(String((!r.ok ? r.data.error : !c.ok ? c.data.error : rv.data.error) ?? "Something went wrong."));
+    const [r, c] = await Promise.all([call("/api/admin/products"), call("/api/admin/categories")]);
+    if (r.status === 401 || c.status === 401) return setState("login");
+    if (!r.ok || !c.ok) {
+      setErrMsg(String((!r.ok ? r.data.error : c.data.error) ?? "Something went wrong."));
       return setState("error");
     }
     setProducts(r.data.products as AdminProduct[]);
     setCategories(c.data.categories as CatRow[]);
-    setReviews(rv.data.reviews as ReviewRow[]);
     setState("ready");
   }, []);
 
@@ -161,7 +155,7 @@ export function AdminApp() {
     <Shell onLogout={logout}>
       <div className="max-w-5xl mx-auto px-4 py-6 font-sans">
         <div className="flex gap-6 border-b border-[#E3DED4] mb-5 text-[14px]">
-          {(["products", "categories", "reviews"] as const).map((t) => (
+          {(["products", "categories"] as const).map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
@@ -174,8 +168,6 @@ export function AdminApp() {
 
         {tab === "categories" ? (
           <CategoriesPanel categories={categories} reload={() => void load()} flash={flash} />
-        ) : tab === "reviews" ? (
-          <ReviewsPanel reviews={reviews} reload={() => void load()} flash={flash} />
         ) : (
           <>
         <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
@@ -322,6 +314,8 @@ function ProductForm({
   const [outOfStock, setOutOfStock] = useState(!!initial?.outOfStock);
   const [isNewArrival, setIsNewArrival] = useState(!!initial?.isNewArrival);
   const [isFanFavourite, setIsFanFavourite] = useState(!!initial?.isFanFavourite);
+  const [reviewText, setReviewText] = useState(initial?.reviewText ?? "");
+  const [reviewRating, setReviewRating] = useState(initial?.reviewRating ? String(initial.reviewRating) : "5");
   const [photos, setPhotos] = useState<Photo[]>(initial?.images ?? []);
   const [uploading, setUploading] = useState(0);
   const [saving, setSaving] = useState(false);
@@ -370,6 +364,8 @@ function ProductForm({
       outOfStock,
       isNewArrival,
       isFanFavourite,
+      reviewText: reviewText.trim(),
+      reviewRating: Number(reviewRating),
       images: photos.map((p) => p.ref),
     };
     const r = initial
@@ -418,6 +414,25 @@ function ProductForm({
 
         <label className="block text-[12px] text-[#4F5A5E] mb-1 mt-3">Description (optional)</label>
         <textarea className={inputCls} rows={3} value={description} onChange={(e) => setDescription(e.target.value)} maxLength={2000} />
+
+        <label className="block text-[12px] text-[#4F5A5E] mb-1 mt-3">
+          Customer review shown under &ldquo;Add to Cart&rdquo; <span className="text-[#7A878B]">(optional)</span>
+        </label>
+        <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3">
+          <textarea
+            className={inputCls}
+            rows={2}
+            placeholder="e.g. Loved the quality, arrived faster than expected!"
+            value={reviewText}
+            onChange={(e) => setReviewText(e.target.value)}
+            maxLength={200}
+          />
+          <select className={`${inputCls} sm:w-[110px]`} value={reviewRating} onChange={(e) => setReviewRating(e.target.value)}>
+            {[5, 4, 3, 2, 1].map((n) => (
+              <option key={n} value={n}>{n} star{n === 1 ? "" : "s"}</option>
+            ))}
+          </select>
+        </div>
 
         <label className="block text-[12px] text-[#4F5A5E] mb-1 mt-3">
           Photos <span className="text-[#7A878B]">(first one is the main photo, up to 8)</span>
@@ -620,104 +635,6 @@ function CategoriesPanel({
                 <button className="text-[13px] text-black underline" onClick={() => { setEditId(c._id); setEditName(c.title); setErr(""); }}>Rename</button>
                 <button className="text-[13px] text-[#DC2626] underline" onClick={() => remove(c)}>Delete</button>
               </>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function ReviewsPanel({
-  reviews,
-  reload,
-  flash,
-}: {
-  reviews: ReviewRow[];
-  reload: () => void;
-  flash: (m: string) => void;
-}) {
-  const [author, setAuthor] = useState("");
-  const [quote, setQuote] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [err, setErr] = useState("");
-  const [editId, setEditId] = useState<string | null>(null);
-  const [editAuthor, setEditAuthor] = useState("");
-  const [editQuote, setEditQuote] = useState("");
-
-  async function add(e: React.FormEvent) {
-    e.preventDefault();
-    setBusy(true);
-    setErr("");
-    const r = await call("/api/admin/reviews", "POST", { author, quote });
-    setBusy(false);
-    if (!r.ok) return setErr(String(r.data.error ?? "Could not add the review."));
-    setAuthor("");
-    setQuote("");
-    flash("Review added");
-    reload();
-  }
-
-  async function save(id: string) {
-    setBusy(true);
-    setErr("");
-    const r = await call(`/api/admin/reviews/${encodeURIComponent(id)}`, "PUT", { author: editAuthor, quote: editQuote });
-    setBusy(false);
-    if (!r.ok) return setErr(String(r.data.error ?? "Could not save."));
-    setEditId(null);
-    flash("Review updated");
-    reload();
-  }
-
-  async function remove(rv: ReviewRow) {
-    if (!window.confirm(`Delete this review from "${rv.author}"?`)) return;
-    setErr("");
-    const r = await call(`/api/admin/reviews/${encodeURIComponent(rv._id)}`, "DELETE");
-    if (!r.ok) return setErr(String(r.data.error ?? "Could not delete."));
-    flash("Review deleted");
-    reload();
-  }
-
-  return (
-    <div>
-      <h1 className="font-serif text-[30px] text-black leading-none">Reviews</h1>
-      <p className="text-[13px] text-[#7A878B] mt-1">
-        These show in the &ldquo;feedback diaries&rdquo; section on the home page.
-      </p>
-
-      <form onSubmit={add} className="mt-4 bg-white border border-[#EBE6DD] rounded-lg p-4 flex flex-col gap-3">
-        <input className={inputCls} placeholder="Customer name, e.g. D. Sharma" value={author} maxLength={60} onChange={(e) => setAuthor(e.target.value)} />
-        <textarea className={inputCls} rows={3} placeholder="Review text" value={quote} maxLength={600} onChange={(e) => setQuote(e.target.value)} />
-        <button className={`${btnBlack} self-start`} disabled={busy || !author.trim() || !quote.trim()}>Add review</button>
-      </form>
-      {err && <p className="mt-3 text-[13px] text-[#DC2626]">{err}</p>}
-
-      <ul className="mt-4 flex flex-col gap-2">
-        {reviews.map((rv) => (
-          <li key={rv._id} className="p-3 bg-white border border-[#EBE6DD] rounded-lg">
-            {editId === rv._id ? (
-              <div className="flex flex-col gap-2">
-                <input className={inputCls} value={editAuthor} maxLength={60} autoFocus onChange={(e) => setEditAuthor(e.target.value)} />
-                <textarea className={inputCls} rows={3} value={editQuote} maxLength={600} onChange={(e) => setEditQuote(e.target.value)} />
-                <div className="flex gap-3">
-                  <button className="text-[13px] text-black underline" disabled={busy} onClick={() => save(rv._id)}>Save</button>
-                  <button className="text-[13px] text-[#7A878B] underline" onClick={() => setEditId(null)}>Cancel</button>
-                </div>
-              </div>
-            ) : (
-              <div className="flex items-start gap-3">
-                <div className="flex-1 min-w-0">
-                  <p className="text-[15px] text-[#2E3A42]">{rv.author}</p>
-                  <p className="text-[13px] text-[#7A878B] line-clamp-2 mt-0.5">{rv.quote}</p>
-                </div>
-                <button
-                  className="text-[13px] text-black underline whitespace-nowrap"
-                  onClick={() => { setEditId(rv._id); setEditAuthor(rv.author); setEditQuote(rv.quote); setErr(""); }}
-                >
-                  Edit
-                </button>
-                <button className="text-[13px] text-[#DC2626] underline whitespace-nowrap" onClick={() => remove(rv)}>Delete</button>
-              </div>
             )}
           </li>
         ))}

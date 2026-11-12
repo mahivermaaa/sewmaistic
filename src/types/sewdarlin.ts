@@ -12,6 +12,8 @@ export interface Product {
   isNewArrival?: boolean;
   isFanFavourite?: boolean;
   currency?: "INR"; // omit for AUD
+  reviewText?: string; // short customer-review snippet shown under "Add to Cart"
+  reviewRating?: number; // 1-5, shown as stars next to reviewText
 }
 
 export interface Collection {
